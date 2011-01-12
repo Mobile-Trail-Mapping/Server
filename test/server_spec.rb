@@ -69,7 +69,7 @@ describe "Server Tests" do
                 :api_key => @api_key,
                 :desc => 'test'}
 
-      post "/point/add", params #need to have something in misc or builder shits itself
+      post "/point/add", params #need to have something in misc or builder has problems
 
       params = {:api_key => @api_key,
                 :user => @test_user,
@@ -172,7 +172,7 @@ describe "Server Tests" do
                 :api_key => @api_key,
                 :desc => 'test'}
 
-      post "/point/add", params #need to have something in misc or builder shits itself
+      post "/point/add", params #need to have something in misc or builder has problems
 
       params = {:api_key => @api_key,
                 :user => @test_user,
@@ -196,7 +196,7 @@ describe "Server Tests" do
                 :api_key => @api_key,
                 :desc => 'test'}
 
-      post "/point/add", params #need to have something in misc or builder shits itself
+      post "/point/add", params #need to have something in misc or builder has problems
 
       params = {:api_key => @api_key,
                 :user => @test_user,
