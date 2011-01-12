@@ -22,7 +22,7 @@ end
 helpers do
   def password_matches_user?(user, pass)
     User.all(:email => user, :pwhash => pass).empty?
-  end  
+  end
 end
 
 get '/' do

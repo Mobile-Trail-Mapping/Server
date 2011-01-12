@@ -157,4 +157,54 @@ describe "Server Tests" do
       last_response.body.should == "Invalid username or password"   
     end
   end
+
+  describe "Image Actions" do
+    it "should return the number of images for a point" do
+       params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :api_key => @api_key,
+                :desc => 'test'}
+
+      post "/point/add", params #need to have something in misc or builder shits itself
+
+      params = {:api_key => @api_key,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      get "/image/get/1", params
+
+      last_response.body.should == "0"
+    end
+
+    it "should return an image for a point" do
+       params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :api_key => @api_key,
+                :desc => 'test'}
+
+      post "/point/add", params #need to have something in misc or builder shits itself
+
+      params = {:api_key => @api_key,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      get "/image/get/1/1", params
+
+      last_response.body.should == "<img src=images/1/1.jpg />"
+    end
+  end
 end

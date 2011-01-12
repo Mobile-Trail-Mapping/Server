@@ -1,9 +1,7 @@
-require 'pp'
-
 get '/point/get' do
   @trails = Trail.all - Trail.all(:name => 'misc') 
   @misc = Trail.all(:name => 'misc').points
-  
+
   builder :point
 end
 
@@ -21,7 +19,7 @@ post '/point/add/coords' do
     conn.split(":").each do |lat, long|
       lat, long = lat.to_i, long.to_i
       p = Point.first_or_create(:lat.lte => lat + 0.0005, :lat.gte => lat - 0.0005, :long.lte => long + 0.0005, :long.gte => long - 0.0005)
-      point.connections << Connection.first_or_create(:connection => p.id.to_i)
+      point.connections << Connection.first_or_create(:connected_to => p.id.to_i, :connected_from => point.id)
     end
   end
 
@@ -31,7 +29,6 @@ post '/point/add/coords' do
 end
 
 post '/point/add' do
-  pp params[:connections]
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
