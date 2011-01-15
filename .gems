@@ -3,5 +3,5 @@ libxml-ruby
 datamapper
 dm-migrations
 dm-postgres-adapter
-builder
+builder --version 2.1.2
 haml
