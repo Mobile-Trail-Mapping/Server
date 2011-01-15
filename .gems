@@ -1,0 +1,7 @@
+sinatra
+libxml-ruby
+datamapper
+dm-migrations
+dm-postgres-adapter
+builder
+haml
