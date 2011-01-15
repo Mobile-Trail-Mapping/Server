@@ -4,12 +4,8 @@ require 'dm-migrations'
 require 'digest/sha1'
 require 'builder'
 
-configure :development do
-  DataMapper.setup(:default, 'sqlite://' + Dir.pwd + '/tmp/development.db' )
-end
-
-configure :test do
-  DataMapper.setup(:default, 'sqlite::memory:')
+configure do
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://' + Dir.pwd + '/tmp/development.db') 
 end
 
 require 'models'
