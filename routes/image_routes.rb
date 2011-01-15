@@ -1,6 +1,6 @@
 get '/image/get/:point_id/:image_id' do |point_id, pic_id|
   #image_id is 1 based
-  return "<img src=images/#{point_id}/#{pic_id}.jpg />"
+  send_file("images/#{point_id}/#{pic_id}.jpg")
 end
 
 get '/image/get/:point_id' do |point_id|
