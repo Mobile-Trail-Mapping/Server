@@ -21,7 +21,9 @@ class Photo
   include Paperclip::Resource
 
   property :id,   Serial
-  has_attached_file :pic
+  has_attached_file :pic,
+                    :url => "/images/:id/:basename.:extension",
+                    :path => "#{Dir.pwd}/images/:id/:basename.:extension"
 
   belongs_to :point
 end
@@ -44,14 +46,12 @@ class Point
   property :long, Float, :required => true
   property :desc, Text
   property :title, String
-  has_attached_file :photo,
-                    :url => "/images/:id/:basename.:extension",
-                    :path => "#{Dir.pwd}/images/:id/:basename.:extension"
+
 
   belongs_to  :category
   belongs_to  :condition
   belongs_to  :trail
-  #has n, :photos
+  has n, :photos
   has n, :connections
 end
 
