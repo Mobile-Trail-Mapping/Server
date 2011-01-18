@@ -2,9 +2,8 @@ require 'pp'
 
 get '/image/get/:point_id/:image_id' do |point_id, pic_id|
   #image_id is 1 based
-  #send_file("images/#{point_id}/#{pic_id}.jpg")
-  #send_file(Point.first(:id => point_id).photos[pic_id - 1])
-  send_file(Point.first(:id => point_id).photo.url)
+  string = Point.first(:id => point_id).photo.url
+  send_file(string[1, string.length].split("?")[0])
 end
 
 get '/image/get/:point_id' do |point_id|
@@ -17,7 +16,9 @@ get '/image/upload' do
   haml :add_point
 end
 
-post '/image/add/:point_id' do |point_id|
+post '/image/add' do
+  point_id = params[:id].to_i
+  puts "point_id is #{point_id}"
   p = Point.first(:id => point_id)
   p.photo = make_paperclip_mash(params[:file])
   p.save
