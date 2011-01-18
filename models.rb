@@ -18,10 +18,10 @@ end
 
 class Photo
   include DataMapper::Resource
+  include Paperclip::Resource
 
   property :id,   Serial
-  property :path, String
-  property :desc, Text
+  has_attached_file :pic
 
   belongs_to :point
 end
@@ -37,17 +37,21 @@ end
 
 class Point
   include DataMapper::Resource
+  include Paperclip::Resource
 
   property :id, Serial
   property :lat,  Float, :required => true
   property :long, Float, :required => true
   property :desc, Text
   property :title, String
+  has_attached_file :photo,
+                    :url => "/images/:id/:basename.:extension",
+                    :path => "#{Dir.pwd}/images/:id/:basename.:extension"
 
   belongs_to  :category
   belongs_to  :condition
   belongs_to  :trail
-  has n, :photos
+  #has n, :photos
   has n, :connections
 end
 

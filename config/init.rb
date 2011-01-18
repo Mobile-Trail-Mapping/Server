@@ -1,8 +1,10 @@
 require 'rubygems'
 require 'dm-core'
 require 'dm-migrations'
+require 'dm-paperclip'
 require 'digest/sha1'
 require 'builder'
+require 'haml'
 
 configure do
   DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://' + Dir.pwd + '/tmp/development.db') 

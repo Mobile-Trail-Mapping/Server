@@ -21,6 +21,15 @@ helpers do
   def password_matches_user?(user, pass)
     User.all(:email => user, :pwhash => pass).empty?
   end
+
+  def make_paperclip_mash(file_hash)
+    mash = Mash.new
+    mash['tempfile'] = file_hash[:tempfile]
+    mash['filename'] = file_hash[:filename]
+    mash['content_type'] = file_hash[:type]
+    mash['size'] = file_hash[:tempfile].size
+    mash
+  end
 end
 
 get '/' do
