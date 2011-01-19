@@ -12,7 +12,7 @@ get '/image/get/:point_id' do |point_id|
   return "0"
 end
 
-get '/image/upload' do 
+get '/image/upload' do
   haml :add_point
 end
 
@@ -22,4 +22,6 @@ post '/image/add' do
   p = Point.first(:id => point_id)
   p.photos << Photo.new(:pic => make_paperclip_mash(params[:file]))
   p.save
+
+  redirect "/image/get/#{point_id}"
 end
