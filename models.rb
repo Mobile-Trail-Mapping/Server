@@ -23,7 +23,7 @@ class Photo
   property :id,   Serial
   has_attached_file :pic,
                     :storage => :s3,
-                    :s3_credentials => "/config/s3_config.yml"
+                    :s3_credentials => "/config/s3_config.yml",
                     :path => "/images/:id/:basename.:extension"
 
   belongs_to :point
