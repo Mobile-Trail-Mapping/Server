@@ -1,0 +1,72 @@
+/* Boilerplate with Less Framework */
+
+/* Default 8-column layout
+60 px columns,24 px gutters,60 px margins,768 px total
+---------------------------------------------------------
+1 2 3 4 5 6 7 8 
+60px 144px 228px 312px 396px 480px 564px 648px */
+body{background:rgb(232,232,232);font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;padding:84px 60px 0;width:648px;margin:0px auto;-webkit-tap-highlight-color:rgb(255,255,0);
+background: #e6e6e6 no-repeat -moz-linear-gradient(top, #fafafa, #e6e6e6 58%);
+background: #e6e6e6 no-repeat -webkit-gradient(linear, 0 0, 0 58%, from(#fafafa), to(#e6e6e6));}
+#container{padding:10px 0 0 0;position:relative;width:100%;}
+#container h3{margin:0 auto;text-align:center; font-size: 36px; text-shadow: 0px 1px 0px #fff;}
+#container .download-box{float:left;left:50%;margin:0;text-align:left;padding: 10px 0px 0px;position:relative;width:460px;}
+#container .download-box .box-content{background:#fff; padding:20px 20px 20px 20px;width:420px;font-size: 18px;}
+#container .download-box p{line-height: 1.5;color:#9D9D9D;margin-bottom: 10px;}
+#container .download-box h4{font-size:32px;line-height:36px;margin-bottom:9px;}
+#container .download-box h5{font-size:18px;margin-bottom:1em;}
+#container .download-box h5 em{color:#999;text-transform:none;}
+#container #iphone .box-content{background: white url(../images/iphone.png) no-repeat 383px 13px;}
+#container #android .box-content{background: white url(../images/android.png) no-repeat 373px 13px;}
+#container #android.download-box{margin-left:-470px;}
+#container .nightly-toggle, #container .stable-toggle{padding: 10px;margin-top: 20px;background: #f1f1f1;}
+#container .nightly-toggle span, #container .stable-toggle span{float:right; color:#9f9f9f;}
+#container .nightly-toggle a{width: 100%;padding-left: 30px; display: block; color: #9d9d9d; background: url(../images/arrow-right.png) no-repeat 0% 50%;}
+#container .nightly-toggle a:hover{color:#000;}
+#container .stable-toggle a{width: 100%;padding-left: 30px; display: block; color: #9d9d9d; background: url(../images/arrow-left.png) no-repeat 0% 50%;}
+#container .stable-toggle a:hover{color:#000;}
+#container .button{margin-left:55px;-webkit-transition: all 0.1s ease;position:relative;}
+#container .button:hover{top:1px;color:#eee}
+#container .button:active{top:2px;}
+#container p.meta{width: 600px; margin: 20px auto; padding: 0px; font-size: 18px;text-shadow: 0px 1px 0px #fff }
+#container h3, #container h5, #container h4{text-transform:uppercase; font-family: "Helvetica Neue", "Helvetica", Arial;}
+a{color:#000;text-decoration:none;display:inline;}
+a{-webkit-transition: color 0.3s ease, border-bottom 0.3s ease;
+	-moz-transition: color 0.3s ease, border-bottom 0.3s ease;
+	-o-transition: color 0.3s ease, border-bottom 0.3s ease;
+	transition: color 0.3s ease, border-bottom 0.3s ease; }
+a:hover{color: green;}
+
+/* 13-column layout
+60 px columns,24 px gutters,72 px margins,1212 px total (extra space for scrollbars)
+---------------------------------------------------------------------------------------
+1 2 3 4 5 6 7 8 9 10 11 12 13
+60px 144px 228px 312px 396px 480px 564px 648px 732px 816px 900px 984px 1068px */
+@media only screen and (min-width:1212px) {
+	body{padding:96px 72px 0;width:1068px;}
+	section{width:430px;}
+}
+/* 5-column layout
+60 px columns,24 px gutters,42 px margins,480 px total
+---------------------------------------------------------
+1 2 3 4 5
+60px 144px 228px 312px 396px */
+@media only screen and (max-width:767px) and (min-width:480px){
+	body{padding:60px 42px 0;width:396px;-webkit-text-size-adjust:100%;}
+}
+/* 3-column layout
+60 px columns,24 px gutters,46 px margins,320 px total
+---------------------------------------------------------
+1 2 3
+60px 144px 228px */
+@media only screen and (max-width:479px){
+	body{padding:48px 46px 0;width:228px;-webkit-text-size-adjust:100%;}
+}
+/* Overrides for iPhone 4 
+and other high device-pixel-ratio devices
+----------------------------------------- */
+@media 
+only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min-device-pixel-ratio:2){
+	#example{background:rgb(255,158,97);}
+}

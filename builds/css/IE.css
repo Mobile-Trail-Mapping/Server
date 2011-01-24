@@ -1,0 +1,6 @@
+.button{behavior:url(../css/PIE.htc);}
+.green{-pie-background:linear-gradient(#1cb700,#317900);}
+.darkblue{-pie-background:linear-gradient(#1977b2,#00416a);}
+.green span.east{box-shadow:0px 1px 3px #6ab900;}
+.darkblue span.east{box-shadow:0px 1px 3px #009dfb;}
+.TrSaCs-north span,.TrSaCs-east span,.TrSaCs-south span,.TrSaCs-west span,.TrSaCs-north em,.TrSaCs-east em,.TrSaCs-south em,.TrSaCs-west em,.TrSaCm-north span,.TrSaCm-east span,.TrSaCm-south span,.TrSaCm-west span,.LarThn span.round-color,.CtaThk span.round{behavior:url(../css/PIE.htc);}

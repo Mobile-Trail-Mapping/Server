@@ -1,0 +1,23 @@
+.button{display:inline-block;width:auto;padding:0px 20px;color:#fff;-webkit-box-shadow:0px 0px 12px #555;-moz-box-shadow:0px 0px 12px #555;box-shadow:0px 0px 12px #555;}
+.green{background:#219c0c;border:1px solid #39b000;background-image:-webkit-gradient(linear,0% 0%,0% 100%,from(#1cb700),to(#317900));background-image:-moz-linear-gradient(90deg,#317900,#1cb700);}
+.darkblue{background:#00416a;border:1px solid #1778b3;background-image:-webkit-gradient(linear,left top,left bottom,from(#1977b2),to(#00416a));background-image:-moz-linear-gradient(90deg,#00416a,#1977b2);}
+.r10{border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;}
+
+.Cta{height:70px;padding:0px 35px;text-align:center;}
+.Cta span.text-big{display:inline-block;margin-bottom:-10px;font:bold 1.9em/52px helvetica,Arial,sans-serif;}
+.Cta span.text-small{display:inline-block;font:normal 1.0em Verdana,Arial,sans-serif;text-shadow:none;}
+span.text-big{text-shadow:0px 2px 2px #330;}
+.green span.text-small{color:#cf0;}
+.darkblue span.text-small{color:#3cf;}
+.CtaThk{height:60px;padding:0px 20px 0px 35px;}
+.CtaThk span.button-text{float:left;width:auto;text-align:center;}
+.CtaThk span.text-big{display:inline-block;margin-top:7px;font:bold 1.1em helvetica,Arial,sans-serif;}
+.CtaThk span.text-small{display:inline-block;font:normal 0.8em helvetica,Arial,Trebuchet MS,sans-serif;}
+.CtaThk span.round{float:left;height:38px;width:38px;margin:11px -5px 0px 20px;border-radius:19px;-moz-border-radius:19px;-webkit-border-radius:19px;}
+.CtaThk span.arrow-tail{float:left;margin:10px 15px 0px 14px;width:10px;height:12px;background:#f1f1f1;}
+.CtaThk span.arrow-head{float:left;margin:10px 0px 0px -5px;width:0px;height:0px;border-color:#f1f1f1 transparent transparent transparent;border-width:10px 10px 10px 10px;border-style:solid;}
+.green span.round{background:#006c00;-webkit-box-shadow:0px 1px 3px #6ab900;-moz-box-shadow:0px 1px 3px #6ab900;box-shadow:0px 1px 3px #6ab900;}
+.darkblue span.round{background:#003453;-webkit-box-shadow:0px 1px 3px #009dfb;-moz-box-shadow:0px 1px 3px #009dfb;box-shadow:0px 1px 3px #009dfb;}
+.east{-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);}
+.green span.east{-webkit-box-shadow:-1px 0px 3px #6ab900;-moz-box-shadow:-1px 0px 3px #6ab900;box-shadow:-1px 0px 3px #6ab900;}
+.darkblue span.east{-webkit-box-shadow:-1px 0px 3px #009dfb;-moz-box-shadow:-1px 0px 3px #009dfb;box-shadow:-1px 0px 3px #009dfb;}
