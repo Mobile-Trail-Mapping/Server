@@ -10,9 +10,9 @@ a{-webkit-transition:color 0.3s ease,border-bottom 0.3s ease;-moz-transition:col
 a:hover{color:green;}
 #container{padding:10px 0 0 0;position:relative;width:100%;}
 #container h3{margin:0 auto;text-align:center;font-size:36px;text-shadow:0px 1px 0px #fff;}
-#container p.meta{width:600px;margin:20px auto;padding:0px;font-size:18px;text-shadow:0px 1px 0px #fff}
-#container p.meta img{float:left;margin-right:10px;width:45px;height:45px;}
 #container h3,#container h5,#container h4{text-transform:uppercase;font-family:"Helvetica Neue","Helvetica",Arial;}
+#container .meta{width:600px;margin:20px auto;padding:0px;font-size:18px;text-shadow:0px 1px 0px #fff}
+#container .meta img{float:left;margin-right:10px;width:45px;height:45px;}
 
 #container .download-box{float:left;left:50%;margin:0;text-align:left;padding:10px 0px 0px;position:relative;width:460px;}
 #container .download-box p{line-height:1.5;color:#9D9D9D;margin-bottom:10px;}
@@ -27,6 +27,9 @@ a:hover{color:green;}
 #container .button:hover{top:1px;color:#eee}
 #container .button:active{top:2px;}
 
+#container #nightly ul {list-style-type: none;}
+#container #nightly ul li {padding: 10px; background: #f0f0f0;margin-bottom: 3px;opacity:0.8;filter:alpha(opacity=80);}
+#container #nightly ul li.alt {background-color: #fff}
 #container .nightly-toggle,#container .stable-toggle{padding:10px;margin-top:20px;background:#f1f1f1;}
 #container .nightly-toggle span,#container .stable-toggle span{float:right;color:#9f9f9f;}
 #container .nightly-toggle a, #container .stable-toggle a{width:100%;padding-left:30px;display:block;color:#9d9d9d;background:url(../images/arrow-right.png) no-repeat 0% 50%;}

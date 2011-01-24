@@ -1,11 +1,15 @@
 $(document).ready(function(){
 
+	// Fancy indents
+	
 	$(".nightly-toggle a, .stable-toggle a").hover(function(){
 		$(this).stop().animate({marginLeft:'5px'},{queue:false, duration:300, easing: 'easeOutQuart'})
 	},function(){
 		$(this).stop().animate({marginLeft:'0px'},{queue:false, duration:300, easing: 'easeOutQuart'})
 	});
 
+	// Content Sliding
+	
 	$("#android .tab-content, #iphone .tab-content").hide(); 
 	$("#android .tab-content:first, #iphone .tab-content:first").show();
 	$(".stable-toggle").hide();
@@ -28,6 +32,8 @@ $(document).ready(function(){
 		$(this).parent().find(activeTab).slideDown(speed);
 		return false;
 	});
+	
+	 $('#nightly ul li:nth-child(odd)').addClass('alt');
 	
 });
 
