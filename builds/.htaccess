@@ -1,0 +1,4 @@
+# Phusion Passenger Start
+PassengerEnabled on
+RackBaseURI /home/brousali/public_html/builds
+# Phusion Passenger End

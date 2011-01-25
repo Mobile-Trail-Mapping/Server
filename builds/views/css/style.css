@@ -41,22 +41,33 @@ a:hover{color:green;}
 ---------------------------------------------------------------------------------------
 1 2 3 4 5 6 7 8 9 10 11 12 13
 60px 144px 228px 312px 396px 480px 564px 648px 732px 816px 900px 984px 1068px */
-@media only screen and (min-width:1212px){body{padding:96px 72px 0;width:1068px;}
-section{width:430px;}
+@media only screen and (min-width:1212px){
+	body{padding:96px 72px 0;width:1068px;}
 }
 /* 5-column layout
 60 px columns,24 px gutters,42 px margins,480 px total
 ---------------------------------------------------------
 1 2 3 4 5
 60px 144px 228px 312px 396px */
-@media only screen and (max-width:767px) and (min-width:480px){body{padding:60px 42px 0;width:396px;-webkit-text-size-adjust:100%;}
+@media only screen and (max-width:767px) and (min-width:480px){
+	body{padding:60px 42px 0;width:450px;-webkit-text-size-adjust:100%;}
+	.meta{width: 450px !important;}
+	#container #android.download-box{margin:0; left: 0;}
+	#container .download-box{left: 0;}
 }
 /* 3-column layout
 60 px columns,24 px gutters,46 px margins,320 px total
 ---------------------------------------------------------
 1 2 3
 60px 144px 228px */
-@media only screen and (max-width:479px){body{padding:48px 46px 0;width:228px;-webkit-text-size-adjust:100%;}
+@media only screen and (max-width:479px){
+	body{padding:48px 0 0;width:320px;-webkit-text-size-adjust:100%;}
+	.meta{width: 320px !important;}
+	#container h3 {text-align:center; font-size: 24px;}
+	#container #android.download-box{margin:0; left: 0; }
+	#container .download-box{left: 0;}
+	#container .download-box .box-content {width: 320px;}
+	#container .button{margin-left:0;}
 }
 /* Overrides for iPhone 4 
 and other high device-pixel-ratio devices
