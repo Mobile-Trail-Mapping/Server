@@ -20,7 +20,7 @@ a:hover{color:green;}
 #container .download-box h5{font-size:18px;margin-bottom:1em;}
 #container .download-box h5 em{color:#999;text-transform:none;}
 #container .download-box .box-content{background:#fff;padding:20px 20px 20px 20px;width:420px;font-size:18px;}
-#container #iphone .box-content{background:white url(../images/iphone.png) no-repeat 383px 13px;}
+#container #iphone .box-content{background:white url(../images/iphone.png) no-repeat 380px 16px;}
 #container #android .box-content{background:white url(../images/android.png) no-repeat 373px 13px;}
 #container #android.download-box{margin-left:-470px;}
 #container .button{margin-left:55px;-webkit-transition:all 0.1s ease;position:relative;}
