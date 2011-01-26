@@ -6,5 +6,5 @@ require 'sinatra'
 require 'haml'
 
 get '/' do
-  "Rakefile works!"
+  "Rakefile works, maybe"
 end
