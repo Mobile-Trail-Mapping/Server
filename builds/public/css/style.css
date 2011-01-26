@@ -15,7 +15,7 @@ a:hover{color:green;}
 #container .meta img{float:left;margin-right:10px;width:45px;height:45px;}
 
 #container .download-box{float:left;left:50%;margin:0;text-align:left;padding:10px 0px 0px;position:relative;width:460px;}
-#container .download-box p{line-height:1.5;color:#9D9D9D;margin-bottom:10px;}
+#container .download-box p{line-height:1.5;color:#9D9D9D;margin-bottom:30px;}
 #container .download-box h4{font-size:32px;line-height:36px;margin-bottom:9px;}
 #container .download-box h5{font-size:18px;margin-bottom:1em;}
 #container .download-box h5 em{color:#999;text-transform:none;}
