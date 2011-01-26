@@ -15,5 +15,5 @@ task :push do
 end
 
 desc 'Publish and sync'
-  task :p => [:push, :sync] do
+  task :p => [:sync, :push] do
 end
