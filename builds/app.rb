@@ -6,5 +6,5 @@ require 'sinatra'
 require 'haml'
 
 get '/' do
-  "I'm a motherfucking badass'"
+  "Testing"
 end
