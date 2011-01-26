@@ -1,8 +1,12 @@
-ENV['GEM_PATH'] = "#{ENV['HOME']}/ruby/gems:/usr/lib/ruby/gems/1.8"
-ENV['GEM_HOME'] = "#{ENV['HOME']}/ruby/gems"
+ENV['GEM_PATH'] = '/home/brousali/gems'
 
 require 'rubygems'
-require 'sinatra'
+require 'vendor/sinatra-1.0/lib/sinatra.rb'
+require 'vendor/tilt-1.0/lib/tilt.rb'
+require 'vendor/haml/lib/haml.rb'
 require 'app'
+
+set :run, false
+set :environment, :production
 
 run Sinatra::Application
