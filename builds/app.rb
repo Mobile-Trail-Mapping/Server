@@ -6,5 +6,5 @@ require 'sinatra'
 require 'haml'
 
 get '/' do
-  "Rakefile works, maybe"
+  "Last test of the rakefile"
 end
