@@ -25,7 +25,7 @@
 			and
 			= succeed "." do
 				%a{:href => "http://github.com/Mobile-Trail-Mapping/Architecture/wiki"} documentation
-			.clearfix
+		.clearfix
 
 		#android.download-box
 			.box-content
@@ -46,6 +46,44 @@
 						%a.button.green.r10.CtaThk{:href => "#"}
 							%span.button-text
 								%span.text-big Download for Android
+								%br
+								%span.text-small
+									version number
+									%strong 8.1
+							%span.round
+								%span.arrow-tail
+									%span.arrow-head
+				#nightly.tab-content
+					%ul
+						%li Nightly build
+						%li Nightly build
+				.clearfix
+				.nightly-toggle
+					%span 
+						latest 12/16/12
+					%a{:href => "#nightly"} Nightly builds
+				.stable-toggle
+					%a{:href => "#stable"} Stable build
+
+		#iphone.download-box
+			.box-content
+				#stable.tab-content
+					%h4 iPhone
+					%h5 
+						For
+						%em Froyo 2.1
+						and above
+					%p
+						Latest
+						%strong stable
+						release:
+						%em 12/12/12
+						\- Git commit message could be here? I have no clue how
+						.clearfix
+						%br
+						%a.button.darkblue.r10.CtaThk{:href => "#"}
+							%span.button-text
+								%span.text-big Download for iPhone
 								%br
 								%span.text-small
 									version number
