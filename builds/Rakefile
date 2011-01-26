@@ -3,7 +3,7 @@ task :default => :dev
 desc 'rsync the contents of site to the server'
 task :sync do
   puts '* Publishing files to live server'
-  puts `rsync -avz . brousali@brousalis.com:public_html/builds`
+  puts `rsync -e ssh -avz . brousali@brousalis.com:public_html/builds`
 end
 
 desc 'Push source code to Github'
