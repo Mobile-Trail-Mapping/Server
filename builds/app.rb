@@ -39,11 +39,11 @@ get '/' do
     begin
         @stable = parseBuilds("stable")[:stable]
         @android = parseBuilds("android")
-        @iphone = parseBuilds("iphone")
+        #@iphone = parseBuilds("iphone")
     rescue
         @android = []
         @stable = []
-        @iphone = []
+        #@iphone = []
     end
     Dir.chdir(@dir)
     haml :index

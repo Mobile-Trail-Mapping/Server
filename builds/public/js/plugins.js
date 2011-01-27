@@ -36,7 +36,6 @@ $(document).ready(function(){
 
 	$('#nightly').accordion({
 		header: '.head',
-		autoheight: false, 
-		animated: 'bounceslide'
+		autoheight: false
 	});
 });
