@@ -39,21 +39,21 @@
 						Latest stable release:
 						- @stable.each do |s|
 							- if s.ext == ".apk"
-							%strong #{s.date}
-							%br
-							Version:
-							%strong #{s.version}
-							.clearfix
-							%a.button.green.r10.CtaThk{:href => "#"}
-								%span.button-text
-									%span.text-big Download for Android
-									%br
-									%span.text-small
-										version number
-										%strong #{s.version}
-								%span.round
-									%span.arrow-tail
-										%span.arrow-head
+								%strong #{s.date}
+								%br
+								Version:
+								%strong #{s.version}
+								.clearfix
+								%a.button.green.r10.CtaThk{:href => "#"}
+									%span.button-text
+										%span.text-big Download for Android
+										%br
+										%span.text-small
+											version number
+											%strong #{s.version}
+									%span.round
+										%span.arrow-tail
+											%span.arrow-head
 				#nightly.tab-content
 					%ul
 						- @android.each do |file|
@@ -78,23 +78,25 @@
 						Latest stable release:
 						- @stable.each do |s|
 							- if s.ext == ".ipa"
-							%strong #{s.date}
-							%br
-							Version:
-							%strong #{s.version}
-							.clearfix
-							%a.button.darkblue.r10.CtaThk{:href => "#"}
-								%span.button-text
-									%span.text-big Download for iPhone
-									%br
-									%span.text-small
-										version number
-										%strong #{s.version}
-								%span.round
-									%span.arrow-tail
-										%span.arrow-head
+								%strong #{s.date}
+								%br
+								Version:
+								%strong #{s.version}
+								.clearfix
+								%a.button.darkblue.r10.CtaThk{:href => "#"}
+									%span.button-text
+										%span.text-big Download for iPhone
+										%br
+										%span.text-small
+											version number
+											%strong #{s.version}
+									%span.round
+										%span.arrow-tail
+											%span.arrow-head
 				#nightly.tab-content
 					%ul
+						- @iphone.each do |file|
+							%li= "#{file.branch} - #{file.date}"
 				.clearfix
 				.nightly-toggle
 					%span 
