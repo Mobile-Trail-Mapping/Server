@@ -30,13 +30,13 @@ a:hover{color:green;}
 
 #container #nightly ul {list-style-type: none;}
 #container #nightly ul li {padding: 10px; background: #f0f0f0;margin-bottom: 3px;opacity:0.8;filter:alpha(opacity=80);}
-/*#container #nightly ul li.alt {background-color: #fff}*/
-#container #nightly ul li ul li { background-color: #000; }
+#container #nightly ul li.alt {background-color: #fff}
 #container .nightly-toggle,#container .stable-toggle{padding:10px;margin-top:20px;background:#f1f1f1;}
 #container .nightly-toggle span,#container .stable-toggle span{float:right;color:#9f9f9f;}
 #container .nightly-toggle a, #container .stable-toggle a{width:100%;padding-left:30px;display:block;color:#9d9d9d;background:url(../images/arrow-right.png) no-repeat 0% 50%;}
 #container .stable-toggle a{background:url(../images/arrow-left.png) no-repeat 0% 50%;}
 #container .nightly-toggle a:hover, #container .stable-toggle a:hover{color:#000;}
+.js ul li ul { display: none; }
 
 /* 13-column layout
 60 px columns,24 px gutters,72 px margins,1212 px total (extra space for scrollbars)

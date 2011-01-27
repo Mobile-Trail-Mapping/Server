@@ -57,7 +57,7 @@
 					%ul
 						- @android.keys.sort.each do |key|
 							%li
-								#{key}
+								%a{:href => "#"} #{key}
 								%ul
 									- @android[key].each do |build|
 										%li= build.branch
@@ -74,3 +74,5 @@
 	%script{:src => "js/libs/dd_belatedpng.js"}
 	:javascript
 		DD_belatedPNG.fix('img, .png_bg');
+	:javascript
+		document.getElementsByTagName('html')[0].className = 'js';
