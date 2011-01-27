@@ -2,7 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 
-
 class Build
     attr_accessor :date, :branch
     def initialize(date, branch)
@@ -11,28 +10,25 @@ class Build
     end
 end
 
-@android = []
-@iphone = []
-
 def parseFolder(name)
-    #MTMBeta_MM-DD-YYYY_BRANCH-NAME.apk
     array = []
     Dir.chdir(name)    
     Dir.glob("*") { |filename|
         file = filename.split("_")
-        build = Build.new(file[1], file[2].chomp(File.extname(file[2])))
-        array << build
+        array << Build.new(file[1].gsub("-","\/"), file[2].chomp(File.extname(file[2])))
     }
     return array
 end
 
 get '/' do
+    @dir = Dir.getwd
     begin
         @android = parseFolder("android")
-        @iphone = parseFolder("iphone")
+        #@iphone = parseFolder("iphone")
     rescue
         @android = []
-        @iphone = []
+        #@iphone = []
     end
+    Dir.chdir(@dir)
     haml :index
 end

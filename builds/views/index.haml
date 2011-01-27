@@ -54,8 +54,8 @@
 									%span.arrow-head
 				#nightly.tab-content
 					%ul
-						%li Nightly build
-						%li Nightly build
+						- @android.each do |file|
+							%li= "#{file.branch} - #{file.date}"
 				.clearfix
 				.nightly-toggle
 					%span 
@@ -91,8 +91,6 @@
 									%span.arrow-head
 				#nightly.tab-content
 					%ul
-						%li Nightly build
-						%li Nightly build
 				.clearfix
 				.nightly-toggle
 					%span 
