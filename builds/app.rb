@@ -7,7 +7,7 @@ require 'haml'
 
 class Build
     attr_accessor :date, :branch, :ext, :version
-    def initialize(date, branch, ext, version)
+    def initialize(date, branch, ext, version=0)
         @date = date
         @branch = branch
         @ext = ext
@@ -24,7 +24,7 @@ def parseBuilds(name)
         branch = file[2]
         ext = File.extname(filename)
         if name != "stable"
-            array << Build.new(date, branch.chomp(ext), ext, "0")
+            array << Build.new(date, branch.chomp(ext), ext)
         else
             array << Build.new(date, branch, ext, file[3].chomp(ext))
         end
