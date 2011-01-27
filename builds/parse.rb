@@ -1,7 +1,4 @@
 require 'rubygems'
-require 'sinatra'
-require 'haml'
-
 
 class Build
     attr_accessor :date, :branch
@@ -26,13 +23,5 @@ def parseFolder(name)
     return array
 end
 
-get '/' do
-    begin
-        @android = parseFolder("android")
-        @iphone = parseFolder("iphone")
-    rescue
-        @android = []
-        @iphone = []
-    end
-    haml :index
-end
+@android = parseFolder("android")
+@iphone = parseFolder("iphone")

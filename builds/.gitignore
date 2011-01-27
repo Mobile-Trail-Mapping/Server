@@ -2,3 +2,7 @@
 publish/
 build/buildinfo.properties
 .DS_Store
+android/
+iphone/
+stable/
+vendor/
