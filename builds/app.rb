@@ -16,7 +16,7 @@ class Build
 end
 
 def parseBuilds(name)
-    array = []
+    hash = {}
     Dir.chdir(name) 
     Dir.glob("*") { |filename|
         file = filename.split("_")
@@ -24,19 +24,20 @@ def parseBuilds(name)
         branch = file[2]
         ext = File.extname(filename)
         if name != "stable"
-            array << Build.new(date, branch.chomp(ext), ext)
+            hash[date] ||= [] #check if exists, init
+            hash[date] << Build.new(date, branch.chomp(ext), ext)
         else
-            array << Build.new(date, branch, ext, file[3].chomp(ext))
+            hash[:stable] = Build.new(date, branch, ext, file[3].chomp(ext))
         end
     }
     Dir.chdir("../")
-    return array
+    return hash
 end
 
 get '/' do
     @dir = Dir.getwd
     begin
-        @stable = parseBuilds("stable")
+        @stable = parseBuilds("stable")[:stable]
         @android = parseBuilds("android")
         @iphone = parseBuilds("iphone")
     rescue

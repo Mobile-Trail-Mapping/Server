@@ -33,7 +33,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	 $('#nightly ul li:nth-child(odd)').addClass('alt');
+	//$('#nightly ul li:nth-child(odd)').addClass('alt');
 	
 });
 
