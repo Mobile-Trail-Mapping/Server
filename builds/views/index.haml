@@ -57,7 +57,7 @@
 					%ul
 						- @android.keys.sort.each do |key|
 							%li
-								%a{:href => "#"} #{key}
+								%a.head{:href => "#"} #{key}
 								%ul
 									- @android[key].each do |build|
 										%li= build.branch
@@ -70,9 +70,8 @@
 					%a{:href => "#stable"} Stable build
 						
 	%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"}
+	%script{:src => "js/libs/third.js"}
 	%script{:src => "js/plugins.js"}
 	%script{:src => "js/libs/dd_belatedpng.js"}
 	:javascript
 		DD_belatedPNG.fix('img, .png_bg');
-	:javascript
-		document.getElementsByTagName('html')[0].className = 'js';
