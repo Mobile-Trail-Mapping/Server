@@ -33,25 +33,27 @@
 					%h4 Android
 					%h5 
 						For
-						%em FROYO 2.1
+						%em ECLAIR 2.1
 						and above
 					%p
 						Latest stable release:
-						%strong 12/12/12
-						%br
-						Branch:
-						%strong master
-						.clearfix
-						%a.button.green.r10.CtaThk{:href => "#"}
-							%span.button-text
-								%span.text-big Download for Android
-								%br
-								%span.text-small
-									version number
-									%strong 8.1
-							%span.round
-								%span.arrow-tail
-									%span.arrow-head
+						- @stable.each do |s|
+							- if s.ext == ".apk"
+							%strong #{s.date}
+							%br
+							Version:
+							%strong #{s.version}
+							.clearfix
+							%a.button.green.r10.CtaThk{:href => "#"}
+								%span.button-text
+									%span.text-big Download for Android
+									%br
+									%span.text-small
+										version number
+										%strong #{s.version}
+								%span.round
+									%span.arrow-tail
+										%span.arrow-head
 				#nightly.tab-content
 					%ul
 						- @android.each do |file|
@@ -74,21 +76,23 @@
 						and above
 					%p
 						Latest stable release:
-						%strong 12/12/12
-						%br
-						Branch:
-						%strong master
-						.clearfix
-						%a.button.darkblue.r10.CtaThk{:href => "#"}
-							%span.button-text
-								%span.text-big Download for iPhone
-								%br
-								%span.text-small
-									version number
-									%strong 8.1
-							%span.round
-								%span.arrow-tail
-									%span.arrow-head
+						- @stable.each do |s|
+							- if s.ext == ".ipa"
+							%strong #{s.date}
+							%br
+							Version:
+							%strong #{s.version}
+							.clearfix
+							%a.button.darkblue.r10.CtaThk{:href => "#"}
+								%span.button-text
+									%span.text-big Download for iPhone
+									%br
+									%span.text-small
+										version number
+										%strong #{s.version}
+								%span.round
+									%span.arrow-tail
+										%span.arrow-head
 				#nightly.tab-content
 					%ul
 				.clearfix

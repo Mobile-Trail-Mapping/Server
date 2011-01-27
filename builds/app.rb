@@ -6,32 +6,43 @@ require 'sinatra'
 require 'haml'
 
 class Build
-    attr_accessor :date, :branch
-    def initialize(date, branch)
+    attr_accessor :date, :branch, :ext, :version
+    def initialize(date, branch, ext, version)
         @date = date
         @branch = branch
+        @ext = ext
+        @version = version
     end
 end
 
-def parseFolder(name)
+def parseBuilds(name)
     array = []
-    Dir.chdir(name)    
+    Dir.chdir(name) 
     Dir.glob("*") { |filename|
         file = filename.split("_")
-        array << Build.new(file[1].gsub("-","\/"), file[2].chomp(File.extname(file[2])))
+        date = file[1].gsub("-","\/")
+        branch = file[2]
+        ext = File.extname(filename)
+        if name != "stable"
+            array << Build.new(date, branch.chomp(ext), ext, "0")
+        else
+            array << Build.new(date, branch, ext, file[3].chomp(ext))
+        end
     }
+    Dir.chdir("../")
     return array
 end
 
 get '/' do
     @dir = Dir.getwd
     begin
-        @android = parseFolder("android")
-        #@iphone = parseFolder("iphone")
+        @stable = parseBuilds("stable")
+        @android = parseBuilds("android")
     rescue
         @android = []
-        #@iphone = []
+        @stable = []
     end
+    p @stable
     Dir.chdir(@dir)
     haml :index
 end
