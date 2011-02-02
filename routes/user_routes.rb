@@ -3,3 +3,7 @@ post '/user/add' do
   return "Added user #{user.email}"
 end
 
+get '/user/check' do
+  (not User.first(:email => params[:email], :pwhash => params[:pwhash]).nil?).to_s
+end
+
