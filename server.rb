@@ -36,4 +36,8 @@ get '/' do
   "Welcome to mobile trail mapping application"
 end
 
+get '/user/check' do
+  (not User.first(:email => params[:email], :pwhash => params[:pwhash]).nil?).to_s
+end
+
 
