@@ -12,7 +12,7 @@ end
 before do
   OBJECTS.each do |object|
     if request.path_info.split('/').include?(object)
-      #halt "Invalid username or password" if password_matches_user?(params[:user], params[:pwhash])
+      halt "Invalid username or password" if password_matches_user?(params[:user], params[:pwhash])
     end
   end
 end
