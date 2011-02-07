@@ -1,11 +1,11 @@
-get '/point/get' do
+get '/point/get/?' do
   @trails = Trail.all - Trail.all(:name => 'misc') 
   @misc = Trail.all(:name => 'misc').points
 
   builder :point
 end
 
-post '/point/add/coords' do
+post '/point/add/coords/?' do
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
@@ -28,7 +28,7 @@ post '/point/add/coords' do
   "Added Point #{point.lat}, #{point.long}"
 end
 
-post '/point/add' do
+post '/point/add/?' do
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
