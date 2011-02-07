@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'config/init'
+require 'pp'
 Dir['routes/*'].each { |obj| require obj }
 
 configure do
