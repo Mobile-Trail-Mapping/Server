@@ -23,7 +23,3 @@ body.login header img { height: 45px; width: 45px; float: left; padding-right: 1
 .main-content > header h2{font-family:Georgia,'Times New Roman','Bitstream Charter',Times,serif;font-weight:normal;font-size:18px;margin:0;text-shadow:0 1px 0 #fff;}
 .main-content > header h4{margin:0;}
 .main-content > section{padding:20px 30px;-moz-border-radius:0 0 5px 5px;-webkit-border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px;-khtml-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;}
-.main-content > section.container_6{padding:20px;}
-.main-content > section hgroup{margin-top:10px;}
-.main-content > section hgroup h2{padding-top:10px;margin:0 0 3px 0;line-height:1.3em;text-transform:uppercase;}
-.main-content > section hgroup h4{line-height:1.4em;margin:0 0 30px;}
