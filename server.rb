@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'config/init'
+require 'pp'
 Dir['routes/*'].each { |obj| require obj }
 
 configure do
@@ -11,8 +12,8 @@ end
 
 before do
   OBJECTS.each do |object|
-    if request.path_info.split('/').include?(object)
-      #halt "Invalid username or password" if password_matches_user?(params[:user], params[:pwhash])
+    if request.path_info.split('/').include?(object) && (not request.path_info.split('/').include?("get"))
+      halt "Invalid username or password" if password_matches_user?(params[:user], params[:pwhash])
     end
   end
 end
@@ -39,3 +40,5 @@ end
 get '/dashboard' do
   haml :dashboard
 end
+
+

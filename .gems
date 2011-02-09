@@ -6,3 +6,4 @@ dm-postgres-adapter
 dm-paperclip
 builder --version 2.1.2
 haml
+aws-s3
