@@ -9,3 +9,7 @@ post '/user/check/?' do
   return "false"
 end
 
+get '/user/check' do
+  (not User.first(:email => params[:email], :pwhash => params[:pwhash]).nil?).to_s
+end
+
