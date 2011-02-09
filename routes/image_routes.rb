@@ -1,6 +1,10 @@
 require 'pp'
 
 get '/image/get/:point_id/:image_id/?' do |point_id, pic_id|
+  point = Point.first(:id => point_id)
+
+  return "Image does not exist" if point.photos.size < pic_id.to_i
+
   string = Point.first(:id => point_id).photos[pic_id.to_i - 1].pic.url
 
   return "" if string.nil?

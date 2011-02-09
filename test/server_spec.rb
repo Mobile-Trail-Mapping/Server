@@ -23,13 +23,6 @@ describe "Server Tests" do
       get '/'
       last_response.body.should == @base_response
     end
-
-    it "should error for an invalid api key" do
-      @objects.each do |object|
-        post "/#{object}/add", {:api_key => 12345}
-        last_response.body.should == 'Invalid API Key'
-      end
-    end
   end
 
   describe "Point Actions" do
@@ -204,7 +197,7 @@ describe "Server Tests" do
 
       get "/image/get/1/1", params
 
-      last_response.body.should == "<img src=images/1/1.jpg />"
+      last_response.body.should == "Image does not exist"
     end
   end
 end
