@@ -1,0 +1,10 @@
+auto:true
+lsi:         false
+server_port: 4000
+pygments:    false
+markdown:   rdiscount
+permalink:  /:year/:month/:title/
+sass: true
+haml: true
+haml_folder: **/*.haml
+sass_folder: **/*.sass
