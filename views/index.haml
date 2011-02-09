@@ -18,12 +18,24 @@
       %script{:src => "js/global.js"}
       :javascript
         $(document).ready(function(){
-            $("#form").validator({ 
-            	position: 'top', 
-            	offset: [25, 10],
-            	messageClass:'form-error',
-            	message: '' // em element is the arrow
-            });
+          $.tools.validator.fn("#username", function(input, value) {
+            return value!='Username' ? true : {     
+              en: "Please complete this mandatory field"
+            };
+          });
+    
+          $.tools.validator.fn("#password", function(input, value) {
+            return value!='Password' ? true : {     
+              en: "Please complete this mandatory field"
+            };
+          });
+
+          $("#form").validator({ 
+          	position: 'top', 
+          	offset: [25, 10],
+          	messageClass:'form-error',
+          	message: '<div><em/></div>' // em element is the arrow
+          });
         });
   %body.login
     .login-box.main-content
