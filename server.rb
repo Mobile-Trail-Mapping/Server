@@ -35,3 +35,7 @@ end
 get '/' do
   haml :index
 end
+
+get '/dashboard' do
+  haml :dashboard
+end
