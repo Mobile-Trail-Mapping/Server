@@ -1,5 +1,3 @@
-require 'pp'
-
 get '/image/get/:point_id/:image_id/?' do |point_id, pic_id|
   point = Point.first(:id => point_id)
 
