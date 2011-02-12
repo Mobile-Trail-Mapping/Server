@@ -21,7 +21,7 @@ class Problem
   include Paperclip::Resource
 
   property :id,   Serial
-  has_attached_file :pic
+  has_attached_file :pic,
                     :storage => :s3,
                     :s3_credentials => {:access_key_id => "AKIAIJUGMKYECWUFG2VQ",
                                         :secret_access_key => "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"},
