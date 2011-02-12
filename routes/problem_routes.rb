@@ -6,3 +6,8 @@ post '/problem/add/?' do
 
   Problem.first_or_create(:desc => desc, :user => user, :pic => image, :title => title)
 end
+
+get '/problem/get/?' do
+  @problems = Problem.all
+  builder :problems
+end
