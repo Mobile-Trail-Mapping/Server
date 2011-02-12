@@ -9,5 +9,6 @@ end
 
 get '/problem/get/?' do
   @problems = Problem.all
-  builder :problems
+
+  builder :problem
 end
