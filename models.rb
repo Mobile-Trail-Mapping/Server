@@ -20,7 +20,7 @@ class Problem
   include DataMapper::Resource
   include Paperclip::Resource
 
-  property :id,   Serial
+  property :id,    Serial
   has_attached_file :pic,
                     :storage => :s3,
                     :s3_credentials => {:access_key_id => "AKIAIJUGMKYECWUFG2VQ",
@@ -28,8 +28,9 @@ class Problem
                     :bucket => "mtm_test_data",
                     :path => "problems/:basename.:extension"
 
-  property :desc, Text
-  property :user, String
+  property :desc,  Text
+  property :user,  String
+  property :title, String
 end
 
 class Photo
