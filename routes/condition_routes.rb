@@ -4,7 +4,11 @@ post '/condition/add/?' do
 end
 
 get '/condition/get/?' do
-  content_type 'application/xml', :charset => 'utf-8'
   @conditions = Condition.all
   builder :condition
+end
+
+get '/condition/delete/?' do
+  condition = Condition.first(:desc => params[:condition])
+  condition.destroy unless condition.nil?
 end

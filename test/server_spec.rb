@@ -153,6 +153,29 @@ describe "Server Tests" do
       post '/condition/add', params
       last_response.body.should == "Invalid username or password"   
     end
+
+    it "should delete a condition" do
+      condition = 'condition'
+      params = {:condition => condition,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      post '/condition/add', params
+      last_response.body.should == "Added Condition #{condition}"
+
+      get '/condition/delete', params
+      Condition.first(:desc => condition).should be_nil
+    end
+
+    it "should not error on a nonexistant condition" do
+      condition = 'condition'
+      params = {:condition => condition,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      get '/condition/delete', params
+      Condition.first(:desc => condition).should be_nil
+    end
   end
 
   describe "Image Actions" do
