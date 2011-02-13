@@ -43,7 +43,7 @@ class Photo
                     :s3_credentials => {:access_key_id => "AKIAIJUGMKYECWUFG2VQ",
                                         :secret_access_key => "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"},
                     :bucket => "mtm_test_data",
-                    :path => "images/:id/:basename.:extension"
+                    :path => "images/:basename.:extension"
 
   belongs_to :point
 end
