@@ -1,6 +1,7 @@
 get '/image/get/:point_id/:image_id/?' do |point_id, pic_id|
   point = Point.first(:id => point_id)
 
+  return "Image does not exist" if point.nil?
   return "Image does not exist" if point.photos.size < pic_id.to_i
 
   string = Point.first(:id => point_id).photos[pic_id.to_i - 1].pic.url
@@ -29,4 +30,9 @@ post '/image/add/?' do
   p.save
 
   redirect "/image/get/#{point_id}"
+end
+
+get '/image/delete/?' do
+  photo = Photo.first(:pic_file_name => params[:pic])
+  photo.destroy unless photo.nil?
 end

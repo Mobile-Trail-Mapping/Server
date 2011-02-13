@@ -49,3 +49,8 @@ post '/point/add/?' do
   "Added Point #{point.lat}, #{point.long}"
 end
 
+get '/point/delete/?' do
+  point = Point.all(:id => params[:id])
+  point.destroy unless point.nil?
+end
+

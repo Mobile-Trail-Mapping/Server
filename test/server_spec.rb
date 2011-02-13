@@ -35,6 +35,43 @@ describe "Server Tests" do
       Point.first(:lat => 4, :long => 5).category.name.should == 'test'
     end
 
+    it "should delete a point" do
+      params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :desc => 'test',
+                :id => 1 }
+
+      post "/point/add", params
+      last_response.body.should == "Added Point 4.0, 5.0"
+
+      get '/point/delete', params
+      Point.first(:id => 1).should be_nil
+    end
+
+    it "should not error when deleting a nonexistant point" do
+      params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :desc => 'test',
+                :id => 1}
+
+      get '/point/delete', params
+      Point.first(:id => 1).should be_nil
+    end
+
     it "should catch an invalid user" do
       post '/point/add', { :user => @invalid_user, :pwhash => @test_pw }
       last_response.body.should == 'Invalid username or password'
