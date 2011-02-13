@@ -3,8 +3,12 @@ post '/trail/add/?' do
   "Added Trail #{trail.name}"
 end
 
-get '/trail/get' do
-  content_type 'application/xml', :charset => 'utf-8'
+get '/trail/get/?' do
   @trails = Trail.all
   builder :trail
+end
+
+get '/trail/delete/?' do
+  trail = Trail.all(:name => params[:trail])
+  trail.destroy unless trail.nil?
 end

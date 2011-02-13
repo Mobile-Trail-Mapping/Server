@@ -124,6 +124,29 @@ describe "Server Tests" do
     it "should find all trails except misc" do
       (Trail.all - Trail.all(:name => :misc)).each { |trail| trail.name.should_not == 'misc' }
     end
+
+    it "should delete a trail" do
+      trailname = 'trail'
+      params = {:trail => trailname,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      post '/trail/add', params
+      last_response.body.should == "Added Trail #{trailname}"
+
+      get '/trail/delete', params
+      Trail.first(:name => trailname).should be_nil
+    end
+
+    it "should not error for a non-existant trail" do
+      trailname = 'trail'
+      params = {:trail => trailname,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      get '/trail/delete', params
+      Trail.first(:name => trailname).should be_nil
+    end
   end
 
   describe "Category Actions" do
