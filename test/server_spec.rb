@@ -17,13 +17,6 @@ describe "Server Tests" do
     @schema = LibXML::XML::Schema.new(File.dirname(__FILE__) + '/../schema.xsd')
   end
 
-  describe "base actions" do
-    it "should respond to /" do
-      get '/'
-      last_response.body.should == @base_response
-    end
-  end
-
   describe "Point Actions" do
     it "should add a point" do
       params = {:user => @test_user,
@@ -116,6 +109,27 @@ describe "Server Tests" do
 
       post '/category/add', params
       last_response.body.should == "Invalid username or password"   
+    end
+
+    it "should delete a category" do
+      params = { :category => "test" ,
+                 :user => @test_user,
+                 :pwhash => @test_pw }
+
+      post '/category/add', params
+      last_response.body.should == "Added Category test"
+
+      get '/category/delete', params
+      Category.first(:name => 'test').should be_nil
+    end
+
+    it "should not error when deleting a non-existant category" do
+      params = { :category => "test" ,
+                 :user => @test_user,
+                 :pwhash => @test_pw }
+
+      get '/category/delete', params
+      Category.first(:name => 'test').should be_nil
     end
   end
 
