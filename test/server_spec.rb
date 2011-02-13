@@ -283,4 +283,30 @@ describe "Server Tests" do
       last_response.body.should == "Image does not exist"
     end
   end
+
+  describe "User Actions" do
+    it "should add a user" do
+      params = { :user => @test_user,
+                 :pwhash => @test_pw,
+                 :newuser => 'unit@brousalis.com',
+                 :newpwhash => 'pwhash' }
+
+      post '/user/add', params
+
+      last_response.body.should == "Added user unit@brousalis.com"
+    end
+
+    it "should delete a user" do
+      params = { :user => @test_user,
+                 :pwhash => @test_pw,
+                 :newuser => 'unit@brousalis.com',
+                 :newpwhash => 'pwhash' }
+
+      post '/user/add', params
+      last_response.body.should == "Added user unit@brousalis.com"
+
+      get '/user/delete', params
+      User.all(:email => 'unit@brousalis.com', :pwhash => 'pwhash').should be_empty
+    end
+  end
 end

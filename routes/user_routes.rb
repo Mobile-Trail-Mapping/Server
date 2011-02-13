@@ -1,5 +1,5 @@
 post '/user/add/?' do
-  user = User.create(:email => params[:user], :pwhash => params[:pwhash])
+  user = User.create(:email => params[:newuser], :pwhash => params[:newpwhash])
   return "Added user #{user.email}"
 end
 
@@ -9,7 +9,8 @@ post '/user/check/?' do
   return "false"
 end
 
-get '/user/check' do
-  (not User.first(:email => params[:email], :pwhash => params[:pwhash]).nil?).to_s
+get '/user/delete/?' do
+  user = User.all(:email => params[:newuser], :pwhash => params[:newpwhash])
+  user.destroy unless user.nil?
 end
 
