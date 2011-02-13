@@ -9,6 +9,10 @@ end
 
 get '/problem/get/?' do
   @problems = Problem.all
-
   builder :problem
+end
+
+get '/problem/delete/?' do
+  problem = Problem.all(:id => parmas[:id])
+  problem.destroy unless problem.nil?
 end
