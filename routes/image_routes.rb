@@ -33,6 +33,6 @@ post '/image/add/?' do
 end
 
 get '/image/delete/?' do
-  photo = Photo.first(:id => params[:pic_id])
+  photo = Point.get(params[:point_id]).photos[params[:pic_id] - 1]
   photo.destroy unless photo.nil?
 end
