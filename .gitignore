@@ -2,4 +2,4 @@
 IconStaging/
 secret.xml
 photos/
-tmp/
+tmp/*.db

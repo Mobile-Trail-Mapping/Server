@@ -34,7 +34,11 @@ helpers do
 end
 
 get '/' do
-  "Welcome to mobile trail mapping application"
+  haml :index
+end
+
+get '/dashboard' do
+  haml :dashboard
 end
 
 
