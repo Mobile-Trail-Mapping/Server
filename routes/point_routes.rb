@@ -30,7 +30,7 @@ post '/point/add/coords/?' do
 
   point.save
 
-  "Added Point #{point.lat}, #{point.long}"
+  "#{point.id}"
 end
 
 
@@ -56,7 +56,7 @@ post '/point/add/?' do
 
   point.save
 
-  "Added Point #{point.lat}, #{point.long}"
+  "#{point.id}"
 end
 
 # Delete a point
