@@ -65,3 +65,17 @@ get '/point/delete/?' do
   point.destroy unless point.nil?
 end
 
+post '/point/update/?' do
+  point = Point.get(:id => params[:id])
+  params.delete(:id)
+
+  params[:category] = Category.first_or_create(:name => params[:category]) unless params[:category].nil?
+  params[:condition] = Condition.first_or_create(:desc => params[:condition]) unless params[:condition].nil?
+  params[:trail] = Trail.first_or_create(:name => params[:trail]) unless params[:trail].nil?
+
+  params.each do |key, value|
+    point.update(key => value)
+  end
+
+  point.save
+end
