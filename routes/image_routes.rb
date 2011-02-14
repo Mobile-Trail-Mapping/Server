@@ -27,6 +27,8 @@ end
 
 # Add a new image
 post '/image/add/?' do
+  pp params
+
   point_id = params[:id].to_i
   p = Point.get(point_id)
   p.photos << Photo.new(:pic => make_paperclip_mash(params[:file]))
