@@ -16,14 +16,14 @@ before do
   #validate user info before letting them post to the server
   OBJECTS.each do |object|
     if request.path_info.split('/').include?(object) && (not request.path_info.split('/').include?("get"))
-      halt "Invalid username or password" if password_matches_user?(params[:user], params[:pwhash])
+      halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
     end
   end
 end
 
 helpers do
   #Check user credentials
-  def password_matches_user?(user, pass)
+  def password_doesnt_match_user?(user, pass)
     User.all(:email => user, :pwhash => pass).empty?
   end
 
