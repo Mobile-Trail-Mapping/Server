@@ -66,7 +66,8 @@ get '/point/delete/?' do
 end
 
 post '/point/update/?' do
-  point = Point.get(:id => params[:id])
+  point = Point.get(params[:id].to_i)
+  pp params
   params.delete(:id)
 
   params[:category] = Category.first_or_create(:name => params[:category]) unless params[:category].nil?
@@ -74,7 +75,8 @@ post '/point/update/?' do
   params[:trail] = Trail.first_or_create(:name => params[:trail]) unless params[:trail].nil?
 
   params.each do |key, value|
-    point.update(key => value)
+    puts "#{key}=> #{value}"
+    point.update(key.to_sym => value)
   end
 
   point.save

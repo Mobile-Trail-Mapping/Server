@@ -31,7 +31,6 @@ describe "Server Tests" do
                 :desc => 'test'}
 
       post "/point/add", params
-      last_response.body.should == "Added Point 4.0, 5.0"
       Point.first(:lat => 4, :long => 5).category.name.should == 'test'
     end
 
@@ -47,9 +46,6 @@ describe "Server Tests" do
                 :trail => 'trail',
                 :desc => 'test',
                 :id => 1 }
-
-      post "/point/add", params
-      last_response.body.should == "Added Point 4.0, 5.0"
 
       get '/point/delete', params
       Point.first(:id => 1).should be_nil
@@ -97,6 +93,30 @@ describe "Server Tests" do
       get "/point/get", params
       doc = LibXML::XML::Document.string(last_response.body)
       doc.validate_schema(@schema).should == true
+    end
+
+    it "should update a point" do
+       params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :id => 2,
+                :desc => 'test'}
+
+       post "/point/add", params
+
+       params[:desc] = 'new desc'
+
+       Point.first(:lat => 4, :long => 5).desc.should == 'test'
+
+       post "/point/update", params
+
+       Point.first(:lat => 4, :long => 5).desc.should == 'new desc'
     end
   end
 
