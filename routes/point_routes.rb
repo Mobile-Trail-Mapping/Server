@@ -21,7 +21,7 @@ post '/point/add/coords/?' do
       p = Point.first_or_create(:lat.lte => lat + 0.0005, :lat.gte => lat - 0.0005, :long.lte => long + 0.0005, :long.gte => long - 0.0005)
       point.connections << Connection.first_or_create(:connected_to => p.id.to_i, :connected_from => point.id)
     end
-  end
+  end unless params[:connections].nil?
 
   point.save
 
@@ -42,7 +42,7 @@ post '/point/add/?' do
 
   params[:connections].split(',').each do |conn|
     point.connections << Connection.first_or_create(:connected_to => conn.to_i, :connected_from => point.id)
-  end
+  end unless params[:connections].nil?
 
   point.save
 
