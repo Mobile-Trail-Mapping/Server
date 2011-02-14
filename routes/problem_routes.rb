@@ -3,6 +3,8 @@ post '/problem/add/?' do
   desc = params[:desc]
   user = params[:user]
   title = params[:title]
+  lat = params[:lat]
+  long = params[:long]
   image = make_paperclip_mash(params[:pic])
 
   Problem.first_or_create(:desc => desc, :user => user, :pic => image, :title => title)

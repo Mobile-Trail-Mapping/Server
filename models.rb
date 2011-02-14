@@ -31,6 +31,8 @@ class Problem
   property :desc,  Text
   property :user,  String
   property :title, String
+  property :lat, Float
+  property :long, Float
 end
 
 class Photo
