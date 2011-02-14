@@ -5,7 +5,7 @@ require 'pp'
 Dir['routes/*'].each { |obj| require obj }
 
 configure do
-  OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'image', 'problem']
+  OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'problem']
 
   #create a default user so we're not locked out
   User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'))
@@ -16,8 +16,9 @@ before do
   #validate user info before letting them post to the server
   OBJECTS.each do |object|
     if request.path_info.split('/').include?(object) && (not request.path_info.split('/').include?("get"))
+      pp params
       halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
-    end unless request.path_info == "/image/upload"
+    end
   end
 end
 

@@ -43,6 +43,8 @@ File.open('iowa.txt', 'r') do |in_file|
     point[:condition] = "Open"
     point[:trail] = "iowa"
     point[:title] = "title"
+    point[:user] = "test@brousalis.com"
+    point[:pwhash] = "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8"
   end
 
   points.first[:category] = "Trailhead"
