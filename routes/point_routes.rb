@@ -67,6 +67,7 @@ end
 
 post '/point/update/?' do
   point = Point.get(params[:id].to_i)
+
   params.delete("id")
   params.delete("user")
   params.delete("pwhash")
@@ -77,7 +78,6 @@ post '/point/update/?' do
   params["trail"] = Trail.first_or_create(:name => params[:trail]) unless params[:trail].nil?
 
   params.each do |key, value|
-    puts "#{key}=> #{value}"
     point.update(key.to_sym => value)
   end
 
