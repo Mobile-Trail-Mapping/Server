@@ -77,9 +77,7 @@ post '/point/update/?' do
   params["condition"] = Condition.first_or_create(:desc => params[:condition]) unless params[:condition].nil?
   params["trail"] = Trail.first_or_create(:name => params[:trail]) unless params[:trail].nil?
 
-  params.each do |key, value|
-    point.update(key.to_sym => value)
-  end
+  point.update(params)
 
   point.save
 end
