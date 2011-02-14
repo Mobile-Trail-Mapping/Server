@@ -1,3 +1,4 @@
+# Return a list of all points as xml
 get '/point/get/?' do
   @trails = Trail.all - Trail.all(:name => 'misc') 
   @misc = Trail.all(:name => 'misc').points
@@ -5,6 +6,7 @@ get '/point/get/?' do
   builder :point
 end
 
+# Add a new point with connections specified as lat and long
 post '/point/add/coords/?' do
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
@@ -31,6 +33,8 @@ post '/point/add/coords/?' do
   "Added Point #{point.lat}, #{point.long}"
 end
 
+
+# Add a new point with connections specified as point id's
 post '/point/add/?' do
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
@@ -55,6 +59,7 @@ post '/point/add/?' do
   "Added Point #{point.lat}, #{point.long}"
 end
 
+# Delete a point
 get '/point/delete/?' do
   point = Point.all(:id => params[:id])
   point.destroy unless point.nil?

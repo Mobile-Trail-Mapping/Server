@@ -1,3 +1,4 @@
+# Return a specific image
 get '/image/get/:point_id/:image_id/?' do |point_id, pic_id|
   point = Point.first(:id => point_id)
 
@@ -12,16 +13,19 @@ get '/image/get/:point_id/:image_id/?' do |point_id, pic_id|
   redirect file_path
 end
 
+# Return the number of images associated with a point
 get '/image/get/:point_id/?' do |point_id|
   point = Point.first(:id => point_id)
   return point.photos.size.to_i.to_s unless point.nil?
   return "0"
 end
 
+# Basic page for uploading images
 get '/image/upload/?' do
   haml :add_point
 end
 
+# Add a new image
 post '/image/add/?' do
   point_id = params[:id].to_i
   puts "point_id is #{point_id}"
@@ -32,6 +36,7 @@ post '/image/add/?' do
   redirect "/image/get/#{point_id}"
 end
 
+# Delete an image
 get '/image/delete/?' do
   photo = Point.get(params[:point_id]).photos[params[:pic_id] - 1]
   photo.destroy unless photo.nil?
