@@ -8,7 +8,7 @@ end
 post '/point/add/coords/?' do
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
-  params[:condition] ||= Condition.first_or_create(:desc => "Open")
+  params[:condition] ||= "Open"
 
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
@@ -34,7 +34,7 @@ end
 post '/point/add/?' do
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
-  params[:condition] ||= Condition.first_or_create(:desc => "Open")
+  params[:condition] ||= "Open"
 
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
