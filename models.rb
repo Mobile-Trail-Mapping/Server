@@ -16,17 +16,37 @@ class Condition
   has n, :points
 end
 
+class Problem
+  include DataMapper::Resource
+  include Paperclip::Resource
+
+  property :id,    Serial
+  has_attached_file :pic,
+                    :storage => :s3,
+                    :s3_credentials => {:access_key_id => "AKIAIJUGMKYECWUFG2VQ",
+                                        :secret_access_key => "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"},
+                    :bucket => "mtm_test_data",
+                    :path => "problems/:basename.:extension"
+
+  property :desc,  Text
+  property :user,  String
+  property :title, String
+  property :lat, Float
+  property :long, Float
+end
+
 class Photo
   include DataMapper::Resource
   include Paperclip::Resource
 
   property :id,   Serial
   has_attached_file :pic,
+                    :styles => { :medium => "400x300" },
                     :storage => :s3,
                     :s3_credentials => {:access_key_id => "AKIAIJUGMKYECWUFG2VQ",
                                         :secret_access_key => "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"},
                     :bucket => "mtm_test_data",
-                    :path => "images/:id/:basename.:extension"
+                    :path => "images/:basename.:extension"
 
   belongs_to :point
 end

@@ -11,25 +11,10 @@ describe "Server Tests" do
   before :all do
     @objects = ['user', 'point', 'trail', 'condition', 'category']
     @base_response = 'Welcome to mobile trail mapping application'
-    @api_key = 5500
     @test_user = "test@brousalis.com"
     @test_pw = Digest::SHA1.hexdigest('password')
     @invalid_user = "invalid@brousalis.com"
     @schema = LibXML::XML::Schema.new(File.dirname(__FILE__) + '/../schema.xsd')
-  end
-
-  describe "base actions" do
-    it "should respond to /" do
-      get '/'
-      last_response.body.should == @base_response
-    end
-
-    it "should error for an invalid api key" do
-      @objects.each do |object|
-        post "/#{object}/add", {:api_key => 12345}
-        last_response.body.should == 'Invalid API Key'
-      end
-    end
   end
 
   describe "Point Actions" do
@@ -43,7 +28,6 @@ describe "Server Tests" do
                 :condition => 'Open',
                 :category => 'test',
                 :trail => 'trail',
-                :api_key => @api_key,
                 :desc => 'test'}
 
       post "/point/add", params
@@ -51,8 +35,45 @@ describe "Server Tests" do
       Point.first(:lat => 4, :long => 5).category.name.should == 'test'
     end
 
+    it "should delete a point" do
+      params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :desc => 'test',
+                :id => 1 }
+
+      post "/point/add", params
+      last_response.body.should == "Added Point 4.0, 5.0"
+
+      get '/point/delete', params
+      Point.first(:id => 1).should be_nil
+    end
+
+    it "should not error when deleting a nonexistant point" do
+      params = {:user => @test_user,
+                :pwhash => @test_pw,
+                :title => 'trail_point',
+                :lat => 4,
+                :long => 5,
+                :connections => "1,2,3",
+                :condition => 'Open',
+                :category => 'test',
+                :trail => 'trail',
+                :desc => 'test',
+                :id => 1}
+
+      get '/point/delete', params
+      Point.first(:id => 1).should be_nil
+    end
+
     it "should catch an invalid user" do
-      post '/point/add', {:user => @invalid_user, :pwhash => @test_pw, :api_key => @api_key}
+      post '/point/add', { :user => @invalid_user, :pwhash => @test_pw }
       last_response.body.should == 'Invalid username or password'
     end
 
@@ -66,13 +87,11 @@ describe "Server Tests" do
                 :condition => 'Open',
                 :category => 'test',
                 :trail => 'trail',
-                :api_key => @api_key,
                 :desc => 'test'}
 
       post "/point/add", params #need to have something in misc or builder has problems
 
-      params = {:api_key => @api_key,
-                :user => @test_user,
+      params = { :user => @test_user,
                 :pwhash => @test_pw }
 
       get "/point/get", params
@@ -85,9 +104,8 @@ describe "Server Tests" do
     it "should add a trail" do
       trailname = 'trail'
       params = {:trail => trailname,
-        :api_key => @api_key,
-        :user => @test_user,
-        :pwhash => @test_pw }
+                :user => @test_user,
+                :pwhash => @test_pw }
 
       post '/trail/add', params
       last_response.body.should == "Added Trail #{trailname}"
@@ -96,9 +114,8 @@ describe "Server Tests" do
 
     it "should error for an invalid user" do
       params = {:trail => 'trail',
-        :api_key => @api_key,
-        :user => @invalid_user,
-        :pwhash => @test_pw }
+                :user => @invalid_user,
+                :pwhash => @test_pw }
 
       post '/trail/add', params
       last_response.body.should == "Invalid username or password"   
@@ -107,6 +124,29 @@ describe "Server Tests" do
     it "should find all trails except misc" do
       (Trail.all - Trail.all(:name => :misc)).each { |trail| trail.name.should_not == 'misc' }
     end
+
+    it "should delete a trail" do
+      trailname = 'trail'
+      params = {:trail => trailname,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      post '/trail/add', params
+      last_response.body.should == "Added Trail #{trailname}"
+
+      get '/trail/delete', params
+      Trail.first(:name => trailname).should be_nil
+    end
+
+    it "should not error for a non-existant trail" do
+      trailname = 'trail'
+      params = {:trail => trailname,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      get '/trail/delete', params
+      Trail.first(:name => trailname).should be_nil
+    end
   end
 
   describe "Category Actions" do
@@ -114,9 +154,8 @@ describe "Server Tests" do
       categoryName = 'category'
 
       params = {:category => categoryName,
-        :api_key => @api_key,
-        :user => @test_user,
-        :pwhash => @test_pw }
+                :user => @test_user,
+                :pwhash => @test_pw }
 
       post '/category/add', params
       last_response.body.should == "Added Category #{categoryName}"
@@ -125,12 +164,32 @@ describe "Server Tests" do
 
     it "should error for an invalid user" do
       params = {:category => 'category',
-        :api_key => @api_key,
-        :user => @invalid_user,
-        :pwhash => @test_pw }
+                :user => @invalid_user,
+                :pwhash => @test_pw }
 
       post '/category/add', params
       last_response.body.should == "Invalid username or password"   
+    end
+
+    it "should delete a category" do
+      params = { :category => "test" ,
+                 :user => @test_user,
+                 :pwhash => @test_pw }
+
+      post '/category/add', params
+      last_response.body.should == "Added Category test"
+
+      get '/category/delete', params
+      Category.first(:name => 'test').should be_nil
+    end
+
+    it "should not error when deleting a non-existant category" do
+      params = { :category => "test" ,
+                 :user => @test_user,
+                 :pwhash => @test_pw }
+
+      get '/category/delete', params
+      Category.first(:name => 'test').should be_nil
     end
   end
 
@@ -138,9 +197,8 @@ describe "Server Tests" do
     it "should add a condition" do
       condition = 'condition'
       params = {:condition => condition,
-        :api_key => @api_key,
-        :user => @test_user,
-        :pwhash => @test_pw }
+                :user => @test_user,
+                :pwhash => @test_pw }
 
       post '/condition/add', params
       last_response.body.should == "Added Condition #{condition}"
@@ -149,12 +207,34 @@ describe "Server Tests" do
 
     it "should error for an invalid user" do
       params = {:name => 'condition',
-        :api_key => @api_key,
-        :user => @invalid_user,
-        :pwhash => @test_pw }
+                :user => @invalid_user,
+                :pwhash => @test_pw }
 
       post '/condition/add', params
       last_response.body.should == "Invalid username or password"   
+    end
+
+    it "should delete a condition" do
+      condition = 'condition'
+      params = {:condition => condition,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      post '/condition/add', params
+      last_response.body.should == "Added Condition #{condition}"
+
+      get '/condition/delete', params
+      Condition.first(:desc => condition).should be_nil
+    end
+
+    it "should not error on a nonexistant condition" do
+      condition = 'condition'
+      params = {:condition => condition,
+                :user => @test_user,
+                :pwhash => @test_pw }
+
+      get '/condition/delete', params
+      Condition.first(:desc => condition).should be_nil
     end
   end
 
@@ -169,13 +249,11 @@ describe "Server Tests" do
                 :condition => 'Open',
                 :category => 'test',
                 :trail => 'trail',
-                :api_key => @api_key,
                 :desc => 'test'}
 
       post "/point/add", params #need to have something in misc or builder has problems
 
-      params = {:api_key => @api_key,
-                :user => @test_user,
+      params = {:user => @test_user,
                 :pwhash => @test_pw }
 
       get "/image/get/1", params
@@ -193,18 +271,42 @@ describe "Server Tests" do
                 :condition => 'Open',
                 :category => 'test',
                 :trail => 'trail',
-                :api_key => @api_key,
                 :desc => 'test'}
 
       post "/point/add", params #need to have something in misc or builder has problems
 
-      params = {:api_key => @api_key,
-                :user => @test_user,
+      params = { :user => @test_user,
                 :pwhash => @test_pw }
 
       get "/image/get/1/1", params
 
-      last_response.body.should == "<img src=images/1/1.jpg />"
+      last_response.body.should == "Image does not exist"
+    end
+  end
+
+  describe "User Actions" do
+    it "should add a user" do
+      params = { :user => @test_user,
+                 :pwhash => @test_pw,
+                 :newuser => 'unit@brousalis.com',
+                 :newpwhash => 'pwhash' }
+
+      post '/user/add', params
+
+      last_response.body.should == "Added user unit@brousalis.com"
+    end
+
+    it "should delete a user" do
+      params = { :user => @test_user,
+                 :pwhash => @test_pw,
+                 :newuser => 'unit@brousalis.com',
+                 :newpwhash => 'pwhash' }
+
+      post '/user/add', params
+      last_response.body.should == "Added user unit@brousalis.com"
+
+      get '/user/delete', params
+      User.all(:email => 'unit@brousalis.com', :pwhash => 'pwhash').should be_empty
     end
   end
 end

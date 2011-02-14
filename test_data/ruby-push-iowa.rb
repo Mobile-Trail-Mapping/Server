@@ -46,7 +46,11 @@ File.open('iowa.txt', 'r') do |in_file|
   end
 
   points.first[:category] = "Trailhead"
+  points.first[:title] = "Sac and Fox Trailhead"
+  points.first[:desc] = "The beginning of the trail."
   points.last[:category] = "Trailhead"
+  points.last[:title] = "Sac and Fox Trailhead"
+  points.last[:desc] = "The end of the trail."
 
   points.each do |point|
     Net::HTTP.post_form(URI.parse('http://localhost:4567/point/add'), point)
