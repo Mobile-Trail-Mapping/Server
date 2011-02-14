@@ -111,11 +111,9 @@ describe "Server Tests" do
        post "/point/add", params
 
        params[:desc] = 'new desc'
-
        Point.first(:lat => 4, :long => 5).desc.should == 'test'
 
        post "/point/update", params
-
        Point.first(:lat => 4, :long => 5).desc.should == 'new desc'
     end
   end
