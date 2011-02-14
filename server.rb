@@ -17,7 +17,7 @@ before do
   OBJECTS.each do |object|
     if request.path_info.split('/').include?(object) && (not request.path_info.split('/').include?("get"))
       halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
-    end
+    end unless request.path_info == "/image/upload"
   end
 end
 
