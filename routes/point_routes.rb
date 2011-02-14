@@ -67,12 +67,14 @@ end
 
 post '/point/update/?' do
   point = Point.get(params[:id].to_i)
-  pp params
-  params.delete(:id)
+  params.delete("id")
+  params.delete("user")
+  params.delete("pwhash")
+  params.delete("connections")
 
-  params[:category] = Category.first_or_create(:name => params[:category]) unless params[:category].nil?
-  params[:condition] = Condition.first_or_create(:desc => params[:condition]) unless params[:condition].nil?
-  params[:trail] = Trail.first_or_create(:name => params[:trail]) unless params[:trail].nil?
+  params["category"] = Category.first_or_create(:name => params[:category]) unless params[:category].nil?
+  params["condition"] = Condition.first_or_create(:desc => params[:condition]) unless params[:condition].nil?
+  params["trail"] = Trail.first_or_create(:name => params[:trail]) unless params[:trail].nil?
 
   params.each do |key, value|
     puts "#{key}=> #{value}"
