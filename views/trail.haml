@@ -3,23 +3,23 @@
   %head
     %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
       %title LC Admin - #{@trail.name.capitalize} Points
-      %link{:href => "css/reset.css", :media => "screen", :rel => "stylesheet"}/
-      %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
+      %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
+      %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
       /[if lt IE 9]
-        %script{:src => "js/html5.js"}
-        %script{:src => "js/PIE.js"}
-      %script{:src => "js/jquery.tools.min.js"}
-      %script{:src => "js/jquery.ui.min.js"}
+        %script{:src => "../js/html5.js"}
+        %script{:src => "../js/PIE.js"}
+      %script{:src => "../js/jquery.tools.min.js"}
+      %script{:src => "../js/jquery.ui.min.js"}
       /[if lte IE 9]
-        %link{:href => "css/ie.css", :media => "screen", :rel => "stylesheet"}/
-        %script{:src => "js/ie.js"}
-      %script{:src => "js/global.js"}
+        %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
+        %script{:src => "../js/ie.js"}
+      %script{:src => "../js/global.js"}
   %body 
     #bg
       .wrapper
         #header
           %h1
-            %img{:alt => "LC Trails", :src => "images/icon.png"}/
+            %img{:alt => "LC Trails", :src => "../images/icon.png"}/
             %a{:href => "#"} LC Trails
           %ul#nav
             %li
@@ -45,65 +45,21 @@
             %a{:href => "#"} user
             %a{:href => "index.html", :style => "padding-left: 20px;"} Logout
         / #header ends
-        .block.small.left
-          .block_head
-            %h2 Graph? Quick add trail?
-          .block_content
-            %form{:action => "", :method => "post"}
-              %p
-                %input.text{:type => "text", :value => "Trail Name"}/
-              %p
-                %textarea{:cols => "50", :rows => "5" }
-              %p
-                %button.button.button-gray.fr{:type => "submit"} 
-                  %span.add
-                  Add New Trail
-        / .block.small.left ends
-        .block.small.right
-          .block_head
-            %h2 Instructions?
-          .block_content
-            %h2 Headline
-            %p
-              Quisque felis nunc,
-              lacinia at, viverra sit amet ligula. Praesent justo risus, suscipit eget volutpat ac, fermentum ac massa. Sed at justo velit. Maecenas dapibus sem nec quam cursus.
-            %h3 Headline
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec nibh ac risus aliquet euismod. Mauris eros risus, vestibulum ut molestie ac, placerat porta lorem. Nunc lectus est, posuere eu volutpat eu, porta eget quam. Nulla aliquam commodo turpis et pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam fringilla porttitor pretium. Pellentesque eu purus orci, vel congue elit.
-        / .block.small.right ends
         .block
           .block_head
-            %h2 Recently Added
+            %h2 #{@trail.name.capitalize} 
           .block_content
             %ul.imglist
-              %li
-              
-                %img{:alt => "", :src => "images/thumb.jpg"}/
-                %ul
-                  %li.view
-                    %a{:href => "images/thumb.jpg", :rel => "facebox"} View
-                  %li.edit
-                    %a{:href => "#"} Edit
-          / .block_content ends
-        / .leftcol ends
+              - @trail.points.each do |point|
+                - point.photos.each do |photo|
+                  %li
+                    %img{:alt => "#{point.title}", :src => "#{photo.pic.url}"}
+                      %ul
+                        %li.view
+                          %a{:href => "#{photo.pic.url}", :rel => "facebox"} View
+                        %li.edit
+                          %a{:href => "#"} Edit
         #footer
           %p.right
             powered by
             %a{:href => "#"} Mobile Trail Mapping
-
-
-    - @trail.points.each do |point|
-      - point.photos.each do |photo|
-        %img{:src => photo.pic.url}
-      %br
-      = "Title: #{point.title}"
-      %br
-      = "Description: #{point.desc}"
-      %br
-      = "Category: #{point.category.name}"
-      %br
-      = "Condition: #{point.condition.desc}"
-      %br
-      = "Located at #{point.lat}, #{point.long}"
-      %br
-      %br
