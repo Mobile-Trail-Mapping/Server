@@ -24,7 +24,7 @@ post '/user/login/?' do
     session[:user] = params[:user]
     session[:pwhash] = pwhash
 
-    return "Logged in"
+    redirect '/trails'
   else
     return "Invalid username and password"
   end
