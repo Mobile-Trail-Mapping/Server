@@ -5,6 +5,7 @@ require 'pp'
 Dir['routes/*'].each { |obj| require obj }
 
 configure do
+  enable :sessions
   OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'image']
 
   #create a default user so we're not locked out
@@ -24,7 +25,7 @@ end
 helpers do
   #Check user credentials
   def password_doesnt_match_user?(user, pass)
-    User.all(:email => user, :pwhash => pass).empty?
+    User.all(:email => user, :pwhash => pass).empty? && User.all(:email => session[:user], :pwhash => session[:pwhash]).empty?
   end
 
   #Method for getting image hash
