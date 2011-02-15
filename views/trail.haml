@@ -7,6 +7,8 @@
     %h1= "Points for #{@trail.name.capitalize}"
     %br
     - @trail.points.each do |point|
+      - point.photos.each do |photo|
+        %img{:src => photo.url}
       = "Title: #{point.title}"
       %br
       = "Description: #{point.desc}"
