@@ -1,6 +1,8 @@
 %html
   %head
-    %title Problems
+    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
+      %title Problems
+      %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
   %body
     %h1 Problems
     - @problems.each do |prob|
@@ -8,8 +10,8 @@
       %h2= "#{prob.title}"
       = "#{prob.desc}"
       %br
-      = "#{prob.lat}, #{prob.long}"
+      = "At #{prob.lat}, #{prob.long}"
       %br
-      = "#{prob.user}"
+      = "Submitted by #{prob.user}"
       %br
       %br
