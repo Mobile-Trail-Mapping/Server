@@ -1,8 +1,8 @@
 # Add a new problem
 post '/problem/add/?' do
-  desc = params[:desc]
-  user = params[:user]
-  title = params[:title]
+  desc = params[:desc].to_s
+  user = params[:user].to_s
+  title = params[:title].to_s
   lat = params[:lat].to_f
   long = params[:long].to_f
   image = make_paperclip_mash(params[:file])
