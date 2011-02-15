@@ -48,5 +48,3 @@ end
 get '/dashboard' do
   haml :dashboard
 end
-
-
