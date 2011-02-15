@@ -6,7 +6,7 @@
     - @problems.each do |prob|
       %img{:src => prob.pic.url}
       %h2= "#{prob.title}"
-      %h3= "#{prob.desc}"
-      %h3= "#{prob.lat}, #{prob.long}"
-      %h3= "#{prob.user}"
+      = "#{prob.desc}"
+      = "#{prob.lat}, #{prob.long}"
+      = "#{prob.user}"
       %br
