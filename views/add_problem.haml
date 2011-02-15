@@ -1,0 +1,16 @@
+%form{:action => '/problem/add', :enctype => 'multipart/form-data', :method => 'POST'}
+  %input{:type => 'file', :name => 'file'}
+    %br
+  %input{:type => 'string', :name => 'user'}
+    %br
+  %input{:type => 'string', :name => 'pwhash'}
+    %br
+  %input{:type => 'string', :name => 'lat'}
+    %br
+  %input{:type => 'string', :name => 'long'}
+    %br
+  %input{:type => 'string', :name => 'desc'}
+    %br
+  %input{:type => 'string', :name => 'title'}
+    %br
+  %input{:type => 'submit'}
