@@ -5,7 +5,7 @@ require 'pp'
 Dir['routes/*'].each { |obj| require obj }
 
 configure do
-  OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'problem', 'image']
+  OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'image']
 
   #create a default user so we're not locked out
   User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'))
