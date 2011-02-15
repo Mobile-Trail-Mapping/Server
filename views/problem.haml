@@ -9,15 +9,15 @@
       %h1 Current Problems
       %br
       %table{:border => "1"}
-      - @problems.each do |prob|
-        %tr
-          %td
-            %img{:src => prob.pic.url}
-            %h2= "#{prob.title}"
-            = "#{prob.desc}"
-            %br
-            = "At #{prob.lat}, #{prob.long}"
-            %br
-            = "Submitted by #{prob.user}"
-            %br
-            %br
+        - @problems.each do |prob|
+          %tr
+            %td
+              %img{:src => prob.pic.url}
+              %h2= "#{prob.title}"
+              = "#{prob.desc}"
+              %br
+              = "At #{prob.lat}, #{prob.long}"
+              %br
+              = "Submitted by #{prob.user}"
+              %br
+              %br
