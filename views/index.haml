@@ -2,11 +2,9 @@
 %html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title Mobile Trail Mapping - Admin
+      %title LC Trails - Admin
       %link{:href => "css/reset.css", :media => "screen", :rel => "stylesheet"}/
-      %link{:href => "css/grid.css", :media => "screen", :rel => "stylesheet"}/
       %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
-      %link{:href => "css/forms.css", :media => "screen", :rel => "stylesheet"}/
       /[if lt IE 9]
         %script{:src => "js/html5.js"}
         %script{:src => "js/PIE.js"}
@@ -14,30 +12,28 @@
       %script{:src => "js/jquery.ui.min.js"}
       /[if lte IE 9]
         %link{:href => "css/ie.css", :media => "screen", :rel => "stylesheet"}/
-        %script{:src => "js/ie.js"}
       %script{:src => "js/global.js"}
-      :javascript
-        $(document).ready(function(){
-            $("#form").validator({ 
-            	position: 'top', 
-            	offset: [25, 10],
-            	messageClass:'form-error',
-            	message: '' // em element is the arrow
-            });
-        });
   %body.login
-    .login-box.main-content
-      %header
-        %img{:alt => "MTM Icon", :src => "images/icon.png"}/
-        %h2 Mobile Trail Mapping
-      %section
-        %form#form.clearfix{:action => "/user/login", :method => "post"}
-          %p
-            %input#username.full{:name => "user", :placeholder => "Username", :required => "required", :type => "text", :value => ""}/
-          %p{:style => "margin-bottom: 25px;"}
-            %input#password.full{:name => "password", :placeholder => "Password", :required => "required", :type => "password", :value => ""}/
-          %span.fl
-            Having trouble?
-            %a{:href => "#"} Contact admin
-          %p.clearfix{:style => "width: 294px;"}
-            %button.button.button-gray.fr{:type => "submit"} Login
+    #bg
+      .wrapper
+        .block.small.center.login
+          .block_head
+            %img{:alt => "LC Trails", :src => "images/icon.png"}/
+            %h2
+              LC Trails
+              %strong - Login
+          .block_content
+            %form{:action => "/user/login", :method => "post"}
+              %p
+                %label Username:
+                %br/
+                %input#username.text{:name => "user", :placeholder => "Username", :required => "required", :type => "text", :value => ""}/
+              %p
+                %label Password:
+                %br/
+                %input#password.text{:name => "password", :placeholder => "Password", :required => "required", :type => "password", :value => ""}/
+              %p
+                %button.button.button-gray.fr{:type => "submit"} Login
+                \ 
+                %input#rememberme.checkbox{:checked => "checked", :type => "checkbox"}/
+                %label{:for => "rememberme"} Remember me
