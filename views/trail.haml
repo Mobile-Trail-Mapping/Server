@@ -8,7 +8,7 @@
     %br
     - @trail.points.each do |point|
       - point.photos.each do |photo|
-        %img{:src => photo.url}
+        %img{:src => photo.pic.url}
       = "Title: #{point.title}"
       %br
       = "Description: #{point.desc}"
