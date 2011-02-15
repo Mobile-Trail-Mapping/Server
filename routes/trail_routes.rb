@@ -20,3 +20,9 @@ get '/trails/?' do
   @trails = Trail.all
   haml :trails
 end
+
+get '/trails/:trail/?' do
+  @trail = Trail.first(:name => params[:trail])
+
+  haml :trail
+end
