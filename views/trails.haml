@@ -8,5 +8,7 @@
     %h1 Trails
     %br
     - @trails.sort { |x, y| x.name <=> y.name }.each do |trail|
-      %h3= "#{trail.name.capitalize}"
+      %h3
+        %a{:href => "/trails/#{trail.name}"}
+          ="#{trail.name.capitalize}"
       %br
