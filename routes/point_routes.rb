@@ -8,6 +8,9 @@ end
 
 # Add a new point with connections specified as lat and long
 post '/point/add/coords/?' do
+  params[:desc] ||= ""
+  params[:title] ||= ""
+
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
   params[:condition] ||= "Open"
@@ -36,6 +39,9 @@ end
 
 # Add a new point with connections specified as point id's
 post '/point/add/?' do
+  params[:desc] ||= ""
+  params[:title] ||= ""
+
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
   params[:condition] ||= "Open"
