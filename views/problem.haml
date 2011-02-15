@@ -2,9 +2,11 @@
   %head
     %title Problems
   %body
+    %h1 Problems
     - @problems.each do |prob|
-      = "#{prob.title}"
-      = "#{prob.desc}"
-      = "#{prob.lat}, #{prob.long}"
-      = "#{prob.user}"
       %img{:src => prob.pic.url}
+      %h2= "#{prob.title}"
+      %h3= "#{prob.desc}"
+      %h3= "#{prob.lat}, #{prob.long}"
+      %h3= "#{prob.user}"
+      %br
