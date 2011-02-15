@@ -17,3 +17,15 @@ get '/user/delete/?' do
   user.destroy unless user.nil?
 end
 
+post '/user/login/?' do
+  pwhash = Digest::SHA1.hexdigest(params[:password])
+
+  if not password_doesnt_match_user?(params[:user], pwhash)
+    session[:user] = params[:user]
+    session[:pwhash] = pwhash
+
+    return "Logged in"
+  else
+    return "Invalid username and password"
+  end
+end
