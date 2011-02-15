@@ -15,3 +15,8 @@ get '/trail/delete/?' do
   trail = Trail.all(:name => params[:trail])
   trail.destroy unless trail.nil?
 end
+
+get '/trails/?' do
+  @trails = Trail.all
+  haml :trails
+end
