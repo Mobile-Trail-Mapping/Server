@@ -4,14 +4,16 @@
       %title Problems
       %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
   %body
-    %h1 Problems
-    - @problems.each do |prob|
-      %img{:src => prob.pic.url}
-      %h2= "#{prob.title}"
-      = "#{prob.desc}"
+    %center
+      %h1 Problems
       %br
-      = "At #{prob.lat}, #{prob.long}"
-      %br
-      = "Submitted by #{prob.user}"
-      %br
-      %br
+      - @problems.each do |prob|
+        %img{:src => prob.pic.url}
+        %h2= "#{prob.title}"
+        = "#{prob.desc}"
+        %br
+        = "At #{prob.lat}, #{prob.long}"
+        %br
+        = "Submitted by #{prob.user}"
+        %br
+        %br
