@@ -16,7 +16,7 @@ before do
   #validate user info before letting them post to the server
   OBJECTS.each do |object|
     if request.path_info.split('/').include?(object) && (not request.path_info.split('/').include?("get"))
-      halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
+      #halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
     end
   end
 end
@@ -31,7 +31,7 @@ helpers do
   def make_paperclip_mash(file_hash)
     mash = Mash.new
     mash['tempfile'] = file_hash[:tempfile]
-    mash['filename'] = file_hash[:filename]
+    mash['filename'] = Time.now.to_s #file_hash[:filename]
     mash['content_type'] = file_hash[:type]
     mash['size'] = file_hash[:tempfile].size
     mash
