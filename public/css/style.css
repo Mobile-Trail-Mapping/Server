@@ -95,7 +95,7 @@ body.login .block .block_head h2{padding-top: 12px;}
 .block .block_content .imglist{overflow:hidden;margin:0;padding:0;padding-bottom:10px;}
 .block .block_content .imglist ul{padding:0;}
 .block .block_content .imglist li{padding:0;margin:0;background:0;width:100px;height:100px;display:block;float:left;position:relative;margin:13px 17px 10px 10px;border:1px solid #ccc;padding:1px;box-shadow:0 0 3px #ccc;-moz-box-shadow:0 0 3px #ccc;-webkit-box-shadow:0 0 3px #ccc;}
-.block .block_content .imglist li img{position:absolute;z-index:1;width:100px;height:100px;}
+.block .block_content .imglist li img{position:absolute;z-index:1;}
 .block .block_content .imglist li ul{position:absolute;z-index:10;background:url(../images/imgo.gif) center no-repeat;width:62px;height:58px;left:19px;top:21px;display:none;}
 .block .block_content .imglist li:hover ul{display:block;}
 .block .block_content .imglist li ul li{display:block;width:62px;height:29px;text-align:center;margin:0;padding:0;border:0;box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;}
