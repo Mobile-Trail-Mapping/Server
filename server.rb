@@ -6,7 +6,7 @@ Dir['routes/*'].each { |obj| require obj }
 
 configure do
   enable :sessions
-  OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'image']
+  OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'image', 'problems']
 
   #create a default user so we're not locked out
   User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'))

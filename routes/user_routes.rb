@@ -18,7 +18,6 @@ get '/user/delete/?' do
 end
 
 post '/user/login/?' do
-  pp params
   pwhash = Digest::SHA1.hexdigest(params[:password])
 
   if not password_doesnt_match_user?(params[:user], pwhash)
