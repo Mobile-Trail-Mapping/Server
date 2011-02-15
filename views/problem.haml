@@ -1,0 +1,10 @@
+%html
+  %head
+    %title Problems
+  %body
+    - @problems.each do |prob|
+      = "#{prob.title}"
+      = "#{prob.desc}"
+      = "#{prob.lat}, #{prob.long}"
+      = "#{prob.user}"
+      %img{:src => prob.pic.url}
