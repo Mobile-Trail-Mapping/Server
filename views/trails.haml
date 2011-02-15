@@ -1,0 +1,12 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
+      %title Problems
+      %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
+  %body
+    %br
+    %h1 Trails
+    %br
+    - @trails.sort { |x, y| x.name <=> y.name }.each do |trail|
+      %h3= "#{trail.name.capitalize}"
+      %br
