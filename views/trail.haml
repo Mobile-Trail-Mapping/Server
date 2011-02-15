@@ -1,19 +1,19 @@
 %html
   %head
     %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title Problems
+      %title Trail Points
       %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
   %body
-    %h1= "#{@trail.name.capitalize}"
+    %h1= "Points for #{@trail.name.capitalize}"
     %br
     - @trail.points.each do |point|
-      = "#{point.title}"
+      = "Title: #{point.title}"
       %br
-      = "#{point.desc}"
+      = "Description: #{point.desc}"
       %br
-      = "#{point.category.name}"
+      = "Category: #{point.category.name}"
       %br
-      = "#{point.condition.desc}"
+      = "Condition: #{point.condition.desc}"
       %br
       = "Located at #{point.lat}, #{point.long}"
       %br
