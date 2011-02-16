@@ -4,6 +4,7 @@ body{background:#fbfbfb url(../images/bg.jpg) 0 0 repeat;font-family:"Helvetica"
 p{padding-bottom:15px;}
 a{color:#499510;text-decoration:none;outline:none;}
 a:hover{color:#ec8526;text-decoration:none;}
+ul li{list-style-type:none;}
 #bg{background:url(../images/bg_light.jpg) 0 0 repeat-x;min-height:402px;}
 .wrapper{width:70%;margin:0 auto;padding-top:20px;}
 /* Header */
@@ -56,7 +57,7 @@ body.login .block .block_head h2{padding-top: 12px;}
 .block .block_content h2{font-size:18px;font-weight:normal;color:#454545;margin-bottom:10px;}
 .block .block_content h3{font-size:14px;font-weight:bold;color:#666;margin-bottom:5px;}
 .block .block_content h4{font-size:13px;font-weight:bold;color:#666;margin-bottom:5px;}
-.block .block_content ul{padding-left:15px;padding-bottom:15px;}
+.block .block_content ul{padding-bottom:15px;}
 .block .block_content ol{padding-left:15px;padding-bottom:15px;list-style-position:inside;}
 .block .block_content ul li{margin-bottom:5px;padding-left:15px;background:url(../images/li.gif) 0 7px no-repeat;}
 .block .block_content ol li{margin-bottom:5px;}
@@ -108,3 +109,32 @@ body.login .block .block_head h2{padding-top: 12px;}
 #footer a:hover{color:#666;text-decoration:none;}
 #footer .left{float:left;}
 #footer .right{float:right;text-align:right;}
+/* Preview Pane */
+.preview-pane {position: relative;z-index: 0;}
+.main-section {width: 100%;display: inline;float: left;position: relative;}
+.main-section .block {z-index:1;width:55%;position:relative;}
+.preview-pane.small {width:43%; margin-right:0;}
+.preview-pane.small.right {float:right;clear:none;}
+
+.preview-pane .preview {
+    background: #fcfcfc;
+    display: block;
+    top: 0;
+    left: -530px;
+    padding: 20px;
+    position: absolute;
+    height: 350px;
+    width: 413px;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -khtml-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-box-shadow: 0 2px 2px #777;
+    -webkit-box-shadow: 0 2px 2px #777;
+    -khtml-box-shadow: 0 2px 2px #777;
+    box-shadow: 0 2px 2px #777;
+}
+.preview-pane .preview > h3:first-child, .preview-pane .preview > h4:first-child {
+    margin-top: 0;
+}

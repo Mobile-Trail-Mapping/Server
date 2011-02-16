@@ -45,20 +45,28 @@
             %a{:href => "#"} user
             %a{:href => "index.html", :style => "padding-left: 20px;"} Logout
         / #header ends
-        .block
-          .block_head
-            %h2 #{@trail.name.capitalize} 
-          .block_content
-            %ul.imglist
-              - @trail.points.each do |point|
-                - point.photos.each do |photo|
+        .main-section
+          .block.small.left
+            .block_head
+              %h2 #{@trail.name.capitalize} 
+            .block_content
+              %ul
+                - @trail.points.each do |point| #- point.photos.each do |photo|
                   %li
-                    %img{:alt => "#{point.title}", :src => "#{photo.pic.url}"}
-                      %ul
-                        %li.view
-                          %a{:href => "#{photo.pic.url}", :rel => "facebox"} View
-                        %li.edit
-                          %a{:href => "#"} Edit
+                    %h2 
+                      %a.more{:href=>"#"} #{point.title}
+                      /%img{:alt => "#{point.title}", :src => "#{photo.pic.url}"}
+                      /  %ul
+                      /    %li.view
+                      /      %a{:href => "#{photo.pic.url}", :rel => "facebox"} View
+                      /    %li.edit
+                      /      %a{:href => "#"} Edit
+          .preview-pane.small.right.omega
+            .content
+              .message.info
+                %h3 Helpful Tips
+                %p Click 
+            .preview
         #footer
           %p.right
             powered by
