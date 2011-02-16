@@ -69,7 +69,7 @@
               .desc{:style => "display: block !important"}
                 %span.close
                   %img{:src => "../images/cancel-white.png"}
-              - @photos.each do |photo|
+              - @images.each do |photo|
                 %img{:src => "#{photo.pic.url}"}
               - @trail.points.each do |point|
                 .desc{:id => "point_#{point.id}"}
