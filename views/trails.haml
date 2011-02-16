@@ -54,7 +54,7 @@
                 %a{:herf => "/trails/#{trail}"}
                   = "#{trail.capitalize}"
               - @photos[trail].each do |image|
-                %img{src=> "#{image.pic.url}"}
+                %img{src=> "#{image.url}"}
 
         / .block.small.right ends
         #footer
