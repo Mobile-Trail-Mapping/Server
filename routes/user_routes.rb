@@ -1,7 +1,8 @@
 # Add a new user
 post '/user/add/?' do
   user = User.create(:email => params[:newuser], :pwhash => params[:newpwhash])
-  return "Added user #{user.email}"
+
+  redirect '/trails'
 end
 
 # Check if user credentials are valid

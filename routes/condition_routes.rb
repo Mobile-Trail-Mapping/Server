@@ -1,7 +1,8 @@
 # Add a new condition
 post '/condition/add/?' do
   condition = Condition.first_or_create(:desc => params[:condition])
-  "Added Condition #{condition.desc}"
+
+  redirect '/trails'
 end
 
 # Return a list of all conditions as xml

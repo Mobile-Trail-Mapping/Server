@@ -8,6 +8,8 @@ post '/problem/add/?' do
   image = make_paperclip_mash(params[:file])
 
   Problem.create(:desc => desc, :user => user, :pic => image, :title => title, :lat => lat, :long => long)
+
+  redirect '/trails'
 end
 
 get '/problem/add/?' do
