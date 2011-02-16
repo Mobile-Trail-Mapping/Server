@@ -79,6 +79,7 @@ $(document).ready(function() {
 				window.location.href = "/trails";
 			}
 		});
+		return false;
 	});
 
 });
