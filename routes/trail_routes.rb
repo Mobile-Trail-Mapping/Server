@@ -32,6 +32,11 @@ end
 
 get '/trails/:trail/?' do
   @trail = Trail.first(:name => params[:trail])
+  @images = []
+  @trail.points.each do |point|
+    point.photos.each { |photo| @images << photo }
+  end
+
   haml :trail
 end
 
