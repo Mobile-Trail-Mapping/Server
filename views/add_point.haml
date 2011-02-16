@@ -48,7 +48,7 @@
             .block_head
               %h2 Add Point
             .block_content
-              %form{:id=> 'add_point'}
+              %form{:id=> 'add_point', :enctype => 'multipart/form-data', :method => 'POST'}
                 %p
                   %label Title:
                   %br/
