@@ -56,16 +56,22 @@
                 - @trail.points.each do |point| #- point.photos.each do |photo|
                   - if point.category.name != "Trail"
                     %li.contact.clearfix
-                      %a.more{:href => "janeroe.html"} »
+                      %a.more{:href => "#point_#{point.id}"} »
                       %a.name{:href => "#"} #{point.title}
           .preview-pane.small.right.omega
             .content
               .message.info
                 %h3 Helpful Tips
-                %p Click 
+                %p Click on the trail points located on the left to get more information about them, including pictures and coordinates. 
             .preview
-          /- @trail.points.each do |point|
-            
+              .desc{:style => "display: block !important"}
+                %span.close
+                  %img{:src => "../images/cancel-white.png"}
+              - @trail.points.each do |point|
+                .desc{:id => "point_#{point.id}"}
+                  %h1 #{point.title}
+                  %span #{point.lat}, #{point.long}
+                  %p #{point.desc}
         #footer
           %p.right
             powered by

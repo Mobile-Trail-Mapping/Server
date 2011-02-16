@@ -60,14 +60,15 @@ body.login .block .block_head h2{padding-top:12px;}
 .block hr{height:1px;border:0;background:no-repeat;border-bottom:1px solid #ddd;margin-bottom:15px;}
 .block .block_content .breadcrumb{color:#666;background:#f9f9f9;border-bottom:1px solid #e6e6e6;padding:9px 12px;line-height:normal;margin-bottom:10px;font-size:11px;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px;}
 /* Messages */
-.block .message{padding:10px 15px 10px 40px;margin:10px 0;font-weight:bold;overflow:hidden;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
-.block .message p{padding:0;width:93%;float:left;}
-.block .message.errormsg{border:1px solid #e9c59b;background:#ffecce url(../images/error.gif) 12px 12px no-repeat;color:#e3302c;}
-.block .message.success{border:1px solid #bfde84;background:#edfbd8 url(../images/success.gif) 12px 12px no-repeat;color:#508600;}
-.block .message.info{border:1px solid #bbdbe0;background:#ecf9ff url(../images/info.gif) 12px 12px no-repeat;color:#0888c3;}
-.block .message.warning{border:1px solid #e5e181;background:#fefde2 url(../images/warning.gif) 12px 12px no-repeat;color:#666;}
-.block .message .close{display:block;float:right;width:16px;height:16px;background:url(../images/close.png) 0 0 no-repeat;margin-top:2px;cursor:pointer;-moz-opacity:0.7;opacity:0.7;}
-.block .message .close.hover{-moz-opacity:1;opacity:1;}
+.message{padding:10px 15px 10px 40px;margin:10px 0;font-weight:bold;overflow:hidden;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+.message p{padding:0;width:93%;float:left;padding-top:5px;font-weight:normal;}
+.message.errormsg{border:1px solid #e9c59b;background:#ffecce url(../images/error.gif) 12px 12px no-repeat;color:#e3302c;}
+.message.success{border:1px solid #bfde84;background:#edfbd8 url(../images/success.gif) 12px 12px no-repeat;color:#508600;}
+.message.info{border:1px solid #bbdbe0;background:#ecf9ff url(../images/info.gif) 12px 12px no-repeat;color:#0888c3;}
+.message.warning{border:1px solid #e5e181;background:#fefde2 url(../images/warning.gif) 12px 12px no-repeat;color:#666;}
+.message .close_me{display:block;float:right;width:16px;height:16px;background:url(../images/close.png) 0 0 no-repeat;margin-top:2px;cursor:pointer;-moz-opacity:0.7;opacity:0.7;padding:0;right:15px;top:20px;}
+.message .close_me:hover{-moz-opacity:1;opacity:1;}
+.message .close_me:active{top:21px;}
 /* Forms */
 .block form p{overflow:hidden;clear:both;}
 .block form label{font-size:12px;color:#555;margin-right:10px;vertical-align:middle;}
@@ -112,7 +113,12 @@ body.login .block .block_head h2{padding-top:12px;}
 .preview-pane.small{width:43%;margin-right:0;}
 .preview-pane.small.right{float:right;clear:none;}
 .preview-pane .preview{background:#fff;display:block;top:2px;left:-475px;padding:20px;position:absolute;height:350px;width:419px;-moz-border-radius:0 5px 5px 0;-webkit-border-top-right-radius:5px;-webkit-border-bottom-right-radius:5px;-khtml-border-radius:0 5px 5px 0;border-radius:0 5px 5px 0;-webkit-box-shadow:0px 2px 14px rgba(0,0,0,0.2),0px 0px 2px rgba(0,0,0,0.3);}
-.preview-pane .preview > h3:first-child,.preview-pane .preview > h4:first-child{margin-top:0;}
+.preview-pane .preview .desc {display:none;}
+.preview-pane .preview .desc p {padding-top:5px;}
+.preview-pane h1{margin-top:0; border-bottom: 1px #eee dotted;padding-bottom: 10px; }
+.preview-pane span{border-radius: 0px 0px 0px 5px;-moz-border-radius: 0px 0px 0px 5px;-webkit-border-bottom-left-radius: 5px;float:right; position:absolute; top:0; right:28px;background-color: #eee; padding:5px 15px;}
+.preview-pane span.close{cursor:pointer;border-radius: 0px 5px 0px 0px;-moz-border-radius: 0px 5px 0px 0px;-webkit-border-top-right-radius: 5px;height:25px;float:right; position:absolute; top:0; right:0px;background-color: #000; padding: 5px 5px 0px 5px; }
+.preview-pane span:active{top:1px;}
 .list-view{font-size:12px;margin-left:-30px;margin-right:-30px;}
 .list-view > li{border-bottom:1px solid #ddd;padding:10px 30px 10px 25px;position:relative;zoom:1;}
 .list-view > li:hover{background-color:#fafafa;cursor:pointer;}

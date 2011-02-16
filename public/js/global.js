@@ -28,7 +28,9 @@ $(document).ready(function() {
 		var url = $(this).find('.more').attr('href');
 		if (!$(this).parents('li').hasClass('current')) {
 			$('.preview-pane .preview').animate({left: "-475px"}, 300, function(){
-				$(this).animate({left: "-27px"}, 300).html('<img src="images/ajax-loader.gif" />').html("Testing");
+				$(this).find(".desc").hide();
+				$(this).animate({left: "-27px"}, 300);
+				$(url).show();
 			});
 		} else {
 			$('.preview-pane .preview').animate({left: "-475px"}, 300);
@@ -38,7 +40,7 @@ $(document).ready(function() {
   });
 
   $('.preview-pane .preview .close').live('click', function(){
-		$('.preview-pane .preview').animate({left: "-375px"}, 300);
+		$('.preview-pane .preview').animate({left: "-475px"}, 300);
 		$('.list-view li').removeClass('current');
 		return false;
   });
@@ -52,6 +54,17 @@ $(document).ready(function() {
 			offset = previewYloc+$(document).scrollTop()+400>=$('.main-section').height()? offset=$('.main-section').height()-400 : previewYloc+$(document).scrollTop();
 			$('.preview-pane .preview').animate({top:offset},{duration:500,queue:false});
     }
+	});
+	
+	// Messages
+	$('.message').hide().append('<span class="close_me" title="Dismiss"></span>').fadeIn('slow');
+	$('.message .close').hover(
+		function() { $(this).addClass('hover'); },
+		function() { $(this).removeClass('hover'); }
+	);
+		
+	$('.close_me').click(function() {
+		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
 });
