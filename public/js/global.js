@@ -67,11 +67,12 @@ $(document).ready(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
-	%('#submit_form').click(function(e) {
+	$('#submit_form').click(function(e) {
 		e.preventDefault();
 		$.ajax({
 			type : 'POST',
 			url : '/point/add',
+			dataType: 'html',
 			data: {
 				$('#add_point').serialize();
 			},
