@@ -69,7 +69,10 @@ $(document).ready(function() {
 	
 	$('.delete').click(function(e) {
 		e.preventDefault();
-		$.post($(this).attr("href"));
+		$.post($(this).attr("href"), function (data) {
+			alert("Success!")
+		}, "html"
+		);
 		return false;
 	});
 
