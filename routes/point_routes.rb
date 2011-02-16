@@ -87,7 +87,7 @@ post '/point/delete/:id/?' do
   redirect "/trails"
 end
 
-post '/point/update/?' do
+post '/point/update/:id/?' do
   point = Point.get(params[:id].to_i)
 
   params.delete("id")
