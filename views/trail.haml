@@ -9,11 +9,18 @@
         %script{:src => "../js/html5.js"}
         %script{:src => "../js/PIE.js"}
       %script{:src => "../js/jquery.tools.min.js"}
+      %script{:src => "http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"}
       %script{:src => "../js/jquery.ui.min.js"}
       /[if lte IE 9]
         %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
         %script{:src => "../js/ie.js"}
       %script{:src => "../js/global.js"}
+      :javascript
+        $(document).ready(function() {
+            $('.slideshow').cycle({
+        		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+        	});
+        });
   %body 
     #bg
       .wrapper
@@ -74,8 +81,9 @@
                   %h1 #{point.title}
                   %span #{point.lat}, #{point.long}
                   %p #{point.desc}
-                  - point.photos.each do |photo|
-                    %img{:src => photo.pic.url}
+                  .slideshow
+                    - point.photos.each do |photo|
+                      %img{:width => "200", :height => "200", :src => photo.pic.url}
         #footer
           %p.right
             powered by
