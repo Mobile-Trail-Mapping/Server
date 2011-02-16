@@ -68,6 +68,7 @@ $(document).ready(function() {
 	});
 	
 	%('#submit_form').click(function(e) {
+		e.preventDefault();
 		$.ajax({
 			type : 'POST',
 			url : '/point/add',
