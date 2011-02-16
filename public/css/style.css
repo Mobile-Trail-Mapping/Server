@@ -117,10 +117,10 @@ body.login .block .block_head h2{padding-top:12px;}
 .list-view > li{border-bottom:1px solid #ddd;padding:10px 30px 10px 25px;position:relative;zoom:1;}
 .list-view > li:hover{background-color:#fafafa;cursor:pointer;}
 .list-view > li.current{background-color:#f1f1f1;}
-.list-view > li .more{background:#499510 url(../images/arrow-right.png) no-repeat 20% center;display:block;width:24px;height:100%;position:absolute;right:0px;top:0px;text-align:center;text-decoration:none;text-indent:-999em;visibility:hidden;}
+.list-view > li .more{background:#499510 url(../images/arrow-right.png) no-repeat 5px center;display:block;width:24px;height:100%;position:absolute;right:0px;top:0px;text-align:center;text-decoration:none;text-indent:-999em;visibility:hidden;}
 .list-view > li .more:hover{cursor:pointer;}
 .list-view > li:hover .more{visibility:visible;}
-.list-view > li.current .more{background-image:url(../images/arrow-left.png);visibility:visible;}
+.list-view > li.current .more{background:#499510 url(../images/arrow-left.png) no-repeat 3px center; visibility:visible;}
 .list-view > li a{font-weight:bold;font-size:16px;}
 .list-view > li p{color:#111;margin:0;}
 .list-view > li:last-child {border-bottom:0;}
