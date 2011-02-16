@@ -67,8 +67,7 @@ $(document).ready(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
-	$('#submit_point').click(function(e) {
-		e.preventDefault();
+	$('#submit_point').click(function() {
 		var dataString = $("add_point").serialize();
 		$.ajax({
 			type: 'POST',
@@ -79,7 +78,7 @@ $(document).ready(function() {
 				window.location.href = "/trails";
 			}
 		});
-		
+		return false;
 	});
 
 });
