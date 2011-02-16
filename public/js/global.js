@@ -24,21 +24,22 @@ $(document).ready(function() {
 	
   // preview pane setup
 	$('.preview-pane .preview').css("height",$('.main-section .block').height()-40+"px");
-  $('.more').click(function(){
-		var url = $(this).attr('href');
+  $('.list-view > li').click(function(){
+		var url = $(this).find('.more').attr('href');
 		if (!$(this).parents('li').hasClass('current')) {
-			$('.preview-pane .preview').animate({left: "-27px"}, 300, function(){
-				$(this).html('<img src="images/ajax-loader.gif" />').html("Testing");
+			$('.preview-pane .preview').animate({left: "-475px"}, 300, function(){
+				$(this).animate({left: "-27px"}, 300).html('<img src="images/ajax-loader.gif" />').html("Testing");
 			});
 		} else {
 			$('.preview-pane .preview').animate({left: "-475px"}, 300);
 		}
-		$(this).parents('li').toggleClass('current').siblings().removeClass('current');
+		$(this).toggleClass('current').siblings().removeClass('current');
 		return false;
   });
 
   $('.preview-pane .preview .close').live('click', function(){
 		$('.preview-pane .preview').animate({left: "-375px"}, 300);
+		$('.list-view li').removeClass('current');
 		return false;
   });
   // preview pane setup end
