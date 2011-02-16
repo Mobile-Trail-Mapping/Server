@@ -17,12 +17,12 @@
       %script{:src => "../js/global.js"}
       :javascript
         $(document).ready(function() {
-            $('.slideshow').cycle({
-      		    fx:     'fade', 
-              speed:  300 , 
-              next:   '#s1', 
-              timeout: 0 
-        	});
+          $('.slideshow').cycle({
+            fx: 'fade', 
+            speed: 300 , 
+            next: '.slideshow', 
+            timeout: 0 
+          });
         });
   %body 
     #bg
