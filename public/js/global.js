@@ -67,33 +67,45 @@ $(document).ready(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
-	$('.delete').click(function(e) {
-		e.preventDefault();		
-		$.ajax({
-			type: 'POST',
-			url: $(this).attr("href"),
-			dataType: 'html',
-			success: function() {
-				window.location.href = "/trails";
-			}
-		});
-		return false;
-	});
-
+	// $('.delete').click(function(e) {
+	// 	e.preventDefault();		
+	// 	$.ajax({
+	// 		type: 'POST',
+	// 		url: $(this).attr("href"),
+	// 		dataType: 'html',
+	// 		success: function() {
+	// 			window.location.href = "/trails";
+	// 		}
+	// 	});
+	// 	return false;
+	// });
+	// 
+	// 
+	// $('#submit_point').click(function(e) {
+	// 	e.preventDefault();
+	// 	var dataString = $("add_point").serialize();
+	// 	$.ajax({
+	// 		type: 'POST',
+	// 		url: '/point/add',
+	// 		dataType: 'html',
+	// 		data: dataString,
+	// 		success: function() {
+	// 			window.location.href = "/trails";
+	// 		}
+	// 	});
+	// 	return true;
+	// });
 	
 	$('#submit_point').click(function(e) {
 		e.preventDefault();
-		var dataString = $("add_point").serialize();
-		$.ajax({
-			type: 'POST',
-			url: '/point/add',
-			dataType: 'html',
-			data: dataString,
-			success: function() {
+		alert("CLICKED");
+		var dataString = $("add_point").serialize();	
+		$.post("/point/add", { dataString },
+			function(data) {
+		  	alert("BACK!");
 				window.location.href = "/trails";
-			}
-		});
-		return true;
+		 	},"html"
+		);
 	});
 
 });
