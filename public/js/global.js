@@ -47,14 +47,14 @@ $(document).ready(function() {
   // preview pane setup end
 
 	// floating menu and preview pane
-	if ($('.preview-pane .preview').length>0) { previewYloc = parseInt($('.preview-pane .preview').css("top").substring(0,$('.preview').css("top").indexOf("px")), 10); }
+/*	if ($('.preview-pane .preview').length>0) { previewYloc = parseInt($('.preview-pane .preview').css("top").substring(0,$('.preview').css("top").indexOf("px")), 10); }
 	$(window).scroll(function () {
 		var offset = 0;
 		if ($('.preview-pane .preview').length>0) {
 			offset = previewYloc+$(document).scrollTop()+400>=$('.main-section').height()? offset=$('.main-section').height()-400 : previewYloc+$(document).scrollTop();
 			$('.preview-pane .preview').animate({top:offset},{duration:500,queue:false});
     }
-	});
+	});*/
 	
 	// Messages
 	$('.message').hide().append('<span class="close_me" title="Dismiss"></span>').fadeIn('slow');

@@ -1,20 +1,80 @@
-%html
+!!! 5
+%html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title Problems
-      %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
-  %body
-    %center
-      %br
-      %h1 Current Problems
-      %br
-      - @problems.each do |prob|
-        %img{:src => prob.pic.url}
-        %h2= "#{prob.title}"
-        = "#{prob.desc}"
-        %br
-        = "At #{prob.lat}, #{prob.long}"
-        %br
-        = "Submitted by #{prob.user}"
-        %br
-        %br
+      %title LC Trails - Admin
+      %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
+      %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
+      /[if lt IE 9]
+        %script{:src => "../js/html5.js"}
+        %script{:src => "../js/PIE.js"}
+      %script{:src => "../js/jquery.tools.min.js"}
+      %script{:src => "../js/jquery.ui.min.js"}
+      /[if lte IE 9]
+        %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
+        %script{:src => "../js/ie.js"}
+      %script{:src => "../js/global.js"}
+  %body 
+    #bg
+      .wrapper
+        #header
+          %h1
+            %img{:alt => "LC Trails", :src => "../images/icon.png"}/
+            %a{:href => "/"} LC Trails
+          %ul#nav
+            %li
+              %a{:href => "/dashboard"} Dashboard
+            %li
+              %a{:href => "/trails"} Trails
+              %ul
+                %li
+                  %a{:href => "/trails"} List trails
+                %li
+                  %a{:href => "/trails/add"} Add trail
+            %li
+              %a{:href => "/point"} Points
+              %ul
+                %li
+                  %a{:href => "/point/add"} Add point
+            %li
+              %a{:href => "/problems"} Problems
+            %li
+              %a{:href => "/users"} Users
+          %p.user
+            %a.logout{:href => "/"} Logout
+        / #header ends
+        .main-section
+          .block.small.left
+            .block_head
+              %h2 Problems 
+            .block_content
+              %ul#listing.list-view.clearfix
+                - @problems.each do |prob|
+                  %li.clearfix
+                    %a.button.button-gray{:href => "#"} 
+                      %span.bin
+                      Delete
+                    %a.button.button-gray{:href => "#"} 
+                      %span.pencil
+                      Edit
+                    %a.more{:href => "#point_#{prob.id}"} >
+                    %a.name{:href => "#"} #{prob.title}
+          .preview-pane.small.right.omega
+            .content
+              .message.info
+                %h3 Helpful Tips
+                %p Click on any problem in the list located on the left to get more information about it, including pictures and coordinates. 
+            .preview
+              .desc{:style => "display: block !important"}
+                %span.close
+                  %img{:src => "../images/cancel-white.png"}
+              - @problems.each do |prob|
+                .desc{:id => "prob_#{prob.id}"}
+                  %h1 #{prob.title}
+                  %span #{prob.lat}, #{prob.long}
+                  %p #{point.desc}
+                  %img{:src => prob.pic.url }
+        #footer
+          %p.right
+            powered by
+            %a{:href => "#"} Mobile Trail Mapping

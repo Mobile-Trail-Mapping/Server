@@ -39,6 +39,7 @@ post '/point/add/coords/?' do
 end
 
 get '/point/add/?' do
+  @categories = Category.all
   haml :add_point
 end
 
