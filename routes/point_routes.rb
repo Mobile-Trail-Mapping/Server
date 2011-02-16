@@ -38,6 +38,9 @@ post '/point/add/coords/?' do
   "#{point.id}"
 end
 
+get '/point/add/?' do
+  haml :add_point
+end
 
 # Add a new point with connections specified as point id's
 post '/point/add/?' do

@@ -67,4 +67,18 @@ $(document).ready(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
+	%('#submit_form').click(function(e) {
+		$.ajax({
+			type : 'POST',
+			url : '/point/add',
+			data: {
+				$('#add_point').serialize();
+			},
+			success : function(data){
+					alert("SENT")
+			}
+		});
+		return false;
+	});
+	
 });
