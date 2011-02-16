@@ -132,10 +132,11 @@ body.login .block .block_head h2{padding-top:12px;}
 .list-view > li p{color:#111;margin:0;}
 .list-view > li:last-child {border-bottom:0;}
 .list-view > li a.button{float:right;font-size:12px;font-weight:normal;margin-top:-2px;margin-right:5px;}
-/* root element for single scroll */
+	/* root element for single scroll */
 	.scroll {
 		position:relative;
 		overflow:hidden;
+		width: 394px;
 		height: 266px;
 		float:left;
 	}
@@ -151,7 +152,7 @@ body.login .block .block_head h2{padding-top:12px;}
 	.pics div {
 		float:left;
 		cursor:pointer;
-
+		width:400px !important;
 		height:300px;
 		margin:0px;
 	}
