@@ -1,7 +1,8 @@
 # Add a new trail
 post '/trail/add/?' do
   trail = Trail.first_or_create(:name => params[:trail])
-  "Added Trail #{trail.name}"
+
+  redirect '/trails'
 end
 
 # Return a list of trails as xml

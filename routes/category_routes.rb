@@ -1,7 +1,8 @@
 # Add a new category
 post '/category/add/?' do
   category = Category.first_or_create(:name => params[:category])
-  "Added Category #{category.name}"
+
+  redirect '/trails'
 end
 
 # Return list of all categories as xml
