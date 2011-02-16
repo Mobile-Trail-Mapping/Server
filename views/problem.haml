@@ -23,7 +23,7 @@
             %a{:href => "/"} LC Trails
           %ul#nav
             %li
-              %a{:href => "/dashboard"} Dashboard
+              %a{:href => "#"} Dashboard
             %li
               %a{:href => "/trails"} Trails
               %ul
@@ -55,7 +55,8 @@
                       %span.bin
                       Delete
                     %a.more{:href => "#prob_#{prob.id}"} >
-                    %a.name{:href => "#"} #{prob.title}
+                    %a.name{:href => "#"} 
+                      #{prob.title} %small #{prob.desc}
           .preview-pane.small.right.omega
             .content
               .message.info

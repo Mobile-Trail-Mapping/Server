@@ -102,8 +102,6 @@ post '/point/update/:id/?' do
   point.update(params)
 
   point.save
-  
-  redirect "/trails"
 end
 
 get '/point/update/:id/?' do
