@@ -23,8 +23,7 @@ $(document).ready(function() {
 	//$('a[rel*=facebox]').facebox()
 	
   // preview pane setup
-	var he = $('.main-section .block').height();
-	$('.preview-pane .preview').css("height",he+"px");
+	$('.preview-pane .preview').css("height",$('.main-section .block').height()-40+"px");
   $('.more').click(function(){
 		var url = $(this).attr('href');
 		if (!$(this).parents('li').hasClass('current')) {

@@ -52,9 +52,10 @@
             .block_content
               %ul
                 - @trail.points.each do |point| #- point.photos.each do |photo|
-                  %li
-                    %h2 
-                      %a.more{:href=>"#"} #{point.title}
+                  - if point.category.name != "Trail"
+                    %li
+                      %h2 
+                        %a.more{:href=>"#"} #{point.title}
                       /%img{:alt => "#{point.title}", :src => "#{photo.pic.url}"}
                       /  %ul
                       /    %li.view
