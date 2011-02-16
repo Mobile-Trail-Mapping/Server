@@ -28,24 +28,20 @@
               %a{:href => "/trails"} Trails
               %ul
                 %li
-                  %a{:href => "#"} List trails
+                  %a{:href => "/trails"} List trails
                 %li
-                  %a{:href => "#"} Add trail
+                  %a{:href => "/trails/add"} Add trail
             %li
-              %a{:href => "#"} Points
+              %a{:href => "/point"} Points
               %ul
                 %li
-                  %a{:href => "#"} List points
-                %li
-                  %a{:href => "#"} Add point
+                  %a{:href => "/point/add"} Add point
             %li
-              %a{:href => "#"} Problems
-            %li
-              %a{:href => "#"} Users
+              %a{:href => "/users"} Users
           %p.user
             Hello,
             %a{:href => "#"} user
-            %a{:href => "index.html", :style => "padding-left: 20px;"} Logout
+            %a.logout{:href => "/"} Logout
         / #header ends
         .main-section
           .block.small.left
