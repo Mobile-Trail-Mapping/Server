@@ -16,3 +16,7 @@ get '/category/delete/?' do
   category = Category.first(:name => params[:category])
   category.destroy unless category.nil?
 end
+
+get '/category/add/?' do
+  haml :add_category
+end

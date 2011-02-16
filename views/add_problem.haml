@@ -1,16 +1,61 @@
-%form{:action => '/problem/add', :enctype => 'multipart/form-data', :method => 'POST'}
-  %input{:type => 'file', :name => 'file'}
-    %br
-  %input{:type => 'string', :name => 'user'}
-    %br
-  %input{:type => 'string', :name => 'pwhash'}
-    %br
-  %input{:type => 'string', :name => 'lat'}
-    %br
-  %input{:type => 'string', :name => 'long'}
-    %br
-  %input{:type => 'string', :name => 'desc'}
-    %br
-  %input{:type => 'string', :name => 'title'}
-    %br
-  %input{:type => 'submit'}
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
+      %title LC Trails - Admin
+      %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
+      %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
+      /[if lt IE 9]
+        %script{:src => "../js/html5.js"}
+        %script{:src => "../js/PIE.js"}
+      %script{:src => "../js/jquery.tools.min.js"}
+      %script{:src => "../js/jquery.ui.min.js"}
+      /[if lte IE 9]
+        %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
+        %script{:src => "../js/ie.js"}
+      %script{:src => "../js/global.js"}
+  %body 
+    #bg
+      .wrapper
+        #header
+          %h1
+            %img{:alt => "LC Trails", :src => "../images/icon.png"}/
+            %a{:href => "/"} LC Trails
+          %ul#nav
+            %li
+              %a{:href => "/dashboard"} Dashboard
+            %li
+              %a{:href => "/trails"} Trails
+              %ul
+                %li
+                  %a{:href => "/trails"} List trails
+                %li
+                  %a{:href => "/trails/add"} Add trail
+            %li
+              %a{:href => "/point"} Points
+              %ul
+                %li
+                  %a{:href => "/point/add"} Add point
+            %li
+              %a{:href => "/problems"} Problems
+            %li
+              %a{:href => "/users"} Users
+          %p.user
+            %a.logout{:href => "/"} Logout
+        / #header ends
+        .main-section
+          .block
+            .block_head
+              %h2 Add Problem
+            .block_content
+              %form{:action => '/problem/add', :enctype => 'multipart/form-data', :method => 'POST'}
+                %p
+                  %label Condition:
+                  %br/
+                  %input.text{:type => 'string', :name => 'condition'}
+                %p
+                  %button.button.button-gray{:type => "submit"} Submit
+        #footer
+          %p.right
+            powered by
+            %a{:href => "http://github.com/Mobile-Trail-Mapping/"} Mobile Trail Mapping
