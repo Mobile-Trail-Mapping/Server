@@ -100,12 +100,13 @@ $(document).ready(function() {
 		e.preventDefault();
 		alert("CLICKED");
 		var dataString = $("#add_point").serialize();	
-		$.post("/point/add", { dataString },
+		$.post("/point/add", dataString,
 			function(data) {
 		  	alert("BACK!");
 				window.location.href = "/trails";
 		 	},"html"
 		);
+		return false;
 	});
 
 });
