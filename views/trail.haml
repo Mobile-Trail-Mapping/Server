@@ -50,12 +50,12 @@
             .block_head
               %h2 #{@trail.name.capitalize} 
             .block_content
-              %ul
+              %ul#contacts.listing.list-view.clearfix
                 - @trail.points.each do |point| #- point.photos.each do |photo|
                   - if point.category.name != "Trail"
-                    %li
-                      %h2 
-                        %a.more{:href=>"#"} #{point.title}
+                    %li.contact.clearfix
+                      %a.more{:href => "janeroe.html"} »
+                      %a.name{:href => "#"} #{point.title}
                       /%img{:alt => "#{point.title}", :src => "#{photo.pic.url}"}
                       /  %ul
                       /    %li.view
