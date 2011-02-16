@@ -51,7 +51,7 @@
           .block_content
             - @photos.keys.each do |trail|
               %h3
-                %a{:herf => "/trails/#{trail}"}
+                %a{:href => "/trails/#{trail}"}
                   = "#{trail.capitalize}"
               - @photos[trail].each do |image|
                 %img{:src => "#{image.pic.url}"}
