@@ -70,7 +70,8 @@ $(document).ready(function() {
 	$('.delete').click(function(e) {
 		e.preventDefault();
 		$.post($(this).attr("href"), function (data) {
-			alert("Success!")
+			alert("Success!");
+			window.location.reload(true);
 		}, "html"
 		);
 		return false;
