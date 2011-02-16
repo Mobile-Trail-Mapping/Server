@@ -45,9 +45,6 @@ $(document).ready(function() {
 		return false;
   });
 
-	$(".scroll").scrollable({ circular: true }).click(function() {
-		$(this).data("scrollable").next();		
-	});
   // preview pane setup end
 
 	// floating menu and preview pane
@@ -82,4 +79,11 @@ $(document).ready(function() {
 		
 	});
 
+});
+
+$(function() { 
+// enable circular scrollables with a click handler
+$(".scroll").scrollable({ circular: false }).click(function() {
+	$(this).data("scrollable").next();		
+});
 });
