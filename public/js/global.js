@@ -96,8 +96,7 @@ $(document).ready(function() {
 	// 	return true;
 	// });
 	
-	$('#submit_point').click(function(e) {
-		e.preventDefault();
+	$('#submit_point').click(function() {
 		alert("CLICKED");
 		var dataString = $("add_point").serialize();	
 		$.post("/point/add", { dataString },
