@@ -21,8 +21,11 @@ get '/trails/?' do
   @photos = Hash.new
   @trails.each { |trail| @photos[trail.name] = [] }
   @trails.points.each do |point|
-    point.photos.each { |photo| @photos[point.trail.name] << photo }
+    point.photos.each do |photo|
+      @photos[point.trail.name] << photo
+    end
   end
+
   haml :trails
 end
 

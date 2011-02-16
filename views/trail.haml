@@ -73,10 +73,7 @@
                   %span #{point.lat}, #{point.long}
                   %p #{point.desc}
                   .image_list
-                    - @photos.each do |trail, images|
-                      - images.each do |image|
-                        %img{src=> "#{image.pic.url}"}
-                    end
+
         #footer
           %p.right
             powered by
