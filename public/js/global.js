@@ -29,7 +29,7 @@ $(document).ready(function() {
 		if (!$(this).parents('li').hasClass('current')) {
 			$('.preview-pane .preview').animate({left: "-475px"}, 300, function(){
 				$(this).find(".desc").hide();
-				$(this).animate({left: "-26px"}, 300);
+				$(this).animate({left: "-32px"}, 300);
 				$(url).show();
 			});
 		} else {
