@@ -55,7 +55,7 @@ $(document).ready(function() {
 			$('.preview-pane .preview').animate({top:offset},{duration:500,queue:false});
     }
 	});*/
-	
+		
 	// Messages
 	$('.message').hide().append('<span class="close_me" title="Dismiss"></span>').fadeIn('slow');
 	$('.message .close').hover(
@@ -65,6 +65,18 @@ $(document).ready(function() {
 		
 	$('.close_me').click(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
+	});
+	
+	$('.delete').click(function(e) {
+		e.preventDefault();
+		alert("YEP");
+		$.post($(this).attr("href"),
+			function(data) {
+				alert("HOPE");
+				window.location.href = "/trails";
+		 	},"html"
+		);
+		return false;
 	});
 
 	$('#submit_point').click(function(e) {
