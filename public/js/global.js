@@ -29,7 +29,7 @@ $(document).ready(function() {
 		if (!$(this).parents('li').hasClass('current')) {
 			$('.preview-pane .preview').animate({left: "-475px"}, 300, function(){
 				$(this).find(".desc").hide();
-				$(this).animate({left: "-27px"}, 300);
+				$(this).animate({left: "-26px"}, 300);
 				$(url).show();
 			});
 		} else {
@@ -44,6 +44,8 @@ $(document).ready(function() {
 		$('.list-view li').removeClass('current');
 		return false;
   });
+
+	$('.image_list').orbit();
   // preview pane setup end
 
 	// floating menu and preview pane
