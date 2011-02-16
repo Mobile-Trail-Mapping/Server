@@ -51,7 +51,7 @@
               %ul#listing.list-view.clearfix
                 - @problems.each do |prob|
                   %li.clearfix
-                    %a.button.button-gray.delete{:href => "/point/delete/#{prob.id}"} 
+                    %a.button.button-gray.delete{:href => "/problem/delete/#{prob.id}"} 
                       %span.bin
                       Delete
                     %a.more{:href => "#prob_#{prob.id}"} >
