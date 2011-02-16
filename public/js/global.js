@@ -75,7 +75,7 @@ $(document).ready(function() {
 				$('#add_point').serialize();
 			},
 			success : function(data){
-					alert("SENT")
+					window.location.replace("/trails");
 			}
 		});
 		return false;
