@@ -81,7 +81,6 @@ get '/point/delete/:id/?' do
   redirect "/trails"
 end
 
-# Pete is awesome
 post '/point/delete/:id/?' do
   point = Point.all(:id => params[:id])
   point.destroy unless point.nil?

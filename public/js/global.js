@@ -84,4 +84,14 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('#submit_edit').click(function(e) {
+		e.preventDefault();
+		var dataString = $("#edit_point").serialize();	
+		$.post("/point/update", dataString,
+			function(data) {
+		 	},"html"
+		);
+		return false;
+	});
+
 });
