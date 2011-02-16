@@ -45,7 +45,7 @@ $(document).ready(function() {
 		return false;
   });
 
-	$('.image_list').orbit();
+	$('.image-list').orbit();
   // preview pane setup end
 
 	// floating menu and preview pane
