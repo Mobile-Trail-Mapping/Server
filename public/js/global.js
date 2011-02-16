@@ -73,12 +73,8 @@ $(document).ready(function() {
 			type: 'POST',
 			url: '/point/add',
 			dataType: 'html',
-			data: dataString,
-			success: function(data) {
-				window.location.href = "/trails";
-			}
+			data: dataString
 		});
-		return false;
 	});
 
 });
