@@ -86,7 +86,7 @@
                   %p #{point.desc}
                   .slideshow
                     - point.photos.each do |photo|
-                      %img{:width => "200", :height => "200", :src => photo.pic.url}
+                      %img{:src => photo.pic.url}
         #footer
           %p.right
             powered by
