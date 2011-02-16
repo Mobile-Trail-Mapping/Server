@@ -1,0 +1,35 @@
+%html
+  %head
+    %title Edit Point
+  %body
+    %form{:id=> 'add_point', :enctype => 'multipart/form-data', :method => 'POST'}
+      %p
+        %label Title:
+        %br/
+        %input.text{:type => 'string', :name => 'title', :value => @point.title}
+      %p
+        %label Lat:
+        %br/
+        %input.text{:type => 'string', :name => 'lat', :value => @point.lat.to_s}
+      %p
+        %label Long:
+        %br/
+        %input.text{:type => 'string', :name => 'long', :value => @point.long.to_s}
+      %p
+        %label Category:
+        %br/
+        %input.text{:type => 'string', :name => 'category', :value => @point.category.name}
+      %p
+        %label Description:
+        %br/
+        %input.text{:type => 'string', :name => 'desc', :value => @point.desc}
+      %p
+        %label Condition:
+        %br/
+        %input.text{:type => 'string', :name => 'condition', :value => @point.condition.desc}
+      %p
+        %label Trail:
+        %br/
+        %input.text{:type => 'string', :name => 'trail', :value => @point.trail.name}
+      %p
+        %button.button.button-gray{:id => "submit_point", :type => "submit"} Submit
