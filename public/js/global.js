@@ -90,11 +90,10 @@ $(document).ready(function() {
 
 	$('#submit_edit').click(function(e) {
 		e.preventDefault();
-		alert("CRICKED");
 		var dataString = $("#edit_point").serialize();	
 		$.post("/point/update/"+$(this).attr("href"), dataString,
 			function(data) {
-				alert("WE'RE BACK");
+					window.location.reload(true);
 		 	},"html"
 		);
 		return false;
