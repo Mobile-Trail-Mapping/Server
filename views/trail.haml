@@ -18,7 +18,10 @@
       :javascript
         $(document).ready(function() {
             $('.slideshow').cycle({
-        		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+      		    fx:     'fade', 
+              speed:  300 , 
+              next:   '#s1', 
+              timeout: 0 
         	});
         });
   %body 
