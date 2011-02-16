@@ -49,10 +49,35 @@
               %h2 Add Problem
             .block_content
               %form{:action => '/problem/add', :enctype => 'multipart/form-data', :method => 'POST'}
+              %form{:action => '/problem/add', :enctype => 'multipart/form-data', :method => 'POST'}
                 %p
-                  %label Condition:
+                  %label Title:
                   %br/
-                  %input.text{:type => 'string', :name => 'condition'}
+                  %input.text{:type => 'string', :name => 'title'}
+                %p
+                  %label Picture:
+                  %br/
+                  %input.text{:type => 'file', :name => 'file'}
+                %p
+                  %label User:
+                  %br/
+                  %input.text{:type => 'string', :name => 'user'}
+                %p
+                  %label Password:
+                  %br/
+                  %input.text{:type => 'password', :name => 'pwhash'}
+                %p
+                  %label Lat:
+                  %br/
+                  %input.text{:type => 'string', :name => 'lat'}
+                %p
+                  %label Long:
+                  %br/
+                  %input.text{:type => 'string', :name => 'long'}
+                %p
+                  %label Description:
+                  %br/
+                  %input.text{:type => 'string', :name => 'desc'}
                 %p
                   %button.button.button-gray{:type => "submit"} Submit
         #footer
