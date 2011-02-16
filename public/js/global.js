@@ -66,16 +66,6 @@ $(document).ready(function() {
 	$('.close_me').click(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
-	
-	$('.delete').click(function(e) {
-		e.preventDefault();
-		$.post($(this).attr("href"),
-			function(data) {
-				window.location.href = "/trails";
-		 	},"html"
-		);
-		return false;
-	});
 
 	$('#submit_point').click(function(e) {
 		e.preventDefault();
