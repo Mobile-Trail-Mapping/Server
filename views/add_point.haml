@@ -64,7 +64,8 @@
                 %p
                   %label Category:
                   %br/
-                  %input.text{:type => 'string', :name => 'category'}
+                  - @categories.each do |category|
+                    %h2 #{category.name}
                 %p
                   %label Description:
                   %br/
