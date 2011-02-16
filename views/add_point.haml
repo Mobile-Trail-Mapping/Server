@@ -64,8 +64,9 @@
                 %p
                   %label Category:
                   %br/
-                  - @categories.each do |category|
-                    %h2 #{category.name}
+                  %select{:name => 'category'}
+                    - @categories.each do |category|
+                      %option{:value => category.name} #{category.name}
                 %p
                   %label Description:
                   %br/
