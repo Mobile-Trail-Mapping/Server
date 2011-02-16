@@ -2,48 +2,46 @@
 %html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title LC Admin - #{@trails.name.capitalize}
-      %link{:href => "css/reset.css", :media => "screen", :rel => "stylesheet"}/
-      %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
+      %title LC Trails - Admin
+      %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
+      %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
       /[if lt IE 9]
-        %script{:src => "js/html5.js"}
-        %script{:src => "js/PIE.js"}
-      %script{:src => "js/jquery.tools.min.js"}
-      %script{:src => "js/jquery.ui.min.js"}
+        %script{:src => "../js/html5.js"}
+        %script{:src => "../js/PIE.js"}
+      %script{:src => "../js/jquery.tools.min.js"}
+      %script{:src => "../js/jquery.ui.min.js"}
       /[if lte IE 9]
-        %link{:href => "css/ie.css", :media => "screen", :rel => "stylesheet"}/
-        %script{:src => "js/ie.js"}
-      %script{:src => "js/global.js"}
+        %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
+        %script{:src => "../js/ie.js"}
+      %script{:src => "../js/global.js"}
   %body 
     #bg
       .wrapper
         #header
           %h1
-            %img{:alt => "LC Trails", :src => "images/icon.png"}/
-            %a{:href => "#"} LC Trails
+            %img{:alt => "LC Trails", :src => "../images/icon.png"}/
+            %a{:href => "/"} LC Trails
           %ul#nav
             %li
-              %a{:href => "#"} Dashboard
+              %a{:href => "/dashboard"} Dashboard
             %li
-              %a{:href => "#"} Trails
+              %a{:href => "/trails"} Trails
               %ul
                 %li
-                  %a{:href => "#"} List trails
+                  %a{:href => "/trails"} List trails
                 %li
-                  %a{:href => "#"} Add trail
+                  %a{:href => "/trails/add"} Add trail
             %li
-              %a{:href => "#"} Points
+              %a{:href => "/point"} Points
               %ul
                 %li
-                  %a{:href => "#"} List points
-                %li
-                  %a{:href => "#"} Add point
+                  %a{:href => "/point/add"} Add point
             %li
-              %a{:href => "#"} Users
+              %a{:href => "/problems"} Problems
+            %li
+              %a{:href => "/users"} Users
           %p.user
-            Hello,
-            %a{:href => "#"} user
-            %a{:href => "index.html", :style => "padding-left: 20px;"} Logout
+            %a.logout{:href => "/"} Logout
         / #header ends
         .block
           .block_head
@@ -53,8 +51,8 @@
               %h3
                 %a{:href => "/trails/#{trail}"}
                   = "#{trail.capitalize}"
-              - @photos[trail].each do |image|
-                %img{:src => "#{image.pic.url}"}
+              /- @photos[trail].each do |image|
+              /  %img{:src => "#{image.pic.url}"}
 
         / .block.small.right ends
         #footer

@@ -94,10 +94,11 @@ post '/point/update/?' do
   point.update(params)
 
   point.save
+  
+  redirect "/trails"
 end
 
-get '/point/update/?' do
+get '/point/update/:id/?' do
   @point = Point.get(params[:id].to_i)
-
   haml :edit_point
 end
