@@ -44,7 +44,6 @@ $(document).ready(function() {
 		$('.list-view li').removeClass('current');
 		return false;
   });
-
   // preview pane setup end
 
 	// floating menu and preview pane
@@ -79,11 +78,4 @@ $(document).ready(function() {
 		
 	});
 
-});
-
-$(function() { 
-// enable circular scrollables with a click handler
-$(".scroll").scrollable({ circular: true }).click(function() {
-	$(this).data("scrollable").next();		
-});
 });
