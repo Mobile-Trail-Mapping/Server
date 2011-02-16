@@ -20,12 +20,12 @@
         #header
           %h1
             %img{:alt => "LC Trails", :src => "../images/icon.png"}/
-            %a{:href => "#"} LC Trails
+            %a{:href => "/"} LC Trails
           %ul#nav
             %li
-              %a{:href => "#"} Dashboard
+              %a{:href => "/dashboard"} Dashboard
             %li
-              %a{:href => "#"} Trails
+              %a{:href => "/trails"} Trails
               %ul
                 %li
                   %a{:href => "#"} List trails
@@ -56,7 +56,7 @@
                 - @trail.points.each do |point| #- point.photos.each do |photo|
                   - if point.category.name != "Trail"
                     %li.contact.clearfix
-                      %a.more{:href => "#point_#{point.id}"} »
+                      %a.more{:href => "#point_#{point.id}"} >
                       %a.name{:href => "#"} #{point.title}
           .preview-pane.small.right.omega
             .content
@@ -72,6 +72,11 @@
                   %h1 #{point.title}
                   %span #{point.lat}, #{point.long}
                   %p #{point.desc}
+                  .image_list
+                    - @photos.each do |trail, images|
+                      - images.each do |image|
+                        %img{src=> "#{image.pic.url}"}
+                    end
         #footer
           %p.right
             powered by
