@@ -62,7 +62,7 @@
                 - @trail.points.each do |point| #- point.photos.each do |photo|
                   - if point.category.name != "Trail"
                     %li.clearfix
-                      %a.button.button-gray.delete{:href => "/point/delete/#{point.id}", :id => point.id} 
+                      %a.button.button-gray.delete{:href => "/point/delete/#{point.id}"} 
                         %span.bin
                         Delete
                       %a.button.button-gray{:href => "#"} 
