@@ -48,10 +48,16 @@
             .block_head
               %h2 #{@trail.name.capitalize} 
             .block_content
-              %ul#contacts.listing.list-view.clearfix
+              %ul#listing.list-view.clearfix
                 - @trail.points.each do |point| #- point.photos.each do |photo|
                   - if point.category.name != "Trail"
-                    %li.contact.clearfix
+                    %li.clearfix
+                      %a.button.button-gray{:href => "#"} 
+                        %span.bin
+                        Delete
+                      %a.button.button-gray{:href => "#"} 
+                        %span.pencil
+                        Edit
                       %a.more{:href => "#point_#{point.id}"} >
                       %a.name{:href => "#"} #{point.title}
           .preview-pane.small.right.omega
@@ -68,8 +74,6 @@
                   %h1 #{point.title}
                   %span #{point.lat}, #{point.long}
                   %p #{point.desc}
-                  .image_list
-
         #footer
           %p.right
             powered by

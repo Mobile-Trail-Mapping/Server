@@ -131,3 +131,4 @@ body.login .block .block_head h2{padding-top:12px;}
 .list-view > li a{font-weight:bold;font-size:16px;}
 .list-view > li p{color:#111;margin:0;}
 .list-view > li:last-child {border-bottom:0;}
+.list-view > li a.button{float:right;font-size:12px;font-weight:normal;margin-top:-2px;margin-right:5px;}
