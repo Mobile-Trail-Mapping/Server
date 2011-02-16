@@ -9,7 +9,7 @@ post '/problem/add/?' do
 
   Problem.create(:desc => desc, :user => user, :pic => image, :title => title, :lat => lat, :long => long)
 
-  redirect '/trails'
+  redirect '/problems'
 end
 
 get '/problem/add/?' do

@@ -48,13 +48,38 @@
             .block_head
               %h2 Add Point
             .block_content
-              %form{:action => '/point/add', :enctype => 'multipart/form-data', :method => 'POST'}
+              %form{:id=> 'add_point'}
+                %p
+                  %label Title:
+                  %br/
+                  %input.text{:type => 'string', :name => 'title'}
+                %p
+                  %label Lat:
+                  %br/
+                  %input.text{:type => 'string', :name => 'lat'}
+                %p
+                  %label Long:
+                  %br/
+                  %input.text{:type => 'string', :name => 'long'}
+                %p
+                  %label Category:
+                  %br/
+                  %input.text{:type => 'string', :name => 'category'}
+                %p
+                  %label Description:
+                  %br/
+                  %input.text{:type => 'string', :name => 'desc'}
                 %p
                   %label Condition:
                   %br/
                   %input.text{:type => 'string', :name => 'condition'}
                 %p
-                  %button.button.button-gray{:type => "submit"} Submit
+                  %label Trail:
+                  %br/
+                  %input.text{:type => 'string', :name => 'trail'}
+                %input.text{:type => 'hidden', :name => 'connections'}
+                %p
+                  %button.button.button-gray{:id => "submit_point", :type => "submit"} Submit
         #footer
           %p.right
             powered by
