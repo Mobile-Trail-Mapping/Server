@@ -95,3 +95,9 @@ post '/point/update/?' do
 
   point.save
 end
+
+get '/point/update/?' do
+  @point = Point.get(params[:id].to_i)
+
+  haml :edit_point
+end
