@@ -56,18 +56,14 @@
                     %li.contact.clearfix
                       %a.more{:href => "janeroe.html"} »
                       %a.name{:href => "#"} #{point.title}
-                      /%img{:alt => "#{point.title}", :src => "#{photo.pic.url}"}
-                      /  %ul
-                      /    %li.view
-                      /      %a{:href => "#{photo.pic.url}", :rel => "facebox"} View
-                      /    %li.edit
-                      /      %a{:href => "#"} Edit
           .preview-pane.small.right.omega
             .content
               .message.info
                 %h3 Helpful Tips
                 %p Click 
             .preview
+          - @trail.points.each do |point|
+            
         #footer
           %p.right
             powered by
