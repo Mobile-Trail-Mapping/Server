@@ -83,7 +83,7 @@ $(document).ready(function() {
 
 $(function() { 
 // enable circular scrollables with a click handler
-$(".scroll").scrollable({ circular: false }).click(function() {
+$(".scroll").scrollable({ circular: true }).click(function() {
 	$(this).data("scrollable").next();		
 });
 });

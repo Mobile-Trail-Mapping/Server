@@ -74,10 +74,8 @@
                   %h1 #{point.title}
                   %span #{point.lat}, #{point.long}
                   %p #{point.desc}
-                  .scroll
-                    .pics
-                      - point.photos.each do |photo|
-                        .img{:style => "background:url(#{photo.pic.url}) no-repeat"}
+                  - point.photos.each do |photo|
+                    %img{:src => "#{photo.pic.url}"}
         #footer
           %p.right
             powered by
