@@ -8,14 +8,14 @@ end
 
 # Add a new point with connections specified as lat and long
 post '/point/add/coords/?' do
-  params[:desc] ||= ""
-  params[:title] ||= ""
-  params[:category] ||= "Trail"
-  params[:trail] ||= "Misc"
+  params[:desc] = " " if params[:desc] == ""
+  params[:title] = " " if params[:title] == ""
+  params[:category] = "Trail" if params[:category] == ""
+  params[:trail] = "Misc" if params[:trail] == ""
+  params[:condition] ||= "Open"
+  params[:condition] = "Open" if params[:condition] == ""
 
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
-
-  params[:condition] ||= "Open"
 
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
@@ -41,14 +41,15 @@ end
 
 # Add a new point with connections specified as point id's
 post '/point/add/?' do
-  params[:desc] ||= " "
-  params[:title] ||= " "
-  params[:category] ||= "Trail"
-  params[:trail] ||= "Misc"
+  params[:desc] = " " if params[:desc] == ""
+  params[:title] = " " if params[:title] == ""
+  params[:category] = "Trail" if params[:category] == ""
+  params[:trail] = "Misc" if params[:trail] == ""
+  params[:condition] ||= "Open"
+  params[:condition] = "Open" if params[:condition] == ""
 
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
-  params[:condition] ||= "Open"
 
   #not sure why you have to set these to variables first, but you do
   cat = Category.first_or_create(:name => params[:category])
