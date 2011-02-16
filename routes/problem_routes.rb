@@ -28,7 +28,14 @@ get '/problems/?' do
 end
 
 # Delete a problem
-get '/problem/delete/?' do
+get '/problem/delete/id:/?' do
   problem = Problem.all(:id => parmas[:id])
   problem.destroy unless problem.nil?
+  redirect "/problems/"
+end
+
+post '/problem/delete/id:/?' do
+  problem = Problem.all(:id => parmas[:id])
+  problem.destroy unless problem.nil?
+  redirect "/problems/"
 end

@@ -69,11 +69,7 @@ $(document).ready(function() {
 	
 	$('.delete').click(function(e) {
 		e.preventDefault();
-		$.post($(this).attr("href"),
-			function(data) {
-				window.location.href = "/trails";
-		 	},"html"
-		);
+		$.post($(this).attr("href"));
 		return false;
 	});
 
