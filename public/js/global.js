@@ -67,20 +67,15 @@ $(document).ready(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
-	$('#submit_form').click(function(e) {
-		e.preventDefault();
+	$('#submit_point').click(function() {
+		var dataString = $("add_point").serialize();
 		$.ajax({
-			type : 'POST',
-			url : '/point/add',
+			type: 'POST',
+			url: '/point/add',
 			dataType: 'html',
-			data: {
-				$('#add_point').serialize();
-			},
-			success : function(data){
-					window.location.replace("/trails");
-			}
+			data: dataString
 		});
-		return false;
+		
 	});
 	
 });
