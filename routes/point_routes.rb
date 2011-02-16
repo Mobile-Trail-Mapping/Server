@@ -51,6 +51,8 @@ post '/point/add/?' do
   params[:condition] ||= "Open"
   params[:condition] = "Open" if params[:condition] == ""
 
+  pp params
+
   point = Point.first_or_create(:lat => params[:lat], :long => params[:long], :desc => params[:desc], :title => params[:title])
 
 
