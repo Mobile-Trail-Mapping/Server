@@ -69,10 +69,8 @@ $(document).ready(function() {
 	
 	$('.delete').click(function(e) {
 		e.preventDefault();
-		alert("YEP");
 		$.post($(this).attr("href"),
 			function(data) {
-				alert("HOPE");
 				window.location.href = "/trails";
 		 	},"html"
 		);
