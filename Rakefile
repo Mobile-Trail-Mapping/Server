@@ -11,6 +11,7 @@ task :push do
   puts '* Pushing to Github'
   puts `git add .`
   puts `git commit -m "#{ENV['m']}" .`
+  puts `git push origin test`
 end
 
 desc "Deploy to Heroku."
