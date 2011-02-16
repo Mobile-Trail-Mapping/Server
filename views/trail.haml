@@ -2,7 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title LC Admin - #{@trail.name.capitalize} Points
+      %title LC Trails - Admin
       %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
       %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
       /[if lt IE 9]
@@ -37,10 +37,10 @@
                 %li
                   %a{:href => "/point/add"} Add point
             %li
+              %a{:href => "/problems"} Problems
+            %li
               %a{:href => "/users"} Users
           %p.user
-            Hello,
-            %a{:href => "#"} user
             %a.logout{:href => "/"} Logout
         / #header ends
         .main-section
