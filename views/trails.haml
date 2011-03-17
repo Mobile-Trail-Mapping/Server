@@ -1,4 +1,4 @@
-= haml: header.haml
+= haml :header
   .block
     .block_head
       %h2 Trails
@@ -9,4 +9,4 @@
             = "#{trail.capitalize}"
         /- @photos[trail].each do |image|
         /  %img{:src => "#{image.pic.url}"}
-= haml: footer.haml
+= haml :footer
