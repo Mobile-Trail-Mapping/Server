@@ -11,6 +11,9 @@ configure do
   #create a default user so we're not locked out
   User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'))
   Trail.first_or_create(:name => 'misc')
+  
+  #default server dir
+  @server = Dir.pwd
 end
 
 before do
