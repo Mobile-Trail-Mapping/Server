@@ -13,7 +13,7 @@ configure do
   Trail.first_or_create(:name => 'misc')
   
   #default server dir
-  @server = Dir.pwd
+  @serverdir = Dir.pwd
 end
 
 before do
