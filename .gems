@@ -1,4 +1,4 @@
-sinatra --version 1.0
+sinatra --version 1.2
 libxml-ruby
 datamapper
 dm-migrations
