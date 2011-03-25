@@ -36,7 +36,7 @@ ul li{list-style-type:none;}
 .block .block_head ul li.nobg{background:none;}
 #header #nav li.nobg{background:none;}
 /* Blocks */
-.block{padding-bottom:5px;margin-bottom:25px;clear:both;background:#fff;border:1px solid #f1f1f1;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
+.block{padding-bottom:5px;margin-bottom:25px;clear:both;background:#fff;border:1px solid #ccc;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
 /* Block head */
 .block .block_head{height:44px;overflow:hidden;padding-left:15px;padding-right:15px;background:#eee;background:-moz-linear-gradient(top,#fafafa,#e1e1e1);background:-webkit-gradient(linear,left top,left bottom,from(#fafafa),to(#e1e1e1));-pie-background:linear-gradient(top,#fafafa,#e1e1e1);border-bottom:1px solid #999;-moz-border-radius:5px 5px 0 0;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-khtml-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;-moz-box-shadow:0 1px 1px #bbb;-moz-box-shadow:0 1px 1px rgba(0,0,0,0.2);-webkit-box-shadow:0 1px 1px #bbb;-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.2);-khtml-box-shadow:0 1px 1px #bbb;-khtml-box-shadow:0 1px 1px rgba(0,0,0,0.2);-pie-box-shadow:none;box-shadow:0 1px 1px rgba(0,0,0,0.2);}
 .block .block_head h2{padding-top:12px;font-weight:800;font-size:18px;color:#555;text-shadow:1px 1px 0 #fff;}
