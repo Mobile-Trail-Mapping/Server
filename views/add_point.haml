@@ -1,88 +1,39 @@
-!!! 5
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title LC Trails - Admin
-      %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
-      %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
-      /[if lt IE 9]
-        %script{:src => "../js/html5.js"}
-        %script{:src => "../js/PIE.js"}
-      %script{:src => "../js/jquery.tools.min.js"}
-      %script{:src => "../js/jquery.ui.min.js"}
-      /[if lte IE 9]
-        %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
-        %script{:src => "../js/ie.js"}
-      %script{:src => "../js/global.js"}
-  %body 
-    #bg
-      .wrapper
-        #header
-          %h1
-            %img{:alt => "LC Trails", :src => "../images/icon.png"}/
-            %a{:href => "/"} LC Trails
-          %ul#nav
-            %li
-              %a{:href => "#"} Dashboard
-            %li
-              %a{:href => "/trails"} Trails
-              %ul
-                %li
-                  %a{:href => "/trails"} List trails
-                %li
-                  %a{:href => "/trail/add"} Add trail
-            %li
-              %a{:href => "#"} Points
-              %ul
-                %li
-                  %a{:href => "/point/add"} Add point
-            %li
-              %a{:href => "/problems"} Problems
-            %li
-              %a{:href => "/users"} Users
-          %p.user
-            %a.logout{:href => "/"} Logout
-        / #header ends
-        .main-section
-          .block
-            .block_head
-              %h2 Add Point
-            .block_content
-              %form{:id=> 'add_point'}
-                %p
-                  %label Title:
-                  %br/
-                  %input.text{:type => 'string', :name => 'title'}
-                %p
-                  %label Lat:
-                  %br/
-                  %input.text{:type => 'string', :name => 'lat'}
-                %p
-                  %label Long:
-                  %br/
-                  %input.text{:type => 'string', :name => 'long'}
-                %p
-                  %label Category:
-                  %br/
-                  %select{:name => 'category'}
-                    - @categories.each do |category|
-                      %option{:value => category.name} #{category.name}
-                %p
-                  %label Description:
-                  %br/
-                  %input.text{:type => 'string', :name => 'desc'}
-                %p
-                  %label Condition:
-                  %br/
-                  %input.text{:type => 'string', :name => 'condition'}
-                %p
-                  %label Trail:
-                  %br/
-                  %input.text{:type => 'string', :name => 'trail'}
-                %input.text{:type => 'hidden', :name => 'connections'}
-                %p
-                  %a.button.button-gray{:id => "submit_point", :href => "#"} Submit
-        #footer
-          %p.right
-            powered by
-            %a{:href => "http://github.com/Mobile-Trail-Mapping/"} Mobile Trail Mapping
+.main-section
+  .block
+    .block_head
+      %h2 Add Point
+    .block_content
+      %form{:id=> 'add_point'}
+        %p
+          %label Title:
+          %br/
+          %input.text{:type => 'string', :name => 'title'}
+        %p
+          %label Lat:
+          %br/
+          %input.text{:type => 'string', :name => 'lat'}
+        %p
+          %label Long:
+          %br/
+          %input.text{:type => 'string', :name => 'long'}
+        %p
+          %label Category:
+          %br/
+          %select{:name => 'category'}
+            - @categories.each do |category|
+              %option{:value => category.name} #{category.name}
+        %p
+          %label Description:
+          %br/
+          %input.text{:type => 'string', :name => 'desc'}
+        %p
+          %label Condition:
+          %br/
+          %input.text{:type => 'string', :name => 'condition'}
+        %p
+          %label Trail:
+          %br/
+          %input.text{:type => 'string', :name => 'trail'}
+        %input.text{:type => 'hidden', :name => 'connections'}
+        %p
+          %a.button.button-gray{:id => "submit_point", :href => "#"} Submit
