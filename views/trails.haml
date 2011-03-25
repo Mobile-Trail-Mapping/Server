@@ -1,10 +1,11 @@
-.block
-  .block_head
-    %h2 Trails
-  .block_content
-    - @photos.keys.each do |trail|
-      %h3
-        %a{:href => "/trails/#{trail}"}
-          = "#{trail.capitalize}"
-      /- @photos[trail].each do |image|
-      /  %img{:src => "#{image.pic.url}"}
+.main-section
+  .block
+    .block_head
+      %h2 Trails
+    .block_content
+      - @photos.keys.each do |trail|
+        %h3
+          %a{:href => "/trails/#{trail}"}
+            = "#{trail.capitalize}"
+        /- @photos[trail].each do |image|
+        /  %img{:src => "#{image.pic.url}"}
