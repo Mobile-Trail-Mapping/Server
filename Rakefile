@@ -11,7 +11,7 @@ task :push do
   puts '* Pushing to Github'
   puts `git add .`
   puts `git commit -m "#{ENV['m']}" .`
-  puts `git push origin test`
+  puts `git push origin newui`
 end
 
 desc "Deploy to Heroku."
@@ -30,7 +30,7 @@ task :deploy do
    raise "Could not find a git remote for the '#{ENV['APP']}' app"
    end
 
-   `git push #{remote} test:master`
+   `git push #{remote} newui:master`
 
    heroku.restart(app)
 end
