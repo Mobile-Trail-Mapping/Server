@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'json'
 require 'config/init'
 require 'pp'
 Dir['routes/*'].each { |obj| require obj }

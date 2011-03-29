@@ -6,12 +6,12 @@ a{color:#499510;text-decoration:none;outline:none;}
 a:hover{color:#ec8526;text-decoration:none;}
 ul li{list-style-type:none;}
 #bg{background:url(../images/bg_light.jpg) 0 0 repeat-x;min-height:402px;}
-.wrapper{width:50%;margin:0 auto;padding-top:20px;}
+.wrapper{width:60%;margin:0 auto;padding-top:20px;}
 /* Header */
 #header{height:50px;line-height:50px;background:url(../images/header.gif) 0 0 repeat-x;color:#999;font-weight:bold;margin-bottom:20px;padding-left:15px;padding-right:15px;border-radius:5px;}
 #header a{color:#999;text-decoration:none;font-weight:normal;}
 #header a:hover{color:#fff;}
-#header h1{float:left;margin-right:40px;font-size:18px;font-weight:normal;text-transform:none;color:#fff;}
+#header h1{float:left;margin-right:20px;font-size:18px;font-weight:normal;text-transform:none;color:#fff;}
 #header h1 a{color:#fff;}
 #header h1 img{float:left;width:34px;padding-top:7px;padding-right:7px;}
 /* Navigation -- taken from CSS-Snippets */

@@ -1,7 +1,6 @@
 # Add a new trail
 post '/trail/add/?' do
   trail = Trail.first_or_create(:name => params[:trail])
-
   redirect '/trails'
 end
 
@@ -30,14 +29,21 @@ get '/trails/?' do
   haml :trails
 end
 
-get '/trails/:trail/?' do
+post '/trails/get/:trail/?' do  
+  content_type :json
   @trail = Trail.first(:name => params[:trail])
-
   @images = []
   @trail.points.each do |point|
     point.photos.each { |photo| @images << photo }
   end
+end
 
+get '/trails/:trail/?' do
+  @trail = Trail.first(:name => params[:trail])
+  @images = []
+  @trail.points.each do |point|
+    point.photos.each { |photo| @images << photo }
+  end
   haml :trail
 end
 
