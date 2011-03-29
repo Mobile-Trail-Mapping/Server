@@ -44,7 +44,7 @@ end
 
 #show homepage
 get '/' do
-  haml :index
+  haml :index, {:layout => :login}
 end
 
 #show dashboard
