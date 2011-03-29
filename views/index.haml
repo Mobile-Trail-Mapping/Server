@@ -14,7 +14,7 @@
         %label Password:
         %br/
         %input#password.text{:name => "password", :placeholder => "Password", :required => "required", :type => "password", :value => ""}/
-      %p
-        %button.button.button-gray.fr{:type => "submit"} Login
+      %p{:style => "padding-bottom:0"}
+        %button.button.button-gray.fr{:type => "submit", :style => "margin-right:2px;"} Login
         %input#rememberme.checkbox{:checked => "checked", :type => "checkbox"}/
         %label{:for => "rememberme", :disabled => "true"} Remember me
