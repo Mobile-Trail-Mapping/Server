@@ -17,8 +17,8 @@ ul li{list-style-type:none;}
 /* Navigation -- taken from CSS-Snippets */
 #header #nav,#header #nav *{z-index:20;}
 #header #nav{margin:0;border:0 none;padding:0;width:auto;list-style:none;height:50px;padding:0;float:left;}
-#header #nav li{margin:1px;border:0 none;padding:0;float:left;display:inline;list-style:none;position:relative;padding:0 10px;background:url(../images/line.gif) center right no-repeat;line-height:50px;}
-#header #nav ul{margin:0;border:0 none;padding:0;width:190px;list-style:none;display:none;position:absolute;top:50px;left:0;}
+#header #nav li{margin:0;border:0 none;padding:0;float:left;display:inline;list-style:none;position:relative;padding:0 10px;background:url(../images/line.gif) center right no-repeat;line-height:50px;}
+#header #nav ul{margin:1px;border:0 none;padding:0;width:190px;list-style:none;display:none;position:absolute;top:50px;left:0;}
 #header #nav ul:after{clear:both;display:block;font:1px/0px serif;content:".";height:0;visibility:hidden;}
 #header #nav ul li{width:190px;float:left;display:block !important;display:inline;position:relative;top:0;height:30px;line-height:30px;padding:0;background:none;}
 /* Root Menu */
