@@ -1,11 +1,5 @@
 task :default => :dev
 
-#desc 'rsync the contents of site to the server'
-#task :sync do
-#  puts '* Publishing files to live server'
-#  puts `rsync -e ssh -avz --exclude-from '.gitignore' --exclude '.git/' . brousali@brousalis.com:public_html/builds`
-#end
-
 desc 'Push source code to Github'
 task :push do
   puts '* Pushing to Github'

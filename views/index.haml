@@ -1,38 +1,20 @@
-!!! 5
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}
-      %title LC Trails - Admin
-      %link{:href => "css/reset.css", :media => "screen", :rel => "stylesheet"}/
-      %link{:href => "css/style.css", :media => "screen", :rel => "stylesheet"}/
-      /[if lt IE 9]
-        %script{:src => "js/html5.js"}
-        %script{:src => "js/PIE.js"}
-      %script{:src => "js/jquery.tools.min.js"}
-      %script{:src => "js/jquery.ui.min.js"}
-      /[if lte IE 9]
-        %link{:href => "css/ie.css", :media => "screen", :rel => "stylesheet"}/
-      %script{:src => "js/global.js"}
-  %body.login
-    #bg
-      .wrapper
-        .block.small.center.login
-          .block_head
-            %img{:alt => "LC Trails", :src => "images/icon.png"}/
-            %h2
-              LC Trails
-              %strong - Login
-          .block_content
-            %form{:action => "/user/login", :method => "post"}
-              %p
-                %label Username:
-                %br/
-                %input#username.text{:name => "user", :placeholder => "Username", :required => "required", :type => "text", :value => ""}/
-              %p
-                %label Password:
-                %br/
-                %input#password.text{:name => "password", :placeholder => "Password", :required => "required", :type => "password", :value => ""}/
-              %p
-                %button.button.button-gray.fr{:type => "submit"} Login
-                %input#rememberme.checkbox{:checked => "checked", :type => "checkbox"}/
-                %label{:for => "rememberme", :disabled => "true"} Remember me
+.block.small.center.login
+  .block_head
+    %img{:alt => "LC Trails", :src => "images/icon.png"}/
+    %h2
+      LC Trails
+      %strong - Login
+  .block_content
+    %form{:action => "/user/login", :method => "post"}
+      %p
+        %label Username:
+        %br/
+        %input#username.text{:name => "user", :placeholder => "Username", :required => "required", :type => "text", :value => ""}/
+      %p
+        %label Password:
+        %br/
+        %input#password.text{:name => "password", :placeholder => "Password", :required => "required", :type => "password", :value => ""}/
+      %p
+        %button.button.button-gray.fr{:type => "submit"} Login
+        %input#rememberme.checkbox{:checked => "checked", :type => "checkbox"}/
+        %label{:for => "rememberme", :disabled => "true"} Remember me
