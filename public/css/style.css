@@ -21,7 +21,7 @@ ul li{list-style-type:none;}
 #header #nav ul{margin:1px;border:0 none;padding:0;width:190px;list-style:none;display:none;position:absolute;top:50px;left:0;}
 #header #nav ul:after{clear:both;display:block;font:1px/0px serif;content:".";height:0;visibility:hidden;}
 #header #nav ul li{width:190px;float:left;display:block !important;display:inline;position:relative;top:0;height:30px;line-height:30px;padding:0;background:none;}
-#header #nav ul li ul{margin:0;}
+#header #nav ul li ul{margin:0 !important;}
 /* Root Menu */
 #header #nav a{font-size:16px;float:none !important;float:left;display:block;height:auto !important;height:1%;height:30px;padding:0 10px;}
 /* 2nd Menu */
