@@ -7,7 +7,7 @@ end
 
 # Check if user credentials are valid
 post '/user/check/?' do
-  user = User.find(:email => params[:user], :pwhash => params[:pwhash])
+  user = User.first(:email => params[:user], :pwhash => params[:pwhash])
   return "admin" if !user.nil? && user.admin
   return "user" if !user.nil? && !user.admin
   return "invalid"

@@ -34,12 +34,17 @@ helpers do
 
   #Method for getting image hash
   def make_paperclip_mash(file_hash)
+    return nil if file_hash.nil?
     mash = Mash.new
     mash['tempfile'] = file_hash[:tempfile]
     mash['filename'] = "#{Time.now.to_s}.jpg"
     mash['content_type'] = file_hash[:type]
     mash['size'] = file_hash[:tempfile].size
     mash
+  end
+
+  def default_values(params, path)
+
   end
 end
 
