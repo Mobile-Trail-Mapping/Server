@@ -98,6 +98,6 @@ class User
   property :id,     Serial
   property :email,  String, :required => true
   property :pwhash, String, :required => true
-  property :admin?, Boolean, :default => false
+  property :admin, Boolean, :default => false
 
 end
