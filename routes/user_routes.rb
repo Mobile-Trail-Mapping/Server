@@ -18,10 +18,10 @@ get '/user/delete/?' do
   user.destroy unless user.nil?
 end
 
-get '/user/is_admin/?' do
+get '/user/toggle_admin/?' do
   user = User.first(:email => params[:user], :pwhash => params[:pwhash])
 
-  user.admin
+  user.admin = user.admin ? false : true
 end
 
 post '/user/make_admin' do
