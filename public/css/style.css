@@ -61,7 +61,7 @@ body.login .block .block_head h2{padding-top:12px;}
 .block hr{height:1px;border:0;background:no-repeat;border-bottom:1px solid #ddd;margin-bottom:15px;}
 .block .block_content .breadcrumb{color:#666;background:#f9f9f9;border-bottom:1px solid #e6e6e6;padding:9px 12px;line-height:normal;margin-bottom:10px;font-size:11px;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px;}
 /* Messages */
-.message{padding:10px 15px 10px 40px;margin:0px;font-weight:bold;overflow:hidden;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+.message{border:1px solid #ccc;padding:10px 15px 10px 40px;margin:0px;font-weight:bold;overflow:hidden;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 .message p{padding:0;width:93%;float:left;padding-top:5px;font-weight:normal;}
 .message.errormsg{border:1px solid #e9c59b;background:#ffecce url(../images/error.gif) 12px 12px no-repeat;color:#e3302c;}
 .message.success{border:1px solid #bfde84;background:#edfbd8 url(../images/success.gif) 12px 12px no-repeat;color:#508600;}
