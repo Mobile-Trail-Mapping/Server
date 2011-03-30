@@ -25,7 +25,7 @@ $(document).ready(function() {
   // preview pane setup
 	var _left = "-422px";
 	$('.preview-pane .preview').css("height",$('.main-section .block').height()-40+"px");
-	$('.preview-pane .preview').css("width","");
+
   $('.list-view > li').click(function(){
 		var url = $(this).find('.more').attr('href');
 		if (!$(this).parents('li').hasClass('current')) {
@@ -50,7 +50,8 @@ $(document).ready(function() {
 
 	// floating menu and preview pane
 	if ($('.preview-pane .preview').length>0) { 
-		previewYloc = parseInt($('.preview-pane .preview').css("top").substring(0,$('.preview').css("top").indexOf("px")), 10); }
+		previewYloc = parseInt($('.preview-pane .preview').css("top").substring(0,$('.preview').css("top").indexOf("px")), 10); 
+	}
 	$(window).scroll(function () {
 		var offset = 0;
 		if ($('.preview-pane .preview').length>0) {
