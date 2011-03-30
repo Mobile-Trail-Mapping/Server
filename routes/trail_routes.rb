@@ -31,6 +31,7 @@ end
 
 post '/trails/get/:trail/?' do  
   content_type :json
+  @json = []
   @trail = Trail.first(:name => params[:trail])
   @images = []
   @trail.points.each do |point|

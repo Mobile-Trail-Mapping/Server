@@ -23,24 +23,25 @@ $(document).ready(function() {
 	//$('a[rel*=facebox]').facebox()
 	
   // preview pane setup
+	var _left = "-422px";
 	$('.preview-pane .preview').css("height",$('.main-section .block').height()-40+"px");
   $('.list-view > li').click(function(){
 		var url = $(this).find('.more').attr('href');
 		if (!$(this).parents('li').hasClass('current')) {
-			$('.preview-pane .preview').animate({left: "-475px"}, 300, function(){
+			$('.preview-pane .preview').animate({left: _left}, 300, function(){
 				$(this).find(".desc").hide();
 				$(this).animate({left: "-32px"}, 300);
 				$(url).show();
 			});
 		} else {
-			$('.preview-pane .preview').animate({left: "-475px"}, 300);
+			$('.preview-pane .preview').animate({left: _left}, 300);
 		}
 		$(this).toggleClass('current').siblings().removeClass('current');
 		return false;
   });
 
   $('.preview-pane .preview .close').live('click', function(){
-		$('.preview-pane .preview').animate({left: "-475px"}, 300);
+		$('.preview-pane .preview').animate({left: _left}, 300);
 		$('.list-view li').removeClass('current');
 		return false;
   });
