@@ -12,9 +12,9 @@ $(document).ready(function() {
 	$('#header #nav li:last').addClass('nobg');
 	$('.block_head ul').each(function() { $('li:first', this).addClass('nobg'); });
 	$('.list-view > li').hover(function() {
-		$(this).find(".tools").fadeIn(100);
+		$(this).find(".tools").show();
 	}, function() {
-		$(this).find(".tools").fadeOut(100);
+		$(this).find(".tools").hide();
 	});
 	
 	// Image delete confirmation
