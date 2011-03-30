@@ -1,8 +1,8 @@
 .main-section
   .block.small.left
-    .block_head
+    .block-head
       %h2 #{@trail.name.capitalize} 
-    .block_content
+    .block-content
       %ul#listing.list-view.clearfix
         - @trail.points.each do |point| #- point.photos.each do |photo|
           - if point.category.name != "Trail"
@@ -24,11 +24,12 @@
         %span.close
           %img{:src => "../images/cancel-white.png"}
       - @trail.points.each do |point|
-        .desc{:id => "point_#{point.id}"}
-          %h1 #{point.title}
-          %span #{point.lat}, #{point.long}
-          .content
-            %p #{point.desc}
-            .slideshow
-              - point.photos.each do |photo|
-                %img{:src => photo.pic.url}
+        .trail-content
+          .desc{:id => "point_#{point.id}"}
+            %h1 #{point.title}
+            %span #{point.lat}, #{point.long}
+            .content
+              %p #{point.desc}
+              .slideshow
+                - point.photos.each do |photo|
+                  %img{:src => photo.pic.url}

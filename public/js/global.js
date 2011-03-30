@@ -12,7 +12,7 @@ $(document).ready(function() {
 	
 	// small changes
 	$('#header #nav li:last').addClass('nobg');
-	$('.block_head ul').each(function() { $('li:first', this).addClass('nobg'); });
+	$('.block-head ul').each(function() { $('li:first', this).addClass('nobg'); });
 	$('.list-view > li').hover(function() {
 		$(this).find('.tools').show();
 	}, function() {
