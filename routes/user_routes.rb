@@ -18,6 +18,12 @@ get '/user/delete/?' do
   user.destroy unless user.nil?
 end
 
+get '/user/is_admin?/?' do
+  user = User.first(:email => params[:user], :pwhash => params[:pwhash])
+
+  user.admin?
+end
+
 post '/user/login/?' do
   pwhash = Digest::SHA1.hexdigest(params[:password])
 
