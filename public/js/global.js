@@ -83,7 +83,7 @@ $(document).ready(function() {
 	$(window).scroll(function () {
 		var offset = 0;
 		if ($('.preview-pane .preview').length>0) {
-			offset = previewYloc+$(document).scrollTop()+400>=$('.main-section').height()? offset=$('.main-section').height()-400 : previewYloc+$(document).scrollTop();
+			offset = previewYloc + $(document).scrollTop() + 400 >= $('.main-section').height() ? offset = $('.main-section').height()-400 : previewYloc + $(document).scrollTop() + 55;
 			$('.content').animate({top:offset},{duration:500,queue:false});
     }
 	});
