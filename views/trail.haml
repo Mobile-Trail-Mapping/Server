@@ -23,10 +23,10 @@
         %span.close
           %img{:src => "../images/cancel-white.png"}
       - @trail.points.each do |point|
-        .content
-          .desc{:id => "point_#{point.id}"}
-            %h1 #{point.title}
-            %span #{point.lat}, #{point.long}
+        .desc{:id => "point_#{point.id}"}
+          %h1 #{point.title}
+          %span #{point.lat}, #{point.long}
+          .content
             %p #{point.desc}
             .slideshow
               - point.photos.each do |photo|

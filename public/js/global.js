@@ -55,7 +55,7 @@ $(document).ready(function() {
 		var offset = 0;
 		if ($('.preview-pane .preview').length>0) {
 			offset = previewYloc+$(document).scrollTop()+400>=$('.main-section').height()? offset=$('.main-section').height()-400 : previewYloc+$(document).scrollTop();
-			$('.preview-pane .content').animate({top:offset},{duration:500,queue:false});
+			$('.content').animate({top:offset},{duration:500,queue:false});
     }
 	});
 		
