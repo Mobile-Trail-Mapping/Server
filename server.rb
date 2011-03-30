@@ -10,7 +10,7 @@ configure do
   OBJECTS = ['user', 'point', 'trail', 'condition', 'category', 'image', 'problems']
 
   #create a default user so we're not locked out
-  User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'))
+  User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'), :admin => true)
   Trail.first_or_create(:name => 'misc')
   
   #default server dir
