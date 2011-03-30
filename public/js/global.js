@@ -10,7 +10,7 @@ $(document).ready(function() {
 		function() { $(this).find('ul').fadeOut(100); }
 	);
 	
-	// small changes
+	// small initla changes
 	$('#header #nav li:last').addClass('nobg');
 	$('.block-head ul').each(function() { $('li:first', this).addClass('nobg'); });
 	$('.list-view > li').hover(function() {
@@ -18,6 +18,7 @@ $(document).ready(function() {
 	}, function() {
 		$(this).find('.tools').hide();
 	});
+	$('.content').css('top',$(this).find("h1").height()+5+'px');
 	
 	// image delete confirmation
 	$('ul.imglist .delete a').click(function() {
