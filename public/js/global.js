@@ -1,7 +1,7 @@
 var menuYloc = null;
 var previewYloc = null;
 var _left = null;
-var menuYoffset = null;
+
 $(document).ready(function() {
 	
 	// image actions menu
@@ -84,7 +84,7 @@ $(document).ready(function() {
 		var offset = 0;
 		if ($('.preview-pane .preview').length>0) {
 			offset = previewYloc+$(document).scrollTop()+400>=$('.main-section').height()? offset=$('.main-section').height()-400 : previewYloc+$(document).scrollTop();
-			$('.content').animate({top:offset+menuYoffset},{duration:500,queue:false});
+			$('.content').animate({top:offset},{duration:500,queue:false});
     }
 	});
 		
