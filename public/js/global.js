@@ -25,6 +25,7 @@ $(document).ready(function() {
   // preview pane setup
 	var _left = "-422px";
 	$('.preview-pane .preview').css("height",$('.main-section .block').height()-40+"px");
+	$('.preview-pane .preview').css("width","");
   $('.list-view > li').click(function(){
 		var url = $(this).find('.more').attr('href');
 		if (!$(this).parents('li').hasClass('current')) {

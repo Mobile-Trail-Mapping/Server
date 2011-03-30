@@ -60,7 +60,7 @@ small,sup,sub{font-size:90%;}
 .no-margin{margin:0 !important;}
 nav > ul{padding:0;}
 /* Buttons */
-.button{-moz-border-radius:4px;-webkit-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;-moz-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);cursor:pointer;display:inline-block;font:12px/100% 'Lucida Grande','Lucida Sans Unicode','Helvetica Neue',Helvetica,Arial,Verdana,sans-serif;padding:4px 10px;outline:none !important;text-align:center;text-decoration:none;position:relative;-moz-box-sizing:border-box !important;line-height:16px;}
+.button{-moz-border-radius:4px;-webkit-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;-moz-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);cursor:pointer;display:inline-block;font:12px/100% 'Lucida Grande','Lucida Sans Unicode','Helvetica Neue',Helvetica,Arial,Verdana,sans-serif;padding:4px 3px;outline:none !important;text-align:center;text-decoration:none;position:relative;-moz-box-sizing:border-box !important;line-height:16px;}
 .button:hover{text-decoration:none;}
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;}
 .button-round{-moz-border-radius:16px;-webkit-border-radius:16px;-khtml-border-radius:16px;border-radius:16px;padding:7px 0;width:30px;}
