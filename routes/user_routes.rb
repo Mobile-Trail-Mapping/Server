@@ -8,8 +8,9 @@ end
 # Check if user credentials are valid
 post '/user/check/?' do
   user = User.find(:email => params[:user], :pwhash => params[:pwhash])
-  return user.admin if not user.nil?
-  return nil
+  return "admin" if !user.nil? && user.admin
+  return "user" if !user.nil? && !user.admin
+  return "invalid"
 end
 
 # Delete a user
@@ -20,7 +21,7 @@ end
 
 get '/user/toggle_admin/?' do
   user = User.first(:email => params[:to_change_user], :pwhash => params[:to_change_pwhash])
-  current_user = User.first(:email => params[:user], :pwhash => params[:pwhash])
+  current_user = User.first(:email => params[:user])
 
   if current_user.admin
     user.admin = user.admin ? false : true
