@@ -88,14 +88,14 @@ $(document).ready(function() {
 	});
 		
 	// messages
-	$('.message').hide().append('<span class=\'close_me\' title=\'Dismiss\'></span>').fadeIn('slow');
+	$('.message').hide().append('<span class=\'close-me\' title=\'Dismiss\'></span>').fadeIn('slow');
 	$('.message .close').hover(
 		function() { $(this).addClass('hover'); },
 		function() { $(this).removeClass('hover'); }
 	);
 		
 	// click functions
-	$('.close_me').click(function() {
+	$('.close-me').click(function() {
 		$(this).parent().fadeOut('slow', function() { $(this).remove(); });
 	});
 	
