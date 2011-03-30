@@ -2,15 +2,21 @@ var menuYloc = null;
 var previewYloc = null;
 
 $(document).ready(function() {
-// Image actions menu
+	// Image actions menu
 	$('ul.imglist li').hover(
 		function() { $(this).find('ul').css('display', 'none').fadeIn('fast').css('display', 'block'); },
 		function() { $(this).find('ul').fadeOut(100); }
 	);
 	
+	// Small changes
 	$('#header #nav li:last').addClass('nobg');
 	$('.block_head ul').each(function() { $('li:first', this).addClass('nobg'); });
-		
+	$('.list-view > li').hover(function() {
+		$(this).find(".tools").fadeIn(100);
+	}, function() {
+		$(this).find(".tools").fadeOut(100);
+	});
+	
 	// Image delete confirmation
 	$('ul.imglist .delete a').click(function() {
 		if (confirm("Are you sure you want to delete this image?")) {
@@ -25,7 +31,10 @@ $(document).ready(function() {
   // preview pane setup
 	var _left = "-422px";
 	$('.preview-pane .preview').css("height",$('.main-section .block').height()-40+"px");
-
+	$('.preview-pane .preview').css("width",$('.main-section').width()/2-$('.preview-pane .preview').css("padding-left")+"px");
+	$(window).resize(function () {
+			$('.preview-pane .preview').css("width",$('.main-section').width()/2-$('.preview-pane .preview').css("padding-left")+"px");
+	});
   $('.list-view > li').click(function(){
 		var url = $(this).find('.more').attr('href');
 		if (!$(this).parents('li').hasClass('current')) {
@@ -40,13 +49,12 @@ $(document).ready(function() {
 		$(this).toggleClass('current').siblings().removeClass('current');
 		return false;
   });
-
+	
   $('.preview-pane .preview .close').live('click', function(){
 		$('.preview-pane .preview').animate({left: _left}, 300);
 		$('.list-view li').removeClass('current');
 		return false;
   });
-  // preview pane setup end
 
 	// floating menu and preview pane
 	if ($('.preview-pane .preview').length>0) { 
@@ -74,7 +82,7 @@ $(document).ready(function() {
 	$('.delete').click(function(e) {
 		e.preventDefault();
 		$.post($(this).attr("href"));
-		return false;
+		return false;phew
 	});
 
 	$('#submit_point').click(function(e) {

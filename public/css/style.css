@@ -120,6 +120,8 @@ body.login .block .block_head h2{padding-top:12px;}
 .preview-pane span{border-radius: 0px 0px 0px 5px;-moz-border-radius: 0px 0px 0px 5px;-webkit-border-bottom-left-radius: 5px;float:right; position:absolute; top:0; right:28px;background-color: #eee; padding:5px 15px;}
 .preview-pane span.close{cursor:pointer;border-radius: 0px 5px 0px 0px;-moz-border-radius: 0px 5px 0px 0px;-webkit-border-top-right-radius: 5px;height:25px;float:right; position:absolute; top:0; right:0px;background-color: #000; padding: 5px 5px 0px 5px; }
 .preview-pane span:active{top:1px;}
+.tools{display:none;}
+.tools a{padding:4px 3px;}
 .logout{padding-left:20px;}
 .list-view{font-size:12px;margin-left:-30px;margin-right:-30px;}
 .list-view > li{border-bottom:1px solid #ddd;padding:10px 30px 10px 25px;position:relative;zoom:1;}
