@@ -19,7 +19,6 @@ $(document).ready(function() {
 		$(this).find('.tools').hide();
 	});
 	$('.content').css('top',$(this).find("h1").height()+5+'px');
-	menuYoffset = $('.content').css('top');
 	
 	// image delete confirmation
 	$('ul.imglist .delete a').click(function() {
