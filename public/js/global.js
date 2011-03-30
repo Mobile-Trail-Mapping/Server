@@ -10,6 +10,13 @@ $(document).ready(function() {
 		function() { $(this).find('ul').fadeOut(100); }
 	);
 	
+	$('.slideshow').cycle({
+    fx: 'scrollDown', 
+    speed: 1000 , 
+    next: '.slideshow', 
+    timeout: 4000 
+  });
+
 	// small initla changes
 	$('#header #nav li:last').addClass('nobg');
 	$('.block-head ul').each(function() { $('li:first', this).addClass('nobg'); });
