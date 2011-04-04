@@ -29,14 +29,16 @@ get '/trails/?' do
   haml :trails
 end
 
-post '/trails/get/:trail/?' do  
+get '/trails/get/:trail/?' do
   content_type :json
-  @json = []
+  @json = {}
   @trail = Trail.first(:name => params[:trail])
-  @images = []
   @trail.points.each do |point|
-    point.photos.each { |photo| @images << photo }
+    @json[point.id] = { :lat => point[:lat], :long => point[:long], :desc => point[:desc] }
+    @json[point.id][:photos] = point.photos
   end
+
+  @json.to_json
 end
 
 get '/trails/:trail/?' do
