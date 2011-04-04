@@ -37,6 +37,8 @@
 :javascript
   $(document).ready(function() {
     $.getJSON('/trails/get/#{@trail.name}', function(data) {
-      alert(data);
+        $.each(data, function(k, v){
+          alert(k+":"+v);
+        });
     });
   });                  
