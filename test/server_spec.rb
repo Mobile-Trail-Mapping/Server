@@ -327,4 +327,14 @@ describe "Server Tests" do
       User.all(:email => 'unit@brousalis.com', :pwhash => 'pwhash').should be_empty
     end
   end
+
+  describe "problem tests" do
+    it "should add a problem" do
+      params = { :user => @test_user, :pwhash => @test_pw }
+
+      post '/problem/add', params
+
+      Problem.first.desc.should == "Description"
+    end
+  end
 end

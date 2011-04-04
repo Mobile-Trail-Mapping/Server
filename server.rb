@@ -12,9 +12,10 @@ configure do
   #create a default user so we're not locked out
   User.first_or_create(:email => 'test@brousalis.com', :pwhash => Digest::SHA1.hexdigest('password'))
   Trail.first_or_create(:name => 'misc')
-  
+
   #default server dir
   @server_dir = Dir.pwd
+  set :default_values, YAML::load_file(Dir.pwd + '/config/default_params.yml')
 end
 
 before do
@@ -34,12 +35,26 @@ helpers do
 
   #Method for getting image hash
   def make_paperclip_mash(file_hash)
+    return nil if file_hash.nil?
     mash = Mash.new
     mash['tempfile'] = file_hash[:tempfile]
     mash['filename'] = "#{Time.now.to_s}.jpg"
     mash['content_type'] = file_hash[:type]
     mash['size'] = file_hash[:tempfile].size
     mash
+  end
+
+  def default_values(path, passed_values = {})
+    paths = path.split("/")
+    paths.shift
+
+    values = settings.default_values
+
+    paths.each { |path| values = values[path] }
+
+    values.each { |key, value| passed_values[key] ||= value }
+
+    return passed_values
   end
 end
 

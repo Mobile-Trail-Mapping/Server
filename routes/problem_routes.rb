@@ -1,13 +1,11 @@
 # Add a new problem
 post '/problem/add/?' do
-  desc = params[:desc].to_s
-  user = params[:user].to_s
-  title = params[:title].to_s
-  lat = params[:lat].to_f
-  long = params[:long].to_f
-  image = make_paperclip_mash(params[:file])
+  params[:file] = make_paperclip_mash(params[:file])
+  params_clone = params.clone
+  params = default_values(request.path_info, params_clone)
 
-  Problem.create(:desc => desc, :user => user, :pic => image, :title => title, :lat => lat, :long => long)
+  #Problem.create(:desc => desc, :user => user, :pic => image, :title => title, :lat => lat, :long => long)
+  Problem.create(params)
 
   redirect '/problems'
 end
