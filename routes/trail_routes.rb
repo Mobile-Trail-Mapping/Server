@@ -36,7 +36,7 @@ get '/trails/get/:trail/?' do
   @trail = Trail.first(:name => params[:trail])
   @trail.points.each do |point|
     @json[point.id] = { :lat => point[:lat], :long => point[:long], :desc => point[:desc] }
-    @json[point.id][:photos] = point.photos
+    #@json[point.id][:photos] = point.photos
   end
 
   @json.to_json
