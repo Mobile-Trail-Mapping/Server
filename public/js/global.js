@@ -10,7 +10,6 @@ $(document).ready(function() {
     function() { $(this).find('ul').fadeOut(100); }
   );
 
-
   // small initial changes
   $('#header #nav li:last').addClass('nobg');
   $('.block-head ul').each(function() { $('li:first', this).addClass('nobg'); });
@@ -87,6 +86,13 @@ $(document).ready(function() {
       offset = previewYloc + $(document).scrollTop() + 400 >= $('.main-section').height() ? offset = $('.main-section').height()-400 : previewYloc + $(document).scrollTop() + 55;
       $('.content').animate({top:offset},{duration:500,queue:false});
     }
+  });
+  
+  $('.slideshow').cycle({
+    fx: 'scrollDown', 
+    speed: 1000 , 
+    next: '.slideshow', 
+    timeout: 4000 
   });
     
   // messages
