@@ -31,6 +31,9 @@ end
 
 get '/trails/get/:trail/?' do
   content_type :json
+
+  pp params
+
   @json = {}
   @trail = Trail.first(:name => params[:trail])
   @trail.points.each do |point|
