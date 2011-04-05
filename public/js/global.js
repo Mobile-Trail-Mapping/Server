@@ -57,7 +57,7 @@ $(document).ready(function() {
   $('.list-view > li').click(function(){
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
-    var name = $('.name').value();
+    var name = $('.name').val();
     alert(name + ":" + id);
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
         alert(data);
