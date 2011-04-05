@@ -49,7 +49,7 @@ $(document).ready(function() {
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
         if(data) {
           $("#trail-name").html(data.point.name);
-          $("#trail-coords").html(data.point.coords);
+          $("#trail-coords").html(data.point.lat + ", " + data.point.long);
           $("#trail-desc").html(data.point.desc)
         }
     });    
