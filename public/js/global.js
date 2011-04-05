@@ -154,6 +154,7 @@ $(document).ready(function() {
 
   $('#submit_point').click(function(e) {
     e.preventDefault();
+    alert("Add?");
     var dataString = $('#add_point').serialize(); 
     $.post('/point/add', dataString,
       function(data) {
