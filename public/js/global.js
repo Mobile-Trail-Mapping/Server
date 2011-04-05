@@ -58,9 +58,8 @@ $(document).ready(function() {
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
-    alert(name + ":" + id);
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
-        alert(data);
+        alert(data.point)
     });    
     if (!$(this).parents('li').hasClass('current')) {
       $('.preview-pane .preview').animate({left: _left}, 300, function(){

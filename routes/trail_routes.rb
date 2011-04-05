@@ -47,7 +47,7 @@ get '/trails/get/:trail/point/:pointid/?' do
 
   @json = {}
   point = Point.first(params[:pointid])
-  @json[:point] = { :lat => point[:lat] }
+  @json[:point] = { :lat => point[:lat], :long => point[:long], :desc => point[:desc] }
   @json[:point][:photos] = []
   point.photos.each { |img| @json[:point][:photos] << img.pic.url }
 
