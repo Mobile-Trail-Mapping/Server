@@ -33,3 +33,12 @@
               .slideshow
                 - point.photos.each do |photo|
                   %img{:src => photo.pic.url}
+                  
+:javascript
+  $(document).ready(function() {
+    $.getJSON('/trails/get/#{@trail.name}', function(data) {
+        $.each(data, function(i)
+          alert(data[i]);
+        });
+    });
+  });                  
