@@ -84,7 +84,7 @@ $(document).ready(function() {
     $('.trail-slideshow').cycle({
       fx: 'scrollDown', 
       speed: 1000 , 
-      next: '.slideshow', 
+      next: '.trail-slideshow', 
       timeout: 4000 
     });
     
