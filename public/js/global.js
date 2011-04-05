@@ -81,10 +81,10 @@ $(document).ready(function() {
     });    
     
     // trail slideshow cycler
-    $('.trail-slideshow').cycle({
+    $('.slideshow').cycle({
       fx: 'scrollDown', 
-      speed: 1000 , 
-      next: '.trail-slideshow', 
+      speed: 1000, 
+      next: '.slideshow', 
       timeout: 4000 
     });
     
