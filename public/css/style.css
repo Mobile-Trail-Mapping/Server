@@ -138,3 +138,5 @@ body.login .block .block-head h2{padding-top:12px;}
 .message .close-me{display:block;float:right;width:16px;height:16px;background:url(../images/close.png) 0 0 no-repeat;margin-top:2px;cursor:pointer;-moz-opacity:0.7;opacity:0.7;padding:0;right:15px;top:20px;}
 .message .close-me:hover{-moz-opacity:1;opacity:1;}
 .message .close-me:active{top:21px;}
+
+.trail-slideshow{width:200px;height:160px;}

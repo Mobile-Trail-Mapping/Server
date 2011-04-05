@@ -6,6 +6,6 @@
       %div
         %a{:href => "/trails/#{trail}"}
           = "#{trail.capitalize}"
-        .slideshow
+        .trail-slideshow
           - @photos[trail].each do |image|
             %img{:src => "#{image.pic.url}"}
