@@ -52,7 +52,7 @@ $(document).ready(function() {
   
   // trail masonry
   $('#trails').masonry({
-    columnWidth: 200, 
+    columnWidth: 220, 
     animate: true,
     singleMode: true,
     animationOptions: {
