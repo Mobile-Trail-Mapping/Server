@@ -141,4 +141,4 @@ body.login .block .block-head h2{padding-top:12px;}
 
 .trail{width:200px;height:180px;}
 .trail a{text-align:center;display:block;}
-.trail-slideshow img{width:200px;height:160px;}
+.trail-slideshow img{width:200px;height:160px !important;}
