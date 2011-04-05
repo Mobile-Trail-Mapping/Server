@@ -7,5 +7,5 @@
         %a{:href => "/trails/#{trail}"}
           = "#{trail.capitalize}"
         .trail-slideshow
-        - @photos[trail].each do |image|
-          %img{:src => "#{image.pic.url}"}
+          - @photos[trail].each do |image|
+            %img{:src => "#{image.pic.url}"}
