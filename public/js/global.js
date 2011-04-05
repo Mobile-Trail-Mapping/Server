@@ -63,6 +63,14 @@ $(document).ready(function() {
             next: '.slideshow', 
             timeout: 4000 
           });
+          // load the gmap
+          $('#map_canvas').googleMaps({
+              markers: {
+                  latitude: 	data.point.lat,
+                  longitude: data.point.long,
+                  scroll: false
+              }
+          }); 
         }
     });    
     
