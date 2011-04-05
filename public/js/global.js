@@ -4,12 +4,6 @@ var _left = null;
 
 $(document).ready(function() {
 
-  // image actions menu
-  $('ul.imglist li').hover(
-    function() { $(this).find('ul').css('display', 'none').fadeIn('fast').css('display', 'block'); },
-    function() { $(this).find('ul').fadeOut(100); }
-  );
-
   // small initial changes
   $('#header #nav li:last').addClass('nobg');
   $('.block-head ul').each(function() { $('li:first', this).addClass('nobg'); });
@@ -19,15 +13,6 @@ $(document).ready(function() {
     $(this).find('.tools').hide();
   });
   $('.content').css('top',$(this).find("h1").height()+5+'px');
-  
-  // image delete confirmation
-  $('ul.imglist .delete a').click(function() {
-    if (confirm('Are you sure you want to delete this image?')) {
-      return true;
-    } else {
-      return false;
-    }
-  });
 
   // initial
   resizePanel();
@@ -55,12 +40,17 @@ $(document).ready(function() {
 
   // click on the list
   $('.list-view > li').click(function(){
+    // gather the information
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
+    
+    // post and get the json
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
-        alert(data.point.desc)
+        
     });    
+    
+    // slide the panel out
     if (!$(this).parents('li').hasClass('current')) {
       $('.preview-pane .preview').animate({left: _left}, 300, function(){
         $(this).find('.desc').hide();
@@ -71,6 +61,7 @@ $(document).ready(function() {
       $('.preview-pane .preview').animate({left: _left}, 300);
     }
     $(this).toggleClass('current').siblings().removeClass('current');
+    
     return false;
   });
   
