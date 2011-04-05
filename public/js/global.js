@@ -38,7 +38,7 @@ $(document).ready(function() {
     $('.preview-pane .preview').css('left',_left);
     
     // set the gmaps
-    $('#map_canvas').css('width', _width);
+    $('#map_canvas').css('width', _width.replace('px','') - 10 + 'px');
     $('#map_canvas').css('height', '300px');
   }
 
