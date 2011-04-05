@@ -41,6 +41,14 @@ $(document).ready(function() {
     $('#map_canvas').css('width', _width.replace('px','') - 10 + 'px');
     $('#map_canvas').css('height', '200px');
   }
+     
+  // trail slideshow cycler
+  $('.slideshow').cycle({
+    fx: 'scrollDown', 
+    speed: 1000, 
+    next: '.slideshow', 
+    timeout: 4000 
+  });
 
   // click on the list
   $('.list-view > li').click(function(){
@@ -79,14 +87,6 @@ $(document).ready(function() {
           // }); 
         }
     });    
-    
-    // trail slideshow cycler
-    $('.slideshow').cycle({
-      fx: 'scrollDown', 
-      speed: 1000, 
-      next: '.slideshow', 
-      timeout: 4000 
-    });
     
     // slide the panel out
     if (!$(this).parents('li').hasClass('current')) {
