@@ -139,6 +139,6 @@ body.login .block .block-head h2{padding-top:12px;}
 .message .close-me:hover{-moz-opacity:1;opacity:1;}
 .message .close-me:active{top:21px;}
 
-.trail{width:200px;height:160px;margin:15px;}
+.trail{width:200px;height:160px;}
 .trail a{text-align:center;display:block;}
 .trail-slideshow img{width:200px;height:160px;}
