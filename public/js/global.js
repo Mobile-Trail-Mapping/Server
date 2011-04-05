@@ -56,6 +56,13 @@ $(document).ready(function() {
           $.each(data.point.photos, function(i) {
             $(".slideshow").append('<img src="' + data.point.photos[i] + '" />');
           });
+          // slideshow cycler
+          $('.slideshow').cycle({
+            fx: 'scrollDown', 
+            speed: 1000 , 
+            next: '.slideshow', 
+            timeout: 4000 
+          });
         }
     });    
     
@@ -91,14 +98,6 @@ $(document).ready(function() {
       offset = previewYloc + $(document).scrollTop() + 400 >= $('.main-section').height() ? offset = $('.main-section').height()-400 : previewYloc + $(document).scrollTop() + 55;
       $('.content').animate({top:offset},{duration:500,queue:false});
     }
-  });
-  
-  // slideshow cycler
-  $('.slideshow').cycle({
-    fx: 'scrollDown', 
-    speed: 1000 , 
-    next: '.slideshow', 
-    timeout: 4000 
   });
     
   // messages
