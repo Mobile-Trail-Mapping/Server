@@ -47,7 +47,7 @@ $(document).ready(function() {
     
     // post and get the json
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
-        
+        alert(data.point.desc)
     });    
     
     // slide the panel out
