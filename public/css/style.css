@@ -141,7 +141,7 @@ body.login .block .block-head h2{padding-top:12px;}
 /* Trails */
 .trail:hover{background-color:#f1f1f1;}
 .trail a{text-align:center;display:block;}
-.trail-slideshow img{width:300px;height:260px;}
+.trail-slideshow img{width:200px;height:160px;}
 .trail .trail-desc{  
     position:absolute;
     bottom:0px;
