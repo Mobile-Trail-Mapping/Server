@@ -80,6 +80,14 @@ $(document).ready(function() {
         }
     });    
     
+    // trail slideshow cycler
+    $('.trail-slideshow').cycle({
+      fx: 'scrollDown', 
+      speed: 1000 , 
+      next: '.slideshow', 
+      timeout: 4000 
+    });
+    
     // slide the panel out
     if (!$(this).parents('li').hasClass('current')) {
       $('.preview-pane .preview').animate({left: _left}, 300, function(){
