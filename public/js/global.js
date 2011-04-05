@@ -69,14 +69,14 @@ $(document).ready(function() {
             timeout: 4000 
           });
           // load the gmap
-          $('#map_canvas').gMap({
-              controls: false,
-              scrollwheel: false,
-              markers: [{
-                  latitude: data.point.lat,
-                  longitude: data.point.long,
-              }]
-          }); 
+          // $('#map_canvas').gMap({
+          //     controls: false,
+          //     scrollwheel: false,
+          //     markers: [{
+          //         latitude: data.point.lat,
+          //         longitude: data.point.long,
+          //     }]
+          // }); 
         }
     });    
     
