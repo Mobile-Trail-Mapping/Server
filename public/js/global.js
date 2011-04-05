@@ -52,6 +52,7 @@ $(document).ready(function() {
           $("#trail-name").html(data.point.name);
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
+          $("#trail-pics").html(); //clear pics for each point
           $.each(data.point.photos, function(i) {
             $("#trail-pics").append('<img src="' + data.point.photos[i] + '" />');
           });
