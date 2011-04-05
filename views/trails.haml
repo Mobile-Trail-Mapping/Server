@@ -8,6 +8,6 @@
           .trail-slideshow
             - @photos[trail].each do |image|
               %img{:src => "#{image.pic.url}"}
-            .trail-desc
-              %div
-                = "#{trail.capitalize}"            
+          .trail-desc
+            %div
+              = "#{trail.capitalize}"            
