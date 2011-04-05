@@ -39,7 +39,7 @@ $(document).ready(function() {
     
     // set the gmaps
     $('#map_canvas').css('width', _width.replace('px','') - 10 + 'px');
-    $('#map_canvas').css('height', '300px');
+    $('#map_canvas').css('height', '200px');
   }
 
   // click on the list
@@ -71,7 +71,7 @@ $(document).ready(function() {
           // load the gmap
           $('#map_canvas').googleMaps({
               markers: {
-                  latitude: 	data.point.lat,
+                  latitude: data.point.lat,
                   longitude: data.point.long,
                   scroll: false
               }
