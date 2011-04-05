@@ -85,8 +85,3 @@ a.button.no-text{display:block;text-indent:-999em;padding:0;line-height:24px;ove
 .button span.help{background:transparent url(../images/icons/help.png) no-repeat center center;}
 .button span.view-list{background:transparent url(../images/icons/application_view_list.png) no-repeat center center;}
 .button span.view-grid{background:transparent url(../images/icons/application_view_tile.png) no-repeat center center;}
-/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
-.clearfix:after { clear: both; }
-/* fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
-.clearfix { zoom: 1; }

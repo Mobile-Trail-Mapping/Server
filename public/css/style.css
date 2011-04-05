@@ -141,8 +141,8 @@ body.login .block .block-head h2{padding-top:12px;}
 /* Trails */
 .trail:hover{background-color:#f1f1f1;}
 .trail a{text-align:center;display:block;}
-.trail{width:200px;height:160px;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
-.trail-slideshow img{width:200px;height:160px;}
+.trail{width:200px;height:160px;}
+.trail-slideshow img{width:200px;height:160px;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
 .trail .trail-desc{  
     position:absolute;
     bottom:0px;
@@ -151,7 +151,8 @@ body.login .block .block-head h2{padding-top:12px;}
     left:0px;  
     background-color:black;  
     color:white;
-    opacity: 0.75;  
+    opacity: 0.75; 
+    border-radius:0px 5px 0px 0px;-moz-border-radius:0px 5px 0px 0px;-webkit-border-top-right-radius:5px; 
 }  
 .trail .trail-desc div{  
     padding:3px;  
