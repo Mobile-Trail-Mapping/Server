@@ -47,7 +47,11 @@ $(document).ready(function() {
     
     // post and get the json
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
-        alert(data.point.desc)
+        if(data) {
+          $("#trail-name").html(data.point.name);
+          $("#trail-coords").html(data.point.coords);
+          $("#trail-desc").html(data.point.desc)
+        }
     });    
     
     // slide the panel out
