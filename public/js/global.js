@@ -53,7 +53,7 @@ $(document).ready(function() {
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           $.each(data.point.photos, function(i) {
-            $("#trail-pics").append('<img src="' + i + '" />');
+            $("#trail-pics").append('<img src="' + data.point.photos[i] + '" />');
           });
         }
     });    
