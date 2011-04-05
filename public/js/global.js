@@ -59,7 +59,7 @@ $(document).ready(function() {
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
-        alert(data.point)
+        alert(data.point.desc)
     });    
     if (!$(this).parents('li').hasClass('current')) {
       $('.preview-pane .preview').animate({left: _left}, 300, function(){
