@@ -44,7 +44,7 @@ $(document).ready(function() {
      
   // trail slideshow cycler
   $('.trail-slideshow').cycle({
-    fx: 'scrollDown', 
+    fx: 'fade', 
     speed: 1000, 
     next: '.trail-slideshow', 
     timeout: 4000 
