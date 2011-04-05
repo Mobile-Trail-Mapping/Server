@@ -49,6 +49,18 @@ $(document).ready(function() {
     next: '.trail-slideshow', 
     timeout: 4000 
   });
+  
+  // trail masonry
+  $('#trails').masonry({
+    columnWidth: 200, 
+    animate: true,
+    singleMode: true,
+    animationOptions: {
+      duration: 750,
+      easing: 'linear',
+      queue: false
+    }
+  });
 
   // click on the list
   $('.list-view > li').click(function(){

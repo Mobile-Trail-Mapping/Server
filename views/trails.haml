@@ -1,9 +1,9 @@
 .block
   .block-head
     %h2 Trails
-  .block-content
+  #trails.block-content
     - @photos.keys.each do |trail|
-      %div
+      %div.trail
         %a{:href => "/trails/#{trail}"}
           = "#{trail.capitalize}"
         .trail-slideshow
