@@ -138,20 +138,23 @@ body.login .block .block-head h2{padding-top:12px;}
 .message .close-me{display:block;float:right;width:16px;height:16px;background:url(../images/close.png) 0 0 no-repeat;margin-top:2px;cursor:pointer;-moz-opacity:0.7;opacity:0.7;padding:0;right:15px;top:20px;}
 .message .close-me:hover{-moz-opacity:1;opacity:1;}
 .message .close-me:active{top:21px;}
-
+/* Trails */
 .trail{width:200px;height:180px;border:1px solid #eee;padding:7px;}
 .trail:hover{background-color:#f1f1f1;}
 .trail a{text-align:center;display:block;}
 .trail-slideshow{height:163px;}
 .trail-slideshow img{width:200px;height:160px;}
 .trail .trail-desc{  
-    position:absolute; /* absolute position (so we can position it where we want)*/  
-    bottombottom:0px; /* position will be on bottom */  
+    position:absolute;
+    bottom:0px;
+    z-index:9999;
+    width:100%;
     left:0px;  
-    /* styling bellow */  
     background-color:black;  
-    color:white;  
+    color:white;
+    opacity: 0.75;  
 }  
 .trail .trail-desc div{  
-    padding:10px;  
+    padding:3px;  
+    opacity: 1;
 }  
