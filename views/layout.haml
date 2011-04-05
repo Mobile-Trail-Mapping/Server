@@ -5,14 +5,12 @@
       %title LC Trails - Admin
       %link{:href => "../css/reset.css", :media => "screen", :rel => "stylesheet"}/
       %link{:href => "../css/style.css", :media => "screen", :rel => "stylesheet"}/
-      /[if lt IE 9]
+      /[if IE]
         %script{:src => "../js/html5.js"}
         %script{:src => "../js/PIE.js"}
+        %script{:src => "../js/IE9.js"}
       %script{:src => "../js/jquery.tools.min.js"}
       %script{:src => "../js/jquery.ui.min.js"}
-      /[if lte IE 9]
-        %link{:href => "../css/ie.css", :media => "screen", :rel => "stylesheet"}/
-        %script{:src => "../js/ie.js"}
       %script{:src => "../js/global.js"}
   %body 
     #bg
