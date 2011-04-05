@@ -48,9 +48,13 @@ $(document).ready(function() {
     // post and get the json
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
         if(data) {
+          var images = [];
           $("#trail-name").html(data.point.name);
-          $("#trail-coords").html(data.point.lat + ", " + data.point.long);
+          $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
+          $.each(data.point.photos, function(i) {
+            $("#trail-pics").append('<img src="' + i + '" />');
+          });
         }
     });    
     
@@ -79,6 +83,7 @@ $(document).ready(function() {
   if ($('.preview-pane .preview').length>0) { 
     previewYloc = parseInt($('.preview-pane .preview').css('top').substring(0,$('.preview').css('top').indexOf('px')), 10); 
   }
+  // float the menu when the window scrolls
   $(window).scroll(function () {
     var offset = 0;
     if ($('.preview-pane .preview').length>0) {
@@ -87,6 +92,7 @@ $(document).ready(function() {
     }
   });
   
+  // slideshow cycler
   $('.slideshow').cycle({
     fx: 'scrollDown', 
     speed: 1000 , 
