@@ -36,6 +36,10 @@ $(document).ready(function() {
     // set the left
     _left = '-' + $('.preview-pane .preview').width() - 80 + 'px';
     $('.preview-pane .preview').css('left',_left);
+    
+    // set the gmaps
+    $('#map_canvas').css('width', _width);
+    $('#map_canvas').css('height', '300px');
   }
 
   // click on the list
@@ -48,10 +52,11 @@ $(document).ready(function() {
     // post and get the json
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
         if(data) {
-          var images = [];
+          // load the data into the panel
           $("#trail-name").html(data.point.name);
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
+          // pictures
           $(".slideshow").html(""); //clear pics for each point
           $.each(data.point.photos, function(i) {
             $(".slideshow").append('<img src="' + data.point.photos[i] + '" />');
