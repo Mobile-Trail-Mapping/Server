@@ -53,7 +53,6 @@ $(document).ready(function() {
     // slide the panel out
     if (!$(this).parents('li').hasClass('current')) {
       $('.preview-pane .preview').animate({left: _left}, 300, function(){
-        $(this).find('.desc').hide();
         $(this).animate({left: '-32px'}, 300);
         $(url).show();
       });
