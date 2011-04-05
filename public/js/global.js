@@ -51,16 +51,16 @@ $(document).ready(function() {
   });
   
   // trail masonry
-  // $('#trails').masonry({
-  //   columnWidth: 200, 
-  //   animate: true,
-  //   singleMode: true,
-  //   animationOptions: {
-  //     duration: 750,
-  //     easing: 'linear',
-  //     queue: false
-  //   }
-  // });
+  $('#trails').masonry({
+    columnWidth: 200, 
+    animate: true,
+    singleMode: true,
+    animationOptions: {
+      duration: 750,
+      easing: 'linear',
+      queue: false
+    }
+  });
 
   // click on the list
   $('.list-view > li').click(function(){
