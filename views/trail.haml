@@ -3,10 +3,10 @@
     .block-head
       %h2.trail-name #{@trail.name.capitalize} 
     .block-content
-      %ul#listing.list-view.clearfix
+      %ul#listing.list-view
         - @trail.points.each do |point| #- point.photos.each do |photo|
           - if point.category.name != "Trail"
-            %li.clearfix
+            %li
               .tools
                 %a.button.button-gray.delete{:href => "/point/delete/#{point.id}"} 
                   %span.bin
