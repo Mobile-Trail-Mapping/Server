@@ -68,6 +68,7 @@ $(document).ready(function() {
             next: '.slideshow', 
             timeout: 4000 
           });
+          alert(data.point.lat);
           // load the gmap
           $('#map_canvas').gMap({
               controls: false,
