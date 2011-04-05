@@ -22,7 +22,7 @@ end
 
 # Basic page for uploading images
 get '/image/upload/?' do
-  haml :add_point
+  haml :upload
 end
 
 # Add a new image
