@@ -80,6 +80,7 @@ $(document).ready(function() {
     var type = 'trails';
     if($(this).parent('ul').hasClass('problem'))
       type = 'problem';
+    alert(type);
     // post and get the json
     $.getJSON('/' + type + '/get/' + name + '/point/' + id, function(data) {
         if(data) {
