@@ -32,7 +32,7 @@ get '/problems/get/:id/?' do
 
   @json = {}
   problem = Problem.get(params[:id].to_i)
-  @json[:problem] = { :pic => problem[:pic], :lat => problem[:lat], :long => problem[:long], :desc => problem[:desc], :title => problem[:title] }
+  @json[:problem] = { :pic => problem[:pic_file_name], :lat => problem[:lat], :long => problem[:long], :desc => problem[:desc], :title => problem[:title] }
 
   @json.to_json
 end
