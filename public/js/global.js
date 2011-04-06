@@ -80,12 +80,12 @@ $(document).ready(function() {
     $.getJSON('/problem/get/' + id, function(data) {
         if(data) {
           // load the data into the panel
-          $("#problem-title").html(data.point.title);
-          $("#problem-coords").html(data.point.lat + ', ' + data.point.long);
-          $("#problem-desc").html(data.point.desc)
+          $("#problem-title").html(data.problem.title);
+          $("#problem-coords").html(data.problem.lat + ', ' + data.problem.long);
+          $("#problem-desc").html(data.problem.desc)
           // pictures
           $("ul#slider").html("");
-          $("ul#slider").append('<li><img src="' + data.point.pic + '" /></li>');
+          $("ul#slider").append('<li><img src="' + data.problem.pic + '" /></li>');
          
           $('#slider')
           	.anythingSlider({
