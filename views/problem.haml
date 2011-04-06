@@ -12,7 +12,8 @@
             %a.more{:href => "#problem_#{prob.id}"}
             %a.name{:href => "#"} 
               #{prob.title}
-              %small#{prob.desc}
+              %small
+                = #{prob.desc}
   .preview-pane.small.right.omega
     .help
       .message.info
