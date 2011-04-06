@@ -48,7 +48,7 @@ $(document).ready(function() {
     $('#map_canvas').css('height', '200px');
     
     // set the slider
-    $('div.anythingSlider').css('width', _width.replace('px','') - 10 + 'px');
+    // $('div.anythingSlider').css('width', _width.replace('px','') - 10 + 'px');
   }
      
   // trail slideshow cycler
@@ -86,7 +86,7 @@ $(document).ready(function() {
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           // pictures
-          if(data.point.photos) {  
+          if(data.point.photos != null) {  
             $("ul#slider").html("");
             $.each(data.point.photos, function(i) {
               $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
