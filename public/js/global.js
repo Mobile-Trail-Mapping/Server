@@ -70,17 +70,62 @@ $(document).ready(function() {
       queue: false
     }
   });
+  
+  // click on the problem list
+  $('.list-view-problem > li').click(function(){
+    // gather the information
+    var url = $(this).find('.more').attr('href');
+    var id = $(this).find('.more').attr('href').replace('#problem_','');
+    var name = $('.trail-name').text();
+    var type = 'trails';
+    
+    // post and get the json
+    $.getJSON('/' + type + '/get/' + name + '/point/' + id, function(data) {
+        if(data) {
+          // load the data into the panel
+          $("#trail-name").html(data.point.name);
+          $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
+          $("#trail-desc").html(data.point.desc)
+          // pictures
+          if(data.point.photosshoul) {  
+            $("ul#slider").html("");
+            $.each(data.point.photos, function(i) {
+              $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
+            });       
+             
+            $('#slider')
+            	.anythingSlider({
+            		startStopped : true,
+            	})
+            	.anythingSliderFx({
+            		'.caption-top'    : [ 'caption-Top', '50px' ],
+            		'.caption-right'  : [ 'caption-Right', '130px' ],
+            		'.caption-bottom' : [ 'caption-Bottom', '50px' ],
+            		'.caption-left'   : [ 'caption-Left', '130px' ]
+            	})
+            	.find('div[class*=caption]')
+            		.css({ position: 'absolute' })
+            		.prepend('<span class="close">x</span>')
+            		.find('.close').click(function(){
+            			var cap = $(this).parent(),
+            				ani = { bottom : -50 }; // bottom
+            			if (cap.is('.caption-top')) { ani = { top: -50 }; }
+            			if (cap.is('.caption-left')) { ani = { left: -150 }; }
+            			if (cap.is('.caption-right')) { ani = { right: -150 }; }
+            			cap.animate(ani, 400, function(){ cap.hide(); } );
+            	});
+            }
+        }
+    });   
 
-  // click on the list
+  // click on the trail list
   $('.list-view > li').click(function(){
     // gather the information
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
     var type = 'trails';
-    if($(this).parent('.problem'))
-      type = 'problem';
-    alert(type);
+    
     // post and get the json
     $.getJSON('/' + type + '/get/' + name + '/point/' + id, function(data) {
         if(data) {

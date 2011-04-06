@@ -103,18 +103,18 @@ body.login .block .block-head h2{padding-top:12px;}
 .tools{display:none;}
 .tools a{padding:4px 3px;}
 .logout{padding-left:20px;}
-.list-view{font-size:12px;margin-left:-30px;margin-right:-30px;}
-.list-view > li{border-bottom:1px solid #ddd;padding:10px 30px 10px 25px;position:relative;zoom:1;}
-.list-view > li:hover{background-color:#fafafa;cursor:pointer;}
-.list-view > li.current{background-color:#f1f1f1;}
-.list-view > li .more{background:#499510 url(../images/arrow-right.png) no-repeat 5px center;display:block;width:24px;height:100%;position:absolute;right:0px;top:0px;text-align:center;text-decoration:none;text-indent:-999em;visibility:hidden;}
-.list-view > li .more:hover{cursor:pointer;}
-.list-view > li:hover .more{visibility:visible;}
-.list-view > li.current .more{background:#499510 url(../images/arrow-left.png) no-repeat 3px center;visibility:visible;}
-.list-view > li a{font-weight:bold;font-size:16px;}
-.list-view > li p{color:#111;margin:0;}
-.list-view > li:last-child{border-bottom:0;}
-.list-view > li a.button{float:right;font-size:12px;font-weight:normal;margin-top:-2px;margin-right:5px;}
+.list-view, .list-view-problem{font-size:12px;margin-left:-30px;margin-right:-30px;}
+.list-view > li, .list-view-problem > li{border-bottom:1px solid #ddd;padding:10px 30px 10px 25px;position:relative;zoom:1;}
+.list-view > li:hover, .list-view-problem > li:hover;{background-color:#fafafa;cursor:pointer;}
+.list-view > li.current, .list-view-problem > li.current{background-color:#f1f1f1;}
+.list-view > li .more, .list-view-problem > li.more{background:#499510 url(../images/arrow-right.png) no-repeat 5px center;display:block;width:24px;height:100%;position:absolute;right:0px;top:0px;text-align:center;text-decoration:none;text-indent:-999em;visibility:hidden;}
+.list-view > li .more:hover, .list-view-problem > li.more:hover{cursor:pointer;}
+.list-view > li:hover .more, .list-view-problem > li:hover .more{visibility:visible;}
+.list-view > li.current .more, .list-view-problem > li.current .more{background:#499510 url(../images/arrow-left.png) no-repeat 3px center;visibility:visible;}
+.list-view > li a, .list-view-problem > li a{font-weight:bold;font-size:16px;}
+.list-view > li p, .list-view-problem > li p{color:#111;margin:0;}
+.list-view > li:last-child, .list-view-problem > li:last-child{border-bottom:0;}
+.list-view > li a.button, .list-view-problem > li a.button{float:right;font-size:12px;font-weight:normal;margin-top:-2px;margin-right:5px;}
 .slideshow{margin:0 auto;}
 .slideshow img{cursor:pointer;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
 .name small{font-weight:normal;color:#666;padding-left:7px;}

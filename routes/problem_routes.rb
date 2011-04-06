@@ -27,6 +27,16 @@ get '/problems/?' do
   haml :problem
 end
 
+get '/problems/get/:id/?' do
+  content_type :json
+
+  @json = {}
+  problem = Problem.get(params[:id].to_i)
+  @json[:problem] = { :pic => problem[:pic], :lat => problem[:lat], :long => problem[:long], :desc => problem[:desc], :title => problem[:title] }
+
+  @json.to_json
+end
+
 # Delete a problem
 get '/problem/delete/:id/?' do
   problem = Problem.all(:id => params[:id])
