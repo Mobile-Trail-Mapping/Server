@@ -144,7 +144,7 @@ based on work by Remy Sharp:http://jqueryfordesigners.com/
 div.anythingSlider{width:225px;height:300px;margin:0 auto;overflow:hidden;/* needed for Opera and Safari */}
 /* Default State */
 div.anythingSlider .thumbNav a.cur,div.anythingSlider .thumbNav a{background:#777;color:#000;}
-div.anythingSlider .anythingWindow{border-top:3px solid #777;border-bottom:3px solid #777;}
+div.anythingSlider .anythingWindow{border-bottom:3px solid #777;}
 div.anythingSlider .start-stop{background-color:#040;color:#fff;}
 div.anythingSlider .start-stop.playing{background-color:#800;}
 div.anythingSlider .start-stop:hover,div.anythingSlider .start-stop.hover{color:#ddd;}
@@ -163,15 +163,43 @@ div.anythingSlider{position:relative;padding:0 45px 28px 45px;}
 ul.anythingBase{background:transparent;list-style:none;position:absolute;top:0;left:0;margin:0;padding:0;}
 ul.anythingBase li.panel{background:transparent;display:block;overflow:hidden;float:left;padding:0;margin:0;}
 /* Navigation Arrows */
-div.anythingSlider .arrow{top:50%;position:absolute;display:block;}
-div.anythingSlider .arrow a{display:block;height:120px;margin:-60px 0 0 0;width:45px;text-align:center;outline:0;background:url(../images/arrows-default.png) no-repeat;text-indent:-9999px;}
-div.anythingSlider .forward{right:0;}
-div.anythingSlider .back{left:0;}
-div.anythingSlider .forward a{background-position:0 -40px;}
-div.anythingSlider .back a{background-position:-88px -40px;}
-div.anythingSlider .forward a:hover,div.anythingSlider .forward a.hover{background-position:0 -240px;}
-div.anythingSlider .back a:hover,div.anythingSlider .back a.hover{background-position:-88px -240px;}
-div.anythingSlider .forward.disabled{display:none;}
+
+/* Navigation Arrows */
+div.anythingSlider .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+	z-index: 100;
+}
+div.anythingSlider .arrow a {
+	display: block;
+	height: 300px;
+	margin-top: -150px; /* half height of image */
+	width: 45px;
+	outline: 0;
+	background: url(../images/arrows.gif) no-repeat;
+	text-indent: -9999px;
+}
+
+div.anythingSlider .forward a {
+	border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	-webkit-border-radius: 0 5px 5px 0;
+}
+
+div.anythingSlider .back a {
+	border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px;
+}
+
+div.anythingSlider .forward { right: 0; }
+div.anythingSlider .back { left: 0; }
+div.anythingSlider .forward a { background-position: right bottom; }
+div.anythingSlider .back a { background-position: left bottom; }
+div.anythingSlider .forward a:hover, div.anythingSlider .forward a.hover { background-position: -50px top; }
+div.anythingSlider .back a:hover, div.anythingSlider .back a.hover { background-position: -5px top; }
+
 /* disabled arrows,hide or reduce opacity:opacity:.5;filter:alpha(opacity=50);*/
 div.anythingSlider .back.disabled{display:none;}
 /* Navigation Links */
@@ -193,20 +221,20 @@ div.anythingSlider .start-stop{background-image:url(../images/cellshade.png);bac
 div.anythingSlider .start-stop:hover,div.anythingSlider .start-stop.hover{background-image:none;}
 div.anythingSlider,div.anythingSlider .anythingWindow,div.anythingSlider .thumbNav a,div.anythingSlider .arrow a,div.anythingSlider .start-stop{transition-duration:0;-o-transition-duration:0;-moz-transition-duration:0;-webkit-transition-duration:0;}
 /* images with caption */
-#slider3 img{width:100%;height:100%;}
+#slider img{width:100%;height:100%;}
 /* position the panels so the captions appear correctly */
-#slider3 .panel{position:relative;}
+#slider .panel{position:relative;}
 /* captions */
-#slider3 .caption-top,#slider3 .caption-right,
-#slider3 .caption-bottom,#slider3 .caption-left{background:#000;color:#fff;padding:10px;margin:0;position:relative;z-index:10;opacity:.8;filter:alpha(opacity=80);}
+#slider .caption-top,#slider3 .caption-right,
+#slider .caption-bottom,#slider3 .caption-left{background:#000;color:#fff;padding:10px;margin:0;position:relative;z-index:10;opacity:.8;filter:alpha(opacity=80);}
 /* Top caption - padding is included in the width (480px here,500px in the script),same for height */
-#slider3 .caption-top{left:0;top:0;width:480px;height:30px;}
+#slider .caption-top{left:0;top:0;width:480px;height:30px;}
 /* Right caption - padding is included in the width (130px here,150px in the script),same for height */
-#slider3 .caption-right{right:0;bottom:0;width:130px;height:180px;}
+#slider .caption-right{right:0;bottom:0;width:130px;height:180px;}
 /* Bottom caption - padding is included in the width (480px here,500px in the script),same for height */
-#slider3 .caption-bottom{left:0;bottom:0;width:480px;height:30px;}
+#slider .caption-bottom{left:0;bottom:0;width:480px;height:30px;}
 /* Left caption - padding is included in the width (130px here,150px in the script),same for height */
-#slider3 .caption-left{left:0;bottom:0;width:130px;height:180px;}
+#slider .caption-left{left:0;bottom:0;width:130px;height:180px;}
 /* Caption close button */
 .caption-top .close,.caption-right .close,
 .caption-bottom .close,.caption-left .close{font-size:80%;cursor:pointer;float:right;display:inline-block;}
