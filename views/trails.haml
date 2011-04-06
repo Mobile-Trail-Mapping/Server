@@ -1,6 +1,10 @@
 .block
   .block-head
-    %h2 Trails
+    %h2 
+      Trails
+      %button.button.button-gray.fr{:type => "submit"} 
+        %span.add
+        New trail
   #trails.block-content
     - @photos.keys.each do |trail|
       .trail
