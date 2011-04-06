@@ -115,6 +115,7 @@ body.login .block .block-head h2{padding-top:12px;}
 .list-view > li p{color:#111;margin:0;}
 .list-view > li:last-child{border-bottom:0;}
 .list-view > li a.button{float:right;font-size:12px;font-weight:normal;margin-top:-2px;margin-right:5px;}
+.slideshow{margin: 0 auto; -moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
 .slideshow img{cursor:pointer;}
 .name small{font-weight:normal;color:#666;padding-left:7px;}
 /* Messages */ 
