@@ -78,8 +78,7 @@ $(document).ready(function() {
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
     var type = 'trails';
-    alert($(this).parent('ul'));
-    if($(this).parent('ul').hasClass('problem'))
+    if($(this).parent('.problem'))
       type = 'problem';
     alert(type);
     // post and get the json
