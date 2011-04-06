@@ -74,47 +74,40 @@ $(document).ready(function() {
   // click on the problem list
   $('.list-view-problem > li').click(function(){
     // gather the information
-    var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#problem_','');
-    var name = $('.trail-name').text();
-    var type = 'trails';
     
     // post and get the json
-    $.getJSON('/' + type + '/get/' + name + '/point/' + id, function(data) {
+    $.getJSON('/problem/get/' + id, function(data) {
         if(data) {
           // load the data into the panel
-          $("#trail-name").html(data.point.name);
-          $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
-          $("#trail-desc").html(data.point.desc)
+          $("#problem-title").html(data.point.title);
+          $("#problem-coords").html(data.point.lat + ', ' + data.point.long);
+          $("#problem-desc").html(data.point.desc)
           // pictures
-          if(data.point.photosshoul) {  
-            $("ul#slider").html("");
-            $.each(data.point.photos, function(i) {
-              $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
-            });       
-             
-            $('#slider')
-            	.anythingSlider({
-            		startStopped : true,
-            	})
-            	.anythingSliderFx({
-            		'.caption-top'    : [ 'caption-Top', '50px' ],
-            		'.caption-right'  : [ 'caption-Right', '130px' ],
-            		'.caption-bottom' : [ 'caption-Bottom', '50px' ],
-            		'.caption-left'   : [ 'caption-Left', '130px' ]
-            	})
-            	.find('div[class*=caption]')
-            		.css({ position: 'absolute' })
-            		.prepend('<span class="close">x</span>')
-            		.find('.close').click(function(){
-            			var cap = $(this).parent(),
-            				ani = { bottom : -50 }; // bottom
-            			if (cap.is('.caption-top')) { ani = { top: -50 }; }
-            			if (cap.is('.caption-left')) { ani = { left: -150 }; }
-            			if (cap.is('.caption-right')) { ani = { right: -150 }; }
-            			cap.animate(ani, 400, function(){ cap.hide(); } );
-            	});
-            }
+          $("ul#slider").html("");
+          $("ul#slider").append('<li><img src="' + data.point.pic + '" /></li>');
+         
+          $('#slider')
+          	.anythingSlider({
+          		startStopped : true,
+          	})
+          	.anythingSliderFx({
+          		'.caption-top'    : [ 'caption-Top', '50px' ],
+          		'.caption-right'  : [ 'caption-Right', '130px' ],
+          		'.caption-bottom' : [ 'caption-Bottom', '50px' ],
+          		'.caption-left'   : [ 'caption-Left', '130px' ]
+          	})
+          	.find('div[class*=caption]')
+          		.css({ position: 'absolute' })
+          		.prepend('<span class="close">x</span>')
+          		.find('.close').click(function(){
+          			var cap = $(this).parent(),
+          				ani = { bottom : -50 }; // bottom
+          			if (cap.is('.caption-top')) { ani = { top: -50 }; }
+          			if (cap.is('.caption-left')) { ani = { left: -150 }; }
+          			if (cap.is('.caption-right')) { ani = { right: -150 }; }
+          			cap.animate(ani, 400, function(){ cap.hide(); } );
+          	});
         }
     });   
 
@@ -124,17 +117,16 @@ $(document).ready(function() {
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
-    var type = 'trails';
     
     // post and get the json
-    $.getJSON('/' + type + '/get/' + name + '/point/' + id, function(data) {
+    $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
         if(data) {
           // load the data into the panel
           $("#trail-name").html(data.point.name);
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           // pictures
-          if(data.point.photosshoul) {  
+          if(data.point.photos) {  
             $("ul#slider").html("");
             $.each(data.point.photos, function(i) {
               $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
