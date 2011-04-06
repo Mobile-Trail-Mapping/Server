@@ -115,8 +115,8 @@ body.login .block .block-head h2{padding-top:12px;}
 .list-view > li p{color:#111;margin:0;}
 .list-view > li:last-child{border-bottom:0;}
 .list-view > li a.button{float:right;font-size:12px;font-weight:normal;margin-top:-2px;margin-right:5px;}
-.slideshow{margin: 0 auto; -moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
-.slideshow img{cursor:pointer;}
+.slideshow{margin: 0 auto; }
+.slideshow img{cursor:pointer; -moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
 .name small{font-weight:normal;color:#666;padding-left:7px;}
 /* Messages */ 
 .message{padding:10px 15px 10px 40px;margin:0px;margin-top:2px;font-weight:bold;overflow:hidden;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}

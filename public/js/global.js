@@ -89,7 +89,7 @@ $(document).ready(function() {
           });
           // slideshow cycler
           $('.slideshow').cycle({
-            fx: 'scrollDown', 
+            fx: 'fade', 
             speed: 1000 , 
             next: '.slideshow', 
             timeout: 4000 
