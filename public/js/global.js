@@ -73,6 +73,7 @@ $(document).ready(function() {
   
   // click on the problem list
   $('.list-view-problem > li').click(function(){
+    alert("Testing");
     // gather the information
     var id = $(this).find('.more').attr('href').replace('#problem_','');
     
