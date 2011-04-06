@@ -77,7 +77,7 @@ $(document).ready(function() {
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
-    
+    alert($(this).parent());
     // post and get the json
     $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
         if(data) {
@@ -86,7 +86,7 @@ $(document).ready(function() {
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           // pictures
-          if(data.point.photos) {  
+          if(data.point.photosshoul) {  
             $("ul#slider").html("");
             $.each(data.point.photos, function(i) {
               $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
