@@ -80,6 +80,7 @@ $(document).ready(function() {
   $('.list-view-problem > li').click(function(){
     // gather the information
     var id = $(this).find('.more').attr('href').replace('#problem_','');
+    var url = $(this).find('.more').attr('href');
     
     // post and get the json
     $.getJSON('/problem/get/' + id, function(data) {

@@ -107,8 +107,8 @@ body.login .block .block-head h2{padding-top:12px;}
 .list-view > li, .list-view-problem > li{border-bottom:1px solid #ddd;padding:10px 30px 10px 25px;position:relative;zoom:1;}
 .list-view > li:hover, .list-view-problem > li:hover{background-color:#fafafa;cursor:pointer;}
 .list-view > li.current, .list-view-problem > li.current{background-color:#f1f1f1;}
-.list-view > li .more, .list-view-problem > li.more{background:#499510 url(../images/arrow-right.png) no-repeat 5px center;display:block;width:24px;height:100%;position:absolute;right:0px;top:0px;text-align:center;text-decoration:none;text-indent:-999em;visibility:hidden;}
-.list-view > li .more:hover, .list-view-problem > li.more:hover{cursor:pointer;}
+.list-view > li .more, .list-view-problem > li .more{background:#499510 url(../images/arrow-right.png) no-repeat 5px center;display:block;width:24px;height:100%;position:absolute;right:0px;top:0px;text-align:center;text-decoration:none;text-indent:-999em;visibility:hidden;}
+.list-view > li .more:hover, .list-view-problem > li .more:hover{cursor:pointer;}
 .list-view > li:hover .more, .list-view-problem > li:hover .more{visibility:visible;}
 .list-view > li.current .more, .list-view-problem > li.current .more{background:#499510 url(../images/arrow-left.png) no-repeat 3px center;visibility:visible;}
 .list-view > li a, .list-view-problem > li a{font-weight:bold;font-size:16px;}
