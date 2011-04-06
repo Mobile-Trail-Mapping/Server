@@ -2,6 +2,9 @@
   .block.small.left
     .block-head
       %h2.trail-name #{@trail.name.capitalize} 
+        %button.button.button-gray.fr{:type => "submit"} 
+          %span.add
+          New point
     .block-content
       %ul#listing.list-view.clearfix
         - @trail.points.each do |point| #- point.photos.each do |photo|
