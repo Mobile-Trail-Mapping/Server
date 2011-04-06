@@ -77,9 +77,11 @@ $(document).ready(function() {
     var url = $(this).find('.more').attr('href');
     var id = $(this).find('.more').attr('href').replace('#point_','');
     var name = $('.trail-name').text();
-    alert($(this).parent());
+    var type = 'trails';
+    if($(this).parent('ul').hasClass('problem'))
+      type = 'problem';
     // post and get the json
-    $.getJSON('/trails/get/' + name + '/point/' + id, function(data) {
+    $.getJSON('/' + type + '/get/' + name + '/point/' + id, function(data) {
         if(data) {
           // load the data into the panel
           $("#trail-name").html(data.point.name);
