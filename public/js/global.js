@@ -110,6 +110,7 @@ $(document).ready(function() {
           	});
         }
     });   
+  });
 
   // click on the trail list
   $('.list-view > li').click(function(){
