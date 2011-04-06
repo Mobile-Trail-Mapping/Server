@@ -83,37 +83,32 @@ $(document).ready(function() {
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           // pictures
-          $("ul#slider3").html("");
+          $("ul#slider").html("");
           $.each(data.point.photos, function(i) {
-            $("ul#slider3").append('<li><img src="' + data.point.photos[i] + '" /></li>');
-          });          
-$('#slider3')
-	.anythingSlider({
-		width               : 500,
-		height              : 400,
-		startStopped        : true,
-		navigationFormatter : function(i, panel){
-			return ['Top', 'Right', 'Bottom', 'Left'][i - 1];
-		}
-	})
-	.anythingSliderFx({
-		'.caption-top'    : [ 'caption-Top', '50px' ],
-		'.caption-right'  : [ 'caption-Right', '130px' ],
-		'.caption-bottom' : [ 'caption-Bottom', '50px' ],
-		'.caption-left'   : [ 'caption-Left', '130px' ]
-	})
-	.find('div[class*=caption]')
-		.css({ position: 'absolute' })
-		.prepend('<span class="close">x</span>')
-		.find('.close').click(function(){
-			var cap = $(this).parent(),
-				ani = { bottom : -50 }; // bottom
-			if (cap.is('.caption-top')) { ani = { top: -50 }; }
-			if (cap.is('.caption-left')) { ani = { left: -150 }; }
-			if (cap.is('.caption-right')) { ani = { right: -150 }; }
-			cap.animate(ani, 400, function(){ cap.hide(); } );
-		});
-          
+            $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
+          });       
+             
+          $('#slider')
+          	.anythingSlider({
+          		startStopped        : true,
+          	})
+          	.anythingSliderFx({
+          		'.caption-top'    : [ 'caption-Top', '50px' ],
+          		'.caption-right'  : [ 'caption-Right', '130px' ],
+          		'.caption-bottom' : [ 'caption-Bottom', '50px' ],
+          		'.caption-left'   : [ 'caption-Left', '130px' ]
+          	})
+          	.find('div[class*=caption]')
+          		.css({ position: 'absolute' })
+          		.prepend('<span class="close">x</span>')
+          		.find('.close').click(function(){
+          			var cap = $(this).parent(),
+          				ani = { bottom : -50 }; // bottom
+          			if (cap.is('.caption-top')) { ani = { top: -50 }; }
+          			if (cap.is('.caption-left')) { ani = { left: -150 }; }
+          			if (cap.is('.caption-right')) { ani = { right: -150 }; }
+          			cap.animate(ani, 400, function(){ cap.hide(); } );
+          	});
           // $(".slideshow").html(""); //clear pics for each point
           // $.each(data.point.photos, function(i) {
           //   $(".slideshow").append('<img src="' + data.point.photos[i] + '" />');
