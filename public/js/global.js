@@ -13,6 +13,12 @@ $(document).ready(function() {
     $(this).find('.tools').hide();
   });
   $('.content').css('top',$(this).find("h1").height()+5+'px');
+  $('.trail-desc').fadeTo('fast',0.2);
+  $('.trail').mouseenter(function() {
+    $(this).find('.trail-desc').fadeTo('fast',0.5);    
+  }).mouseleave(function() {
+    $(this).find('.trail-desc').fadeTo('fast',0.2);
+  });
 
   // initial
   resizePanel();
