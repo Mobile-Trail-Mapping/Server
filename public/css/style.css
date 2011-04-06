@@ -163,43 +163,18 @@ div.anythingSlider{position:relative;padding:0 45px 28px 45px;}
 ul.anythingBase{background:transparent;list-style:none;position:absolute;top:0;left:0;margin:0;padding:0;}
 ul.anythingBase li.panel{background:transparent;display:block;overflow:hidden;float:left;padding:0;margin:0;}
 /* Navigation Arrows */
-
 /* Navigation Arrows */
-div.anythingSlider .arrow {
-	top: 50%;
-	position: absolute;
-	display: block;
-	z-index: 100;
-}
-div.anythingSlider .arrow a {
-	display: block;
-	height: 300px;
-	margin-top: -150px; /* half height of image */
-	width: 45px;
-	outline: 0;
-	background: url(../images/arrows.gif) no-repeat;
-	text-indent: -9999px;
-}
-
-div.anythingSlider .forward a {
-	border-radius: 0 5px 5px 0;
-	-moz-border-radius: 0 5px 5px 0;
-	-webkit-border-radius: 0 5px 5px 0;
-}
-
-div.anythingSlider .back a {
-	border-radius: 5px 0 0 5px;
-	-moz-border-radius: 5px 0 0 5px;
-	-webkit-border-radius: 5px 0 0 5px;
-}
-
-div.anythingSlider .forward { right: 0; }
-div.anythingSlider .back { left: 0; }
-div.anythingSlider .forward a { background-position: right bottom; }
-div.anythingSlider .back a { background-position: left bottom; }
-div.anythingSlider .forward a:hover, div.anythingSlider .forward a.hover { background-position: -50px top; }
-div.anythingSlider .back a:hover, div.anythingSlider .back a.hover { background-position: -5px top; }
-
+div.anythingSlider .arrow{top:50%;position:absolute;display:block;z-index:100;}
+div.anythingSlider .arrow a{display:block;height:300px;margin-top:-150px;/* half height of image */
+width:45px;outline:0;background:url(../images/arrows.gif) no-repeat;text-indent:-9999px;}
+div.anythingSlider .forward a{border-radius:0 5px 5px 0;-moz-border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;}
+div.anythingSlider .back a{border-radius:5px 0 0 5px;-moz-border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;}
+div.anythingSlider .forward{right:0;}
+div.anythingSlider .back{left:0;}
+div.anythingSlider .forward a{background-position:right bottom;}
+div.anythingSlider .back a{background-position:left bottom;}
+div.anythingSlider .forward a:hover,div.anythingSlider .forward a.hover{background-position:-50px top;}
+div.anythingSlider .back a:hover,div.anythingSlider .back a.hover{background-position:-5px top;}
 /* disabled arrows,hide or reduce opacity:opacity:.5;filter:alpha(opacity=50);*/
 div.anythingSlider .back.disabled{display:none;}
 /* Navigation Links */
