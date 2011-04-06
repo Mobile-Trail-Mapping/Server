@@ -83,17 +83,21 @@ $(document).ready(function() {
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           // pictures
-          $(".slideshow").html(""); //clear pics for each point
+          $("ul#slider3").html("");
           $.each(data.point.photos, function(i) {
-            $(".slideshow").append('<img src="' + data.point.photos[i] + '" />');
-          });
+            $("ul#slider3").append('<li><img src="' + data.point.photos[i] + '" /></li>');
+          });          
+          // $(".slideshow").html(""); //clear pics for each point
+          // $.each(data.point.photos, function(i) {
+          //   $(".slideshow").append('<img src="' + data.point.photos[i] + '" />');
+          // });
           // slideshow cycler
-          $('.slideshow').cycle({
-            fx: 'fade', 
-            speed: 1000 , 
-            next: '.slideshow', 
-            timeout: 4000 
-          });
+          // $('.slideshow').cycle({
+          //   fx: 'fade', 
+          //   speed: 1000 , 
+          //   next: '.slideshow', 
+          //   timeout: 4000 
+          // });
           // load the gmap
           // $('#map_canvas').gMap({
           //     controls: false,
