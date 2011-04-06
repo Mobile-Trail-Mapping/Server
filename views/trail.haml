@@ -2,7 +2,7 @@
   .block.small.left
     .block-head
       %h2.trail-name 
-        = #{@trail.name.capitalize} 
+        - @trail.name.capitalize
         %button.button.button-gray.fr{:type => "submit"} 
           %span.add
           New point
