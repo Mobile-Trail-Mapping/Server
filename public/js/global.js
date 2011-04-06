@@ -46,6 +46,9 @@ $(document).ready(function() {
     // set the gmaps
     $('#map_canvas').css('width', _width.replace('px','') - 10 + 'px');
     $('#map_canvas').css('height', '200px');
+    
+    // set the slider
+    $('div.anythingSlider').css('width', _width.replace('px','') - 10 + 'px');
   }
      
   // trail slideshow cycler
