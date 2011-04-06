@@ -141,7 +141,7 @@ By Chris Coyier:http://css-tricks.com
 with major improvements by Doug Neiner:http://pixelgraphics.us/
 based on work by Remy Sharp:http://jqueryfordesigners.com/
 */
-div.anythingSlider{width:700px;height:390px;margin:0 auto;overflow:hidden;/* needed for Opera and Safari */}
+div.anythingSlider{width:225px;height:300px;margin:0 auto;overflow:hidden;/* needed for Opera and Safari */}
 /* Default State */
 div.anythingSlider .thumbNav a.cur,div.anythingSlider .thumbNav a{background:#777;color:#000;}
 div.anythingSlider .anythingWindow{border-top:3px solid #777;border-bottom:3px solid #777;}
@@ -149,9 +149,9 @@ div.anythingSlider .start-stop{background-color:#040;color:#fff;}
 div.anythingSlider .start-stop.playing{background-color:#800;}
 div.anythingSlider .start-stop:hover,div.anythingSlider .start-stop.hover{color:#ddd;}
 /* Active State */
-div.anythingSlider.activeSlider .anythingWindow{border-color:#7C9127;}
-div.anythingSlider.activeSlider .thumbNav a.cur,div.anythingSlider.activeSlider .thumbNav a{background-color:#7C9127;}
-div.anythingSlider .start-stop{background-color:#080;color:#fff;}
+div.anythingSlider.activeSlider .anythingWindow{border-color:#000;}
+div.anythingSlider.activeSlider .thumbNav a.cur,div.anythingSlider.activeSlider .thumbNav a{background-color:#000;}
+div.anythingSlider .start-stop{display:none;background-color:#080;color:#fff;}
 div.anythingSlider .start-stop.playing{background-color:#d00;}
 div.anythingSlider .start-stop:hover,div.anythingSlider .start-stop.hover{color:#fff;}
 /**** DO NOT CHANGE BELOW THIS LINE ****/
