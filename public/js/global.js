@@ -12,6 +12,11 @@ $(document).ready(function() {
   }, function() {
     $(this).find('.tools').hide();
   });
+  $('.list-view-problem > li').hover(function() {
+    $(this).find('.tools').show();
+  }, function() {
+    $(this).find('.tools').hide();
+  });
   $('.content').css('top',$(this).find("h1").height()+5+'px');
   $('.trail-desc').fadeTo('fast',0.5);
   $('.trail').mouseenter(function() {
@@ -73,7 +78,6 @@ $(document).ready(function() {
   
   // click on the problem list
   $('.list-view-problem > li').click(function(){
-    alert("Testing");
     // gather the information
     var id = $(this).find('.more').attr('href').replace('#problem_','');
     
@@ -86,7 +90,7 @@ $(document).ready(function() {
           $("#problem-desc").html(data.problem.desc)
           // pictures
           $("ul#slider").html("");
-          $("ul#slider").append('<li><img src="' + data.problem.pic + '" /></li>');
+          $("ul#slider").append('<li><img src="http://s3.amazonaws.com/mtm_test_data/images/test/' + data.problem.pic + '" /></li>');
          
           $('#slider')
           	.anythingSlider({
@@ -110,7 +114,20 @@ $(document).ready(function() {
           			cap.animate(ani, 400, function(){ cap.hide(); } );
           	});
         }
-    });   
+    });
+        
+    // slide the panel out
+    if (!$(this).parents('li').hasClass('current')) {
+      $('.preview-pane .preview').animate({left: _left}, 300, function(){
+        $(this).animate({left: '-32px'}, 300);
+        $(url).show();
+      });
+    } else {
+      $('.preview-pane .preview').animate({left: _left}, 300);
+    }
+    $(this).toggleClass('current').siblings().removeClass('current');
+
+    return false;
   });
 
   // click on the trail list
@@ -177,6 +194,7 @@ $(document).ready(function() {
   $('.preview-pane .preview .close').live('click', function(){
     $('.preview-pane .preview').animate({left: _left}, 300);
     $('.list-view li').removeClass('current');
+    $('.list-view-problem li').removeClass('current');
     return false;
   });
 
