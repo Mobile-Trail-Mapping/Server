@@ -136,7 +136,7 @@ $(document).ready(function() {
     var offset = 0;
     var pane_height = $('.preview').height();
     console.log(pane_height);
-    if ($('.preview-pane .preview').length>0 && $('.content').css('top').replace('px','') <= pane_height - 500) {
+    if ($('.preview-pane .preview').length>0) {
       offset = previewYloc + $(document).scrollTop() + 400 >= $('.main-section').height() ? offset = $('.main-section').height()-400 : previewYloc + $(document).scrollTop() + 55;
       $('.content').animate({top:offset},{duration:500,queue:false});
     }
