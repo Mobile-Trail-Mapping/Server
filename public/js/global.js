@@ -86,7 +86,7 @@ $(document).ready(function() {
           $("#trail-coords").html(data.point.lat + ', ' + data.point.long);
           $("#trail-desc").html(data.point.desc)
           // pictures
-          if(data.point.photos != null) {  
+          if(data.point.photos.length == 0) {  
             $("ul#slider").html("");
             $.each(data.point.photos, function(i) {
               $("ul#slider").append('<li><img src="' + data.point.photos[i] + '" /></li>');
