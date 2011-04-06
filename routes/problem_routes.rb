@@ -27,7 +27,7 @@ get '/problems/?' do
   haml :problem
 end
 
-get '/problems/get/:id/?' do
+get '/problem/get/:id/?' do
   content_type :json
 
   @json = {}
