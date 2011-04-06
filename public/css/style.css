@@ -148,6 +148,7 @@ div.anythingSlider .anythingWindow{overflow:hidden;position:relative;width:100%;
 div.anythingSlider{position:relative;padding:0 45px 28px 45px;}
 ul.anythingBase{background:transparent;list-style:none;position:absolute;top:0;left:0;margin:0;padding:0;}
 ul.anythingBase li.panel{background:transparent;display:block;overflow:hidden;float:left;padding:0;margin:0;}
+ul.anythingBase li.panel img{border-radius:5px 5px 5px 0px;-moz-border-radius:5px 5px 5px 0px;}
 div.anythingSlider .arrow{top:46%;position:absolute;display:block;z-index:100;}
 div.anythingSlider .arrow a{display:block;height:300px;margin-top:-150px;width:45px;outline:0;background:url(../images/arrows.gif) no-repeat;text-indent:-9999px;}
 div.anythingSlider .forward a{border-radius:0 5px 5px 0;-moz-border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;}
