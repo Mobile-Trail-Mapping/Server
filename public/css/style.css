@@ -142,9 +142,6 @@ with major improvements by Doug Neiner:http://pixelgraphics.us/
 based on work by Remy Sharp:http://jqueryfordesigners.com/
 */
 div.anythingSlider{width:225px;height:300px;margin:0 auto;overflow:hidden;/* needed for Opera and Safari */}
-div.anythingSlider .thumbNav a.cur,div.anythingSlider .thumbNav a{background:#eee;color:#000;}
-div.anythingSlider.activeSlider .anythingWindow{border-color:#000;}
-div.anythingSlider.activeSlider .thumbNav a.cur,div.anythingSlider.activeSlider .thumbNav a{background-color:#000;}
 div.anythingSlider .start-stop{display:none}
 /**** DO NOT CHANGE BELOW THIS LINE ****/
 div.anythingSlider .anythingWindow{overflow:hidden;position:relative;width:100%;height:100%;}
