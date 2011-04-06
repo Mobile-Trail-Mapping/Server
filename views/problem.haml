@@ -1,30 +1,31 @@
 .main-section
   .block.small.left
     .block-head
-      %h2 Problems 
+      %h2 Problems
     .block-content
       %ul#listing.list-view.clearfix
         - @problems.each do |prob|
           %li.clearfix
-            %a.button.button-gray.delete{:href => "/problem/delete/#{prob.id}"} 
-              %span.bin
-              Delete
+            .tools
+              %a.button.button-gray.delete{:href => "/problem/delete/#{prob.id}"} 
+                %span.bin
             %a.more{:href => "#prob_#{prob.id}"} >
             %a.name{:href => "#"} 
-              #{prob.title} 
-              %small #{prob.desc}
+              #{prob.title}
+              %small{prob.desc}
   .preview-pane.small.right.omega
-    .content
+    .help
       .message.info
         %h3 Helpful Tips
-        %p Click on any problem in the list located on the left to get more information about it, including pictures and coordinates. 
+        %p Click on the problems located on the left to get more information about them, including pictures and coordinates. 
     .preview
-      .desc{:style => "display: block !important"}
+      .trail-pane{:style => "display: block !important"}
         %span.close
           %img{:src => "../images/cancel-white.png"}
-      - @problems.each do |prob|
-        .desc{:id => "prob_#{prob.id}"}
-          %h1 #{prob.title}
-          %span #{prob.lat}, #{prob.long}
-          %p #{prob.desc}
-          %img{:src => prob.pic.url }
+        .trail-content
+          .desc
+            %h1#trail-name Title
+            %span#trail-coords Lat, Long
+            .content
+              %p#trail-desc Desc
+              %ul#slider
