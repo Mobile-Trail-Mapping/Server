@@ -22,7 +22,8 @@ class Photo
 
   property :id,   Serial
   has_attached_file :pic,
-                    :styles => { :medium => "400x300",
+                    :styles => { :small => "400x300",
+                                 :medium => "400x300",
                                  :large => "400x300" },
                     :storage => :s3,
                     :s3_credentials => {:access_key_id => "AKIAIJUGMKYECWUFG2VQ",
