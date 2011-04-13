@@ -3,7 +3,7 @@ libxml-ruby
 datamapper
 dm-migrations
 dm-postgres-adapter
-dm-paperclip
+dm-paperclip --version 2.4.1
 builder --version 2.1.2
 haml
 aws-s3
