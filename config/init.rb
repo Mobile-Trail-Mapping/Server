@@ -5,6 +5,7 @@ require 'dm-paperclip'
 require 'digest/sha1'
 require 'builder'
 require 'haml'
+require 'json'
 
 configure do
   DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://' + Dir.pwd + '/tmp/development.db') 
