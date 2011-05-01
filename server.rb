@@ -14,10 +14,8 @@ class MTM < Sinatra::Base
 
   before do
     #validate user info before letting them post to the server
-    OBJECTS.each do |object|
-      if request.path_info.split('/').include?(object) && (not request.path_info.split('/').include?("get")) && (not request.path_info == '/user/login')
-        #halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
-      end
+    if (not request.path_info == '/') && (not request.path_info.split('/').include?("get")) && (not request.path_info == '/user/login')
+      halt "Invalid username or password" if password_doesnt_match_user?(params[:user], params[:pwhash])
     end
     #dir
     @server_dir = Dir.pwd
